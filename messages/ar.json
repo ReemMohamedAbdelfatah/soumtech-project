@@ -1,7 +1,8 @@
 {
   "Home": {
     "title": "مرحبا",
-    "description": "أهلا بك في Next.js"
+    "description": "أهلا بك في Next.js",
+    "watermelon": "بطيخ"
   },
   "LoginPage": {
     "title": "تسجيل الدخول",

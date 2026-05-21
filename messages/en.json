@@ -1,7 +1,8 @@
 {
   "Home": {
     "title": "Welcome",
-    "description": "Hello from Next.js"
+    "description": "Hello from Next.js",
+    "watermelon": "Watermelon"
   },
   "LoginPage": {
     "title": "Login",
