@@ -1,0 +1,10 @@
+{
+  "Home": {
+    "title": "مرحبا",
+    "description": "أهلا بك في Next.js"
+  },
+  "LoginPage": {
+    "title": "تسجيل الدخول",
+    "description": "يرجى تسجيل الدخول"
+  }
+}
