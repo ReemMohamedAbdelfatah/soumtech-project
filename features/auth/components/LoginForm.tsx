@@ -1,7 +1,4 @@
+//Email/phone + password form logic
 export default function LoginForm() {
-  return (
-    <form>
-      <h1>Login</h1>
-    </form>
-  );
+  return null
 }
