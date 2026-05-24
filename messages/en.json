@@ -6,6 +6,8 @@
   },
   "LoginPage": {
     "title": "Login",
-    "description": "please login"
+    "description": "please login",
+    "hi": "Hello user",
+    "color": "red"
   }
 }
