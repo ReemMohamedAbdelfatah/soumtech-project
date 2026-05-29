@@ -9,5 +9,11 @@
     "description": "please login",
     "hi": "Hello user",
     "color": "red"
+  },
+  "AuctionStatusTabs": {
+    "ariaLabel": "Filter auctions by status",
+    "active": "Active",
+    "upcoming": "Upcoming",
+    "ended": "Ended"
   }
 }

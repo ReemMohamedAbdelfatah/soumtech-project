@@ -9,5 +9,11 @@
     "description": "يرجى تسجيل الدخول",
     "hi": "مرحبا بالمستخدم",
     "color": "أحمر"
+  },
+  "AuctionStatusTabs": {
+    "ariaLabel": "تصفية المزادات حسب الحالة",
+    "active": "نشط",
+    "upcoming": "قادم",
+    "ended": "منتهي"
   }
 }
