@@ -15,5 +15,32 @@
     "active": "نشط",
     "upcoming": "قادم",
     "ended": "منتهي"
+  },
+  "AuctionCard": {
+    "defaultTitle": "مزاد عقاري مميز",
+    "defaultLocation": "الرياض، المملكة العربية السعودية",
+    "defaultCompany": "مزادات سوم تك",
+    "defaultCurrentBid": "450,000 ريال",
+    "defaultStartingBid": "300,000 ريال",
+    "defaultEndDate": "ينتهي في 12 يونيو 2026",
+    "defaultRemainingTime": "متبقي 3 أيام",
+    "defaultImageAlt": "صورة معاينة للعقار في المزاد",
+    "status": {
+      "active": "نشط",
+      "upcoming": "قادم",
+      "ended": "منتهي"
+    },
+    "labels": {
+      "lotNumber": "القطعة",
+      "bids": "المزايدات",
+      "views": "المشاهدات",
+      "currentBid": "السعر الحالي",
+      "startingBid": "السعر الافتتاحي"
+    },
+    "actions": {
+      "bidNow": "زايد الآن",
+      "viewDetails": "عرض التفاصيل",
+      "viewResults": "عرض النتائج"
+    }
   }
 }

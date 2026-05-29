@@ -15,5 +15,32 @@
     "active": "Active",
     "upcoming": "Upcoming",
     "ended": "Ended"
+  },
+  "AuctionCard": {
+    "defaultTitle": "Premium real estate auction",
+    "defaultLocation": "Riyadh, Saudi Arabia",
+    "defaultCompany": "Soumtech Auctions",
+    "defaultCurrentBid": "450,000 SAR",
+    "defaultStartingBid": "300,000 SAR",
+    "defaultEndDate": "Ends 12 Jun 2026",
+    "defaultRemainingTime": "3 days left",
+    "defaultImageAlt": "Auction property preview",
+    "status": {
+      "active": "Active",
+      "upcoming": "Upcoming",
+      "ended": "Ended"
+    },
+    "labels": {
+      "lotNumber": "Lot",
+      "bids": "Bids",
+      "views": "Views",
+      "currentBid": "Current bid",
+      "startingBid": "Starting bid"
+    },
+    "actions": {
+      "bidNow": "Bid now",
+      "viewDetails": "View details",
+      "viewResults": "View results"
+    }
   }
 }
