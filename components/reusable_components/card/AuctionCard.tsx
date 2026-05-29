@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import CountdownTimer from './CountdownTimer';
 import AuctionButton from './AuctionButton';
+import AuctionDateTime from './AuctionDateTime';
 
 export interface AuctionCardProps {
   title: string;
@@ -12,6 +13,8 @@ export interface AuctionCardProps {
   detailsUrl?: string;
   location?: string;
   area?: string;
+  auctionDate?: string;
+  auctionTime?: string;
   priceInfo?: {
     label: string;
     amount: string;
@@ -29,6 +32,8 @@ export default function AuctionCard({
   detailsUrl = '#',
   location,
   area,
+  auctionDate,
+  auctionTime,
   priceInfo,
 }: AuctionCardProps) {
   return (
@@ -82,9 +87,11 @@ export default function AuctionCard({
         </div>
       </div>
 
-      {/* Interactive Status Section (Countdown / Closed State Banner) */}
+      {/* Interactive Status Section (Countdown / Date & Time / Closed State Banner) */}
       <div className="px-1 shrink-0 mb-4">
-        {status === 'active' ? (
+        {auctionDate && auctionTime ? (
+          <AuctionDateTime date={auctionDate} time={auctionTime} />
+        ) : status === 'active' ? (
           <CountdownTimer targetDate={endDate} />
         ) : (
           <AuctionButton variant="closed" />
