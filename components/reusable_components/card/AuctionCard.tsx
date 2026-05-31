@@ -2,6 +2,7 @@ import Image from 'next/image';
 import CountdownTimer from './CountdownTimer';
 import AuctionButton from './AuctionButton';
 import AuctionDateTime from './AuctionDateTime';
+import { useTranslations } from 'next-intl';
 
 export interface AuctionCardProps {
   title: string;
@@ -16,7 +17,6 @@ export interface AuctionCardProps {
   auctionDate?: string;
   auctionTime?: string;
   priceInfo?: {
-    label: string;
     amount: string;
     subText?: string;
   };
@@ -36,13 +36,14 @@ export default function AuctionCard({
   auctionTime,
   priceInfo,
 }: AuctionCardProps) {
+  const t = useTranslations("auctionCard");
   return (
     <div
       dir="rtl"
-      className="w-[323px] h-[448px]  bg-white rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-5 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col justify-between"
+      className="min-h-[448px]  bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col justify-between"
     >
       {/* Main Image */}
-      <div className="relative w-full h-[160px] shrink-0 overflow-hidden rounded-[1.5rem] bg-gray-50 mb-2">
+      <div className="relative w-full h-[255px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50 mb-2">
         <Image
           src={imageSrc}
           alt={title}
@@ -54,8 +55,13 @@ export default function AuctionCard({
         {/* Location Badge at the bottom of the image */}
         {location && (
           <div className="absolute bottom-0 inset-x-0 bg-[#0f1b4c]/90 text-white text-xs py-2 px-3 flex items-center justify-start gap-1 backdrop-blur-sm z-10 ">
-            <span>📍</span>
-            <span className="font-bold truncate">{location}</span>
+            <Image
+              src="/icons/loc.svg"
+              alt="menu"
+              width={9}
+              height={14}
+            />
+            <span className="font-medium text-[15px] leading-[100%]">{location}</span>
           </div>
         )}
       </div>
@@ -64,13 +70,19 @@ export default function AuctionCard({
       <div className="flex justify-between items-start gap-3 px-1 shrink-0 mb-2">
         {/* Title & Subtitle/Area */}
         <div className="flex flex-col items-start text-start min-w-0">
-          <h3 className="text-[#0f1b4c] font-black text-lg tracking-tight leading-snug truncate w-full">
+          <h3 className="text-[#171D5B]  text-[18px] font-bold tracking-tight leading-snug truncate w-full">
             {title}
           </h3>
           {/* Subtitle / Land area */}
           {area && (
-            <span className="text-gray-500 dark:text-gray-400 text-xs mt-1 flex items-center gap-1 select-none">
-              <span className="text-[#e9a11d]">📐</span> {area}
+            <span className="text-[#171D5B] text-[12px] font_regular leading-[100%] text-xs mt-1 flex items-center gap-1 select-none">
+              <Image
+                src="/icons/ruler-combined.svg"
+                alt="ruler-combined"
+                width={15}
+                height={15}
+              />
+              {area}
             </span>
           )}
         </div>
@@ -88,7 +100,7 @@ export default function AuctionCard({
       </div>
 
       {/* Interactive Status Section (Countdown / Date & Time / Closed State Banner) */}
-      <div className="px-1 shrink-0 mb-4">
+      <div className=" shrink-0 mb-2">
         {auctionDate && auctionTime ? (
           <AuctionDateTime date={auctionDate} time={auctionTime} />
         ) : status === 'active' ? (
@@ -99,39 +111,38 @@ export default function AuctionCard({
       </div>
 
       {/* Footer Area: Details Button & Asset Count / Price Info */}
-      <div className="flex justify-between items-center gap-4 mt-auto pt-2 px-1 w-full shrink-0 border-t border-gray-100/50">
+      <div className="flex justify-between items-center gap-4 mt-auto pt-2 px-1 w-full">
         {priceInfo || assetsCount !== undefined ? (
           <>
-            {/* Info on the Right (First in RTL) - occupying 50% width */}
-            <div className="w-1/2 select-none min-w-0">
-              {priceInfo ? (
-                <div className="flex flex-col items-start text-start">
-                  <span className="text-[#0f1b4c] text-xs font-bold opacity-80 truncate w-full">
-                    {priceInfo.label}
+            {/* Info on the Right (First in RTL) */}
+            {priceInfo ? (
+              <div className="flex flex-col items-start text-start">
+                <span className="text-[#171D5B] text-[14px] font-bold w-full">
+                  {t("currentBidPrice")}
+                </span>
+                <span className="text-[#EEA820] text-[14px] font-bold" title={priceInfo.amount}>
+                  {priceInfo.amount}<span className="text-[#171D5B]"> {t("SAR")}</span>
+                </span>
+                {priceInfo.subText && (
+                  <span className="text-gray-400 text-[10px] mt-0.5 truncate w-full">
+                    ({priceInfo.subText} {t("SARperMeter")})
                   </span>
-                  <span className="text-[#e9a11d] text-base font-black mt-0.5 truncate w-full" title={priceInfo.amount}>
-                    {priceInfo.amount}
-                  </span>
-                  {priceInfo.subText && (
-                    <span className="text-gray-400 text-[10px] mt-0.5 truncate w-full">
-                      {priceInfo.subText}
-                    </span>
-                  )}
-                </div>
-              ) : (
-                <div className="flex flex-col items-start text-start">
-                  <span className="text-[#0f1b4c] text-xs font-bold opacity-80 truncate w-full">
-                    عدد الاصول
-                  </span>
-                  <span className="text-[#e9a11d] text-lg font-black mt-0.5 truncate w-full">
-                    {assetsCount} الأصول
-                  </span>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            ) : (
+              <div className="flex flex-col items-start text-start">
+                <span className="text-[#171D5B] text-[17px] font-bold">
+                  {t("assetsCount")}
+                </span>
+                <span className="text-[#EEA820] text-[19px] font-bold ">
+                  {assetsCount}
+                </span>
+              </div>
+            )}
+
 
             {/* Details Button*/}
-            <div className="w-1/2 flex justify-end min-w-0 mb-2">
+            <div className="flex justify-end min-w-0 mb-2">
               <AuctionButton href={detailsUrl} />
             </div>
           </>

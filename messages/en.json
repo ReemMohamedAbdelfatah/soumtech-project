@@ -9,5 +9,20 @@
     "description": "please login",
     "hi": "Hello user",
     "color": "red"
+  },
+  "auctionCard": {
+    "closed": "Auction Closed",
+    "auctionDetails": "Auction Details",
+    "day": "Day",
+    "hour": "Hour",
+    "minute": "Minute",
+    "second": "Second",
+    "auctionOpenDate": "Auction Open Date",
+    "auctionOpenTime": "Auction Open Time",
+    "assetsCount": "Assets Count",
+    "assets": "Assets",
+    "currentBidPrice": "Current Bid Price",
+    "SAR": "SAR",
+    "SARperMeter": "SAR per Meter"
   }
 }

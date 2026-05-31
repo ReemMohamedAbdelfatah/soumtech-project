@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState, useEffect } from 'react';
 
 interface CountdownTimerProps {
@@ -13,6 +14,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
     minutes: '00',
     seconds: '00',
   });
+  const t = useTranslations("auctionCard");
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -44,29 +46,35 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate]);
 
   const timeUnits = [
-    { value: timeLeft.days, label: 'يوم' },
-    { value: timeLeft.hours, label: 'ساعة' },
-    { value: timeLeft.minutes, label: 'دقيقة' },
-    { value: timeLeft.seconds, label: 'ثانية' },
+    { value: timeLeft.days, label: t("day") },
+    { value: timeLeft.hours, label: t("hour") },
+    { value: timeLeft.minutes, label: t("minute") },
+    { value: timeLeft.seconds, label: t("second") },
   ];
 
   return (
     <div
       dir="rtl"
-      className="w-full border border-gray-200/80 bg-white/50 backdrop-blur-sm rounded-xl py-3 px-4 flex justify-between items-center"
+      className="border
+              border-[#EAEAEA]
+              rounded-[6.54px]
+              bg-white
+              px-3
+              flex justify-between
+              items-center"
     >
       {timeUnits.map((unit, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-col items-center flex-1">
-            <span className="text-[#0f1b4c] font-extrabold text-2xl tracking-tight md:text-3xl">
+            <span className="text-[#171D5B] font-bold text-[20px]">
               {unit.value}
             </span>
-            <span className="text-[#6b7280] text-xs font-semibold mt-1">
+            <span className="text-[#171D5B] text-[12px] font-light mb-1">
               {unit.label}
             </span>
           </div>
           {index < timeUnits.length - 1 && (
-            <div className="text-gray-300 font-bold text-xl px-1 select-none">:</div>
+            <div className="text-[#171D5B] font-bold text-[12px] select-none">:</div>
           )}
         </React.Fragment>
       ))}

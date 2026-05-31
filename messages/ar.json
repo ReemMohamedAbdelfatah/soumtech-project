@@ -9,5 +9,21 @@
     "description": "يرجى تسجيل الدخول",
     "hi": "مرحبا بالمستخدم",
     "color": "أحمر"
+  },
+
+  "auctionCard": {
+    "closed": "تم اغلاق المزاد",
+    "auctionDetails": "تفاصيل المزاد",
+    "day": "يوم",
+    "hour": "ساعة",
+    "minute": "دقيقة",
+    "second": "ثانية",
+    "auctionOpenDate": "تاريخ فتح المزاد",
+    "auctionOpenTime": "وقت فتح المزاد",
+    "assetsCount": "عدد الأصول",
+    "assets": "الأصول",
+    "currentBidPrice": "سعر السوم الحالي",
+    "SAR": "ر.س",
+    "SARperMeter": "ر.س للمتر"
   }
 }

@@ -22,8 +22,8 @@ export default async function Home() {
       area: "325.22 م²",
       priceInfo: {
         label: "سعر السوم الحالي",
-        amount: "500,000,000 ر.س",
-        subText: "(20 ر.س للمتر)",
+        amount: "500,000,000",
+        subText: "20",
       },
     },
     {
@@ -38,8 +38,8 @@ export default async function Home() {
       area: "450.00 م²",
       priceInfo: {
         label: "سعر السوم الحالي",
-        amount: "1,200,000 ر.س",
-        subText: "(2,666 ر.س للمتر)",
+        amount: "1,200,000",
+        subText: "2,666",
       },
     },   
     {

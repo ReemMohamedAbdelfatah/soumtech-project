@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 interface AuctionDateTimeProps {
@@ -11,29 +12,30 @@ interface AuctionDateTimeProps {
 export default function AuctionDateTime({
   date,
   time,
-  dateLabel = 'تاريخ فتح المزاد',
-  timeLabel = 'وقت فتح المزاد',
+  dateLabel,
+  timeLabel ,
   className = '',
 }: AuctionDateTimeProps) {
+  const t = useTranslations("auctionCard");
   return (
     <div
       dir="rtl"
-      className={`w-full border border-gray-200/80 bg-white/50 backdrop-blur-sm rounded-xl py-3 px-4 flex justify-between items-center text-center ${className}`}
+      className={`w-full border border-[#EAEAEA] rounded-[6.54px] py-2 px-4 flex justify-between items-center text-center ${className}`}
     >
       <div className="flex flex-col items-center flex-1">
-        <span className="text-[#0f1b4c] opacity-80 text-xs font-bold mb-1">
-          {dateLabel}
+        <span className="text-[#171D5B]  text-[13px] font-regular mb-1">
+          {dateLabel ??  t("auctionOpenDate")}
         </span>
-        <span className="text-[#0f1b4c] font-black text-sm md:text-base">
+        <span className="text-[#171D5B] text-[12px] font-bold">
           {date}
         </span>
       </div>
-      <div className="h-8 w-px bg-gray-200/85" />
+      <div className="h-4 w-px bg-[#EAEAEA]" />
       <div className="flex flex-col items-center flex-1">
-        <span className="text-[#0f1b4c] opacity-80 text-xs font-bold mb-1">
-          {timeLabel}
+        <span className="text-[#171D5B]  text-[13px] font-regular mb-1">
+          {timeLabel?? t("auctionOpenTime")}
         </span>
-        <span className="text-[#0f1b4c] font-black text-sm md:text-base">
+        <span className="text-[#171D5B] font-bold text-[12px]">
           {time}
         </span>
       </div>
