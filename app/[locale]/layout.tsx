@@ -5,6 +5,8 @@ import StoreProvider from "@/store/provider";
 import ThemeProvider from "@/features/theme/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import Navbar from "@/components/Layout/Navbar";
+import Footer from "@/components/Layout/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +44,11 @@ export default async function RootLayout({
         <StoreProvider>
           <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
+              <Navbar locale={locale} />
+               <main> 
               {children}
+              </main>
+              <Footer />
             </NextIntlClientProvider>
           </ThemeProvider>
         </StoreProvider>

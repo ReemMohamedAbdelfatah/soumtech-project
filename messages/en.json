@@ -9,5 +9,44 @@
     "description": "please login",
     "hi": "Hello user",
     "color": "red"
+  },
+  "NavbarLinks": {
+    "MainPage": "Home",
+    "AuctionsPage": "Auctions",
+    "ContactUs": "Contact Us",
+    "Login": "Login"
+  },
+  
+  "Footer": {
+     "Main": {
+      "Description":  "This text is an example of text that can be replaced in the same space. This text was generated from the Arabic text generator, where you can generate such text or many other texts in addition to the website."
+    },
+    "Menu": {
+      "Title": "Main Menu",
+      "TermsAndConditions": "Terms and Conditions",
+      "License": "Licensing from the General Real Estate Authority",
+      "Contact": "Contact Us"
+    },
+    "Sections": {
+      "Title":"Sections",
+      "SupportLibrary": "Support Library",
+      "FAQ": "Frequently Asked Questions"
+    },
+    "Contact": {
+      "Title":"Contact Us",
+      "Location": "Riyadh, King Faisal District, Saudi Arabia",
+      "Phone": "+966 570 212 216",
+      "Mail": "info@soum.tech"
+    },
+    "bottom": {
+      "Description": "All rights reserved - Soumtech ©"
+    }
+  },
+    "HeroBanner": {
+    "Title": "Add your tag wherever you are!",
+    "Description": "Somtech platform brings you the ability to view real estate or participate in auctions quickly and easily in a reliable electronic environment!"
+  },
+  "CompanyLogosSection":{
+    "Title":"Auction companies"
   }
 }
