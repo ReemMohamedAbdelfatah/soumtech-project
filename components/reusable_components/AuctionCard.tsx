@@ -10,6 +10,9 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
+import activePlaceholder from "@/public/placeholder-acive.png";
+import upcomingPlaceholder from "@/public/placeholder-coming.png";
+import endedPlaceholder from "@/public/placeholder-ended.png";
 
 import { cn } from "@/lib/utils";
 
@@ -52,10 +55,18 @@ const actionLabelKeys: Record<AuctionCardStatus, string> = {
   ended: "actions.viewResults",
 };
 
+const imagePlaceholder: Record<AuctionCardStatus, StaticImageData> = {
+  active: activePlaceholder,
+  upcoming: upcomingPlaceholder,
+  ended: endedPlaceholder,
+};
+
 function hasMetricValue(
   metric: AuctionCardMetric,
 ): metric is AuctionCardMetric {
-  return metric.value !== undefined && metric.value !== null && metric.value !== "";
+  return (
+    metric.value !== undefined && metric.value !== null && metric.value !== ""
+  );
 }
 
 export default function AuctionCard({
@@ -107,30 +118,15 @@ export default function AuctionCard({
       )}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-primary">
-        {imageSrc ? (
+        {
           <Image
-            src={imageSrc}
+            src={imagePlaceholder[status]}
             alt={displayedImageAlt}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition duration-300 group-hover:scale-105"
           />
-        ) : (
-          <div className="flex h-full flex-col justify-between bg-gradient-to-br from-primary via-primary to-accent p-4 text-primary-foreground">
-            <div className="flex items-center justify-between gap-3">
-              <span className="inline-flex size-10 items-center justify-center rounded-md bg-white/10">
-                <Gavel className="size-5" aria-hidden="true" />
-              </span>
-              <span className="text-xs font-semibold opacity-80">
-                {displayedCompany}
-              </span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold leading-6">{cardTitle}</p>
-              <p className="mt-1 text-xs opacity-75">{displayedLocation}</p>
-            </div>
-          </div>
-        )}
+        }
 
         <div className="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
           <span
