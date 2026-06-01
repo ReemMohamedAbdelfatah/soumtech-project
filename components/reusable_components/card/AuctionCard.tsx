@@ -111,7 +111,7 @@ export default function AuctionCard({
       </div>
 
       {/* Footer Area: Details Button & Asset Count / Price Info */}
-      <div className="flex justify-between items-center gap-4 mt-auto pt-2 px-1 w-full">
+      <div className="flex justify-between gap-4 mt-auto pt-2 px-1 w-full">
         {priceInfo || assetsCount !== undefined ? (
           <>
             {/* Info on the Right (First in RTL) */}
@@ -142,7 +142,7 @@ export default function AuctionCard({
 
 
             {/* Details Button*/}
-            <div className="flex justify-end min-w-0 mb-2">
+            <div className="flex justify-end w-1/2 min-w-0 mb-2">
               <AuctionButton href={detailsUrl} />
             </div>
           </>

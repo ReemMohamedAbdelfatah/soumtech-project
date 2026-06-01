@@ -51,7 +51,7 @@ export default function AuctionButton({
 
   if (href) {
     return (
-      <a href={href} className="w-full flex min-w-[160px]">
+      <a href={href} className="w-full ">
         {buttonContent}
       </a>
     );

@@ -25,23 +25,25 @@ export default async function Home() {
         amount: "500,000,000",
         subText: "20",
       },
+      numberOfBids:71,
     },
     {
       id: 2,
-      title: "مزاد الاسراء",
-      imageSrc: "/image2.jpg", // Second main image (Alnakheel / closed banner)
+      title: "فيلا الاخلاص",
+      imageSrc: "/image3.png", // Main Jenan Taiba / active banner image
       logoSrc: "/image1.png",  // Fortune Realty logo badge
-      status: "closed" as const,
-      endDate: new Date().toISOString(),
+      status: "active" as const,
+      endDate: targetDate.toISOString(),
       detailsUrl: "#",
-      location: "حي النخيل - الرياض",
-      area: "450.00 م²",
+      location: "شارع الاخلاص - الدمام",
+      area: "325.22 م²",
       priceInfo: {
         label: "سعر السوم الحالي",
-        amount: "1,200,000",
-        subText: "2,666",
+        amount: "500,000,000",
+        subText: "20",
       },
-    },   
+    },
+     
     {
       id: 3,
       title: "عمارة سكنية في الاندلس",
@@ -66,6 +68,23 @@ export default async function Home() {
       location: "شارع حراء - جدة",
       area: "850.00 م²",
     },
+    {
+      id: 5,
+      title: "مزاد الاسراء",
+      imageSrc: "/image2.jpg", // Second main image (Alnakheel / closed banner)
+      logoSrc: "/image1.png",  // Fortune Realty logo badge
+      status: "closed" as const,
+      endDate: new Date().toISOString(),
+      detailsUrl: "#",
+      location: "حي النخيل - الرياض",
+      area: "450.00 م²",
+      priceInfo: {
+        label: "سعر السوم الحالي",
+        amount: "1,200,000",
+        subText: "2,666",
+      },
+      numberOfBids:7,
+    },  
   ];
 
   return (

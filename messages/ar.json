@@ -10,7 +10,6 @@
     "hi": "مرحبا بالمستخدم",
     "color": "أحمر"
   },
-
   "auctionCard": {
     "closed": "تم اغلاق المزاد",
     "auctionDetails": "تفاصيل المزاد",
@@ -24,6 +23,9 @@
     "assets": "الأصول",
     "currentBidPrice": "سعر السوم الحالي",
     "SAR": "ر.س",
-    "SARperMeter": "ر.س للمتر"
+    "SARperMeter": "ر.س للمتر",
+    "numberOfBids": "عدد السومات",
+    "bidder": "مزايد",
+    "auctionEnded": "مزاد منتهي"
   }
 }

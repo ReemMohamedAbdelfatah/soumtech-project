@@ -23,6 +23,9 @@
     "assets": "Assets",
     "currentBidPrice": "Current Bid Price",
     "SAR": "SAR",
-    "SARperMeter": "SAR per Meter"
+    "SARperMeter": "SAR per Meter",
+    "numberOfBids": "Number of Bids",
+    "bidder": "Bidder",
+    "auctionEnded": "Auction Ended"
   }
 }

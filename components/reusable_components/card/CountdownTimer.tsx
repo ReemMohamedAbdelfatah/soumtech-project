@@ -46,10 +46,10 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }, [targetDate]);
 
   const timeUnits = [
-    { value: timeLeft.days, label: t("day") },
-    { value: timeLeft.hours, label: t("hour") },
-    { value: timeLeft.minutes, label: t("minute") },
     { value: timeLeft.seconds, label: t("second") },
+    { value: timeLeft.minutes, label: t("minute") },
+    { value: timeLeft.hours, label: t("hour") },
+    { value: timeLeft.days, label: t("day") },
   ];
 
   return (
