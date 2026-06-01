@@ -71,7 +71,7 @@ export default function AuctionGrid({
   return (
     <ul
       className={cn(
-        "grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4",
+        "grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4 ",
         className,
       )}
     >
