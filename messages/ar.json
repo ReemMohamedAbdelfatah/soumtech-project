@@ -27,5 +27,9 @@
     "numberOfBids": "عدد السومات",
     "bidder": "مزايد",
     "auctionEnded": "مزاد منتهي"
+  },
+  "grid":{
+    "list": "قائمة",
+    "card": "بطاقات"
   }
 }

@@ -54,7 +54,6 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   return (
     <div
-      dir="rtl"
       className="border
               border-[#EAEAEA]
               rounded-[6.54px]

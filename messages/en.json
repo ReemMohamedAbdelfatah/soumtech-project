@@ -27,5 +27,10 @@
     "numberOfBids": "Number of Bids",
     "bidder": "Bidder",
     "auctionEnded": "Auction Ended"
+  },
+  "grid": {
+    "list": "List",
+    "card": "Cards"
   }
+
 }

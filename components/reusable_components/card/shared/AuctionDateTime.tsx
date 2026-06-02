@@ -19,7 +19,6 @@ export default function AuctionDateTime({
   const t = useTranslations("auctionCard");
   return (
     <div
-      dir="rtl"
       className={`w-full border border-[#EAEAEA] rounded-[6.54px] py-2 px-4 flex justify-between items-center text-center ${className}`}
     >
       <div className="flex flex-col items-center flex-1">
