@@ -48,6 +48,10 @@ export default function HorizontalNavbar({
           {navbarData.login.title}
         </Link>
       </nav>
+      
+      <div className="relative w-full h-7 bg-primary" >
+<div className="absolute bottom-0 w-full h-7 bg-background rounded-t-4xl" />
+      </div>
     </div>
   );
 }
