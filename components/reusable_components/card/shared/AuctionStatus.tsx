@@ -20,7 +20,7 @@ export default function AuctionStatus({
 }: AuctionStatusProps) {
   const t = useTranslations("auctionCard");
 
-  if (auctionDate && auctionTime) {
+  if (auctionDate) {
     return <AuctionDateTime date={auctionDate} time={auctionTime} />;
   }
 

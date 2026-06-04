@@ -52,8 +52,7 @@ export default async function Home() {
       assetsCount: 71,
       status: "active" as const,
       endDate: new Date().toISOString(),
-      auctionDate: "19/2/2023",
-      auctionTime: "01:45 pm",
+      auctionDate: new Date().toISOString(),
       detailsUrl: "#",
     },
     {
