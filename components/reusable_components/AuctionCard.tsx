@@ -169,23 +169,29 @@ export default function AuctionCard({
           </div>
         </div>
 
-        <div className="grid grid-cols-3 divide-x divide-border overflow-hidden rounded-md border border-border text-center rtl:divide-x-reverse">
-          {cardMetrics.map((metric) => {
-            const Icon = metric.icon;
+        {status === "ended" ? (
+          <p className="bg-orange-600 text-white inline-flex h-10 shrink-0 items-center justify-center rounded-md px-4 w-full">
+            auction closed
+          </p>
+        ) : (
+          <div className="grid grid-cols-3 divide-x divide-border overflow-hidden rounded-md border border-border text-center rtl:divide-x-reverse">
+            {cardMetrics.map((metric) => {
+              const Icon = metric.icon;
 
-            return (
-              <div key={metric.label} className="min-w-0 px-2 py-2">
-                <div className="flex items-center justify-center gap-1 text-muted-foreground">
-                  {Icon && <Icon className="size-3.5" aria-hidden="true" />}
-                  <span className="truncate text-[11px]">{metric.label}</span>
+              return (
+                <div key={metric.label} className="min-w-0 px-2 py-2">
+                  <div className="flex items-center justify-center gap-1 text-muted-foreground">
+                    {Icon && <Icon className="size-3.5" aria-hidden="true" />}
+                    <span className="truncate text-[11px]">{metric.label}</span>
+                  </div>
+                  <p className="mt-1 truncate text-sm font-semibold text-foreground ">
+                    {formatMetricValue(metric.value)}
+                  </p>
                 </div>
-                <p className="mt-1 truncate text-sm font-semibold text-foreground">
-                  {formatMetricValue(metric.value)}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
 
         <div className="flex items-end justify-between gap-3 border-t border-border pt-4">
           <div className="min-w-0">
