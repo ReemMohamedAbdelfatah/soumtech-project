@@ -15,16 +15,13 @@ type Props = {
 };
 
 //----------------------------
-export default function HorizontalNavbar({
-  navbarData,
-  locale,
-}: Props) {
-
+export default function HorizontalNavbar({ navbarData, locale }: Props) {
   return (
     <div className="flex flex-col">
       <nav className="flex bg-primary items-center w-full h-22 justify-between px-15">
+        {/* Logo */}
         <Logo variant="white" sizeClass="w-[100px]" />
-
+        {/*Main LINKS */}
         <div className="flex items-center gap-10">
           {navbarData.links.map((link) => {
             return (
@@ -39,7 +36,7 @@ export default function HorizontalNavbar({
             );
           })}
         </div>
-
+        {/* Login Link */}
         <Link
           href={navbarData.login.href}
           className="text-white! flex items-center no-underline text-[1.3rem] gap-1"
@@ -48,9 +45,9 @@ export default function HorizontalNavbar({
           {navbarData.login.title}
         </Link>
       </nav>
-      
-      <div className="relative w-full h-7 bg-primary" >
-<div className="absolute bottom-0 w-full h-7 bg-background rounded-t-4xl" />
+      {/* bottom curve */}
+      <div className="relative w-full h-7 bg-primary">
+        <div className="absolute bottom-0 w-full h-7 bg-background rounded-t-4xl" />
       </div>
     </div>
   );
