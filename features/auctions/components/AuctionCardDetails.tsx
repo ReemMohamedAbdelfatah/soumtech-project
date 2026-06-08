@@ -1,5 +1,5 @@
 import PropertyDetails from "./PropertyDetailView";
-import HorizontalAuctionCard from "@/components/reusable_components/card/HorizontalAuctionCard";
+import HorizontalAuctionCard from "@/components/reusable_components/card/HorizontalCard/HorizontalAuctionCard";
 
 
 export default function AuctionCardDetails() {
