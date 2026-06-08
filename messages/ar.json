@@ -10,6 +10,12 @@
     "hi": "مرحبا بالمستخدم",
     "color": "أحمر"
   },
+  "auctionsPage": {
+    "title": "المزادات",
+    "description": "تصفح المزادات المتاحة",
+    "searchPlaceholder": "ابحث عن مزاد...",
+    "assetsCountLabel": "عدد الأصول"
+  },
   "auctionCard": {
     "closed": "تم اغلاق المزاد",
     "auctionDetails": "تفاصيل المزاد",

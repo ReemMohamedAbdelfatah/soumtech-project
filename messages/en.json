@@ -10,6 +10,12 @@
     "hi": "Hello user",
     "color": "red"
   },
+  "auctionsPage": {
+    "title": "Auctions",
+    "description": "Browse available auctions",
+    "searchPlaceholder": "Search for an auction...",
+    "assetsCountLabel": "Assets Count"
+  },
   "auctionCard": {
     "closed": "Auction Closed",
     "auctionDetails": "Auction Details",
