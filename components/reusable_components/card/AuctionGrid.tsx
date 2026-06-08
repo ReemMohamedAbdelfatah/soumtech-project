@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import VerticalAuctionGrid from './VerticalCard/VerticalAuctionGrid';
 import HorizontalAuctionGrid from './HorizontalCard/HorizontalAuctionGrid';
 import { AuctionCardProps } from './VerticalCard/AuctionCard';
-import PropertyMapContainer from '@/features/auctions/components/PropertyMapContainer';
+import PropertyMapContainer from '@/features/auctions/components/cardDetails/PropertyMapContainer';
 
 interface AuctionGridProps {
   auctions: (AuctionCardProps & { id: string | number })[];

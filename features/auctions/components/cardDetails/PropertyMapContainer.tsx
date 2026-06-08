@@ -1,0 +1,11 @@
+import AuctionCardDetails from "./AuctionCardDetails";
+
+export default function PropertyMapContainer() {
+  return <div className="flex flex-col lg:flex-row justify-center gap-4 p-2">
+    <img src="/dummy/map.png" alt="Map Placeholder" className="w-full lg:w-2/3 h-[1000px] object-cover rounded-[22px]" />
+    <div className="w-full lg:w-1/3 bg-white rounded-[22px] shadow-lg">
+      <AuctionCardDetails></AuctionCardDetails>
+    </div>
+  </div>
+    ;
+}

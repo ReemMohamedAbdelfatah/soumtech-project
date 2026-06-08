@@ -4,7 +4,7 @@ import HorizontalAuctionCard from "@/components/reusable_components/card/Horizon
 
 export default function AuctionCardDetails() {
   return (
-    <div className="max-w-sm mx-auto p-4">
+    <div className="w-full h-full p-4 flex flex-col gap-4">
       {/* Upper section — reuse existing AuctionCard */}
 
       <HorizontalAuctionCard
