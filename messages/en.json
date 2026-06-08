@@ -9,5 +9,29 @@
     "description": "please login",
     "hi": "Hello user",
     "color": "red"
+  },
+  "AuctionTable": {
+    "joinAuction": "Join Auction",
+    "propertyName": "Property Name",
+    "currentBid": "Current Bid",
+    "area": "Area",
+    "deposit": "Deposit",
+    "bidsCount": "Bids Count",
+    "timer": "Timer",
+    "auctionDetails": "Auction Details",
+    "auctionDetailsBtn": "Auction Details",
+    "sar": "SAR",
+    "sarPerMeter": "SAR / m²",
+    "m2": "m²",
+    "bidder": "Bidder"
+  },
+  "AuctionTimer": {
+    "second": "Sec",
+    "minute": "Min",
+    "hour": "Hour",
+    "day": "Day",
+    "auctionOpenDate": "Open Date",
+    "auctionOpenTime": "Open Time",
+    "auctionOver": "Auction Over"
   }
 }
