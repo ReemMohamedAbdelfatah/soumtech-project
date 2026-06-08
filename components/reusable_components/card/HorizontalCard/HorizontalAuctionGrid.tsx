@@ -2,7 +2,7 @@
 
 import React from 'react';
 import HorizontalAuctionCard from './HorizontalAuctionCard';
-import { AuctionCardProps } from './AuctionCard';
+import { AuctionCardProps } from '../VerticalCard/AuctionCard';
 
 interface HorizontalAuctionGridProps {
   auctions: (AuctionCardProps & { id: string | number })[];

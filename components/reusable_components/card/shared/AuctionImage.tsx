@@ -7,6 +7,7 @@ interface AuctionImageProps {
   location?: string;
   className?: string;
   transparentLocationBg?: boolean;
+  style?: React.CSSProperties;
 }
 
 export default function AuctionImage({
@@ -15,9 +16,10 @@ export default function AuctionImage({
   location,
   className = '',
   transparentLocationBg = false,
+  style,
 }: AuctionImageProps) {
   return (
-    <div className={className}>
+    <div className={className} style={style}>
       <Image
         src={imageSrc}
         alt={title}
