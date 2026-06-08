@@ -18,7 +18,7 @@ export default function AuctionPrice({ amount, subText }: AuctionPriceProps) {
           {t("currentBidPrice")}
         </Label>
 
-        <span className="text-[#EEA820] text-[10px] sm:text-sm font-bold">
+        <span className="text-[#171D5B] text-[10px] sm:text-sm font-bold">
           {amount}{" "}
           <span className="text-[#171D5B] dark:text-[#171D5B] text-[8px] sm:text-xs">
             {t("SAR")}

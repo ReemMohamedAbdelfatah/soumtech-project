@@ -65,7 +65,7 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
 
         <Button
           onClick={() => setCardFormat('map')}
-          className={`flex rounded-[12px] w-[90px] sm:w-[120px] h-[50px] gap-[3px] sm:gap-[5px] md:gap-[10px]gap-[3px] sm:gap-[5px] md:gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'map'
+          className={`hidden lg:flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'map'
             ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90'
             : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
             }`}
