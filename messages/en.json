@@ -30,7 +30,19 @@
   },
   "grid": {
     "list": "List",
-    "card": "Cards"
+    "card": "Cards",
+    "map": "Map"
+  },
+  "propertyDetails": {
+    "title": "Details",
+    "propertyType": "Property type",
+    "city": "City",
+    "neighborhood": "Neighborhood",
+    "northNeighbor": "North",
+    "southNeighbor": "South",
+    "eastNeighbor": "East",
+    "westNeighbor": "West",
+    "streetName": "Street name",
+    "deedNumber": "Deed number"
   }
-
 }

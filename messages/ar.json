@@ -30,6 +30,19 @@
   },
   "grid":{
     "list": "قائمة",
-    "card": "بطاقات"
+    "card": "بطاقات",
+    "map": "الخريطة"
+  },
+  "propertyDetails": {
+    "title": "التفاصيل",
+    "propertyType": "نوع العقار",
+    "city": "المدينة",
+    "neighborhood": "الحي",
+    "northNeighbor": "شمالاً",
+    "southNeighbor": "جنوباً",
+    "eastNeighbor": "شرقاً",
+    "westNeighbor": "غرباً",
+    "streetName": "اسم الشارع",
+    "deedNumber": "رقم الصك"
   }
 }
