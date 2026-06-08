@@ -14,7 +14,8 @@
     "ariaLabel": "تصفية المزادات حسب الحالة",
     "active": "نشط",
     "upcoming": "قادم",
-    "ended": "منتهي"
+    "ended": "منتهي",
+    "reset": "إعادة تعيين"
   },
   "AuctionCard": {
     "defaultTitle": "مزاد عقاري مميز",

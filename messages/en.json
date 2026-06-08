@@ -14,7 +14,8 @@
     "ariaLabel": "Filter auctions by status",
     "active": "Active",
     "upcoming": "Upcoming",
-    "ended": "Ended"
+    "ended": "Ended",
+    "reset": "Reset"
   },
   "AuctionCard": {
     "defaultTitle": "Premium real estate auction",
