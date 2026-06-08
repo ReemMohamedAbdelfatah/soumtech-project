@@ -55,20 +55,20 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   return (
     <div
-      className="border border-[#EAEAEA] rounded-[6.54px] bg-white dark:bg-white px-3 py-1 flex justify-between items-center h-[50px] w-full"
+      className="border border-[#EAEAEA] rounded-[6.54px] bg-white dark:bg-white px-[clamp(4px,1vw,12px)] py-0.5 sm:py-1 flex justify-between items-center h-[clamp(36px,8vw,50px)] w-full"
     >
       {timeUnits.map((unit, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-col items-center flex-1">
-            <span className="text-[#171D5B] font-bold text-[20px] select-none">
+            <span className="text-[#171D5B] font-bold text-[clamp(11px,2.5vw,20px)] select-none leading-none">
               {unit.value}
             </span>
-            <Label className="text-[#171D5B] text-[11px] font-light mb-1 select-none">
+            <Label className="text-[#171D5B] text-[clamp(7px,1.5vw,11px)] font-light mb-0.5 select-none leading-none mt-0.5 sm:mt-1">
               {unit.label}
             </Label>
           </div>
           {index < timeUnits.length - 1 && (
-            <div className="text-[#171D5B] font-bold text-[14px] select-none translate-y-[-4px]">:</div>
+            <div className="text-[#171D5B] font-bold text-[clamp(9px,2vw,14px)] select-none translate-y-[-2px] sm:translate-y-[-4px]">:</div>
           )}
         </React.Fragment>
       ))}

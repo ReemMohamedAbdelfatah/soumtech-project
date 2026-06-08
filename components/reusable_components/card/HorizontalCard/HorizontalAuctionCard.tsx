@@ -2,11 +2,12 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
-import AuctionButton from './shared/AuctionButton';
-import AuctionHeader from './shared/AuctionHeader';
-import AuctionImage from './shared/AuctionImage';
-import AuctionPrice from './shared/AuctionPrice';
-import AuctionStatus from './shared/AuctionStatus';
+import AuctionButton from '../shared/AuctionButton';
+import AuctionHeader from '../shared/AuctionHeader';
+import AuctionImage from '../shared/AuctionImage';
+import AuctionPrice from '../shared/AuctionPrice';
+import AuctionStatus from '../shared/AuctionStatus';
+import styles from './HorizontalAuctionCard.module.css';
 
 export interface HorizontalAuctionCardProps {
   title: string;
@@ -45,23 +46,21 @@ export default function HorizontalAuctionCard({
   const t = useTranslations("auctionCard");
 
   return (
-    <Card
-      className="bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-row justify-between gap-[10px] w-full"
-    >
+    <Card className={styles.cardContainer}>
       <AuctionImage
         imageSrc="/image4.png"
         title={title}
         location={location}
         transparentLocationBg
-        className="relative w-1/3 h-[180px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
+        className={styles.imageWrapper}
       />
 
       {/* Left Section: Details */}
-      <div className="flex flex-col justify-between gap-3 shrink-0 mb-2 flex-1">
+      <div className={styles.detailsWrapper}>
 
-        <CardHeader className="p-0 flex flex-row justify-between items-center gap-2 w-full space-y-0">
+        <CardHeader className={styles.headerContainer}>
           {/* Title & Subtitle/Area */}
-          <div className="flex-1 min-w-0">
+          <div className={styles.titleColumn}>
             <AuctionHeader
               title={title}
               area={area}
@@ -72,7 +71,7 @@ export default function HorizontalAuctionCard({
 
           {/* Info on the Right (First in RTL) */}
           {priceInfo ? (
-            <div className="flex-shrink-0">
+            <div className={styles.priceColumn}>
               <AuctionPrice amount={priceInfo.amount} subText={priceInfo.subText} />
             </div>
           ) : null}
@@ -90,44 +89,45 @@ export default function HorizontalAuctionCard({
         </CardContent>
 
         {/* Footer Area: Details Button & Asset Count / Price Info */}
-        <CardFooter className="p-0 pt-2 flex flex-row justify-between items-center gap-2 w-full border-none bg-transparent">
+        <CardFooter className={styles.footerContainer}>
           {assetsCount !== undefined ? (
-            <div className="flex flex-col items-start text-start">
-              <span className="text-[#171D5B] text-[12px] sm:text-[17px] font-bold">
+            <div className={styles.footerInfoColumn}>
+              <span className={styles.assetsLabel}>
                 {t("assetsCount")}
               </span>
 
-              <span className="text-[#EEA820] text-[14px] sm:text-[19px] font-bold">
+              <span className={styles.assetsValue}>
                 {assetsCount}
               </span>
             </div>
           ) : numberOfBids !== undefined ? (
-            <div className="flex flex-col items-start text-start">
-              <span className="text-[#171D5B] text-[11px] sm:text-[15px] font-bold flex gap-1 items-center">
+            <div className={styles.footerInfoColumn}>
+              <span className={styles.bidsLabel}>
                 <Image
                   src="/icons/gavel.svg"
                   alt="bid"
                   width={13}
                   height={13}
+                  className="w-2 h-2 sm:w-[13px] sm:h-[13px] shrink-0"
                 />
 
                 {t("numberOfBids")}
               </span>
 
-              <span className="text-[#EEA820] text-[12px] sm:text-[15px] font-bold">
+              <span className={styles.bidsValue}>
                 {numberOfBids}
-                <span className="text-[#757575] text-[10px] sm:text-[12px] font-normal">
+                <span className={styles.bidderLabel}>
                   {" "}
                   {t("bidder")}
                 </span>
               </span>
             </div>
           ) : (
-            <div />
+            <div className={styles.footerInfoColumn} />
           )}
 
           {/* Details Button*/}
-          <div className="flex justify-end w-[45%] sm:w-1/2 min-w-0">
+          <div className={styles.footerButtonColumn}>
             <AuctionButton href={detailsUrl} />
           </div>
         </CardFooter>
