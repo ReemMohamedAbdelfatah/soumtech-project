@@ -53,15 +53,15 @@ export default function HorizontalAuctionCard({
         title={title}
         location={location}
         transparentLocationBg
-        className="relative w-[90px] xs:w-[115px] sm:w-[145px] md:w-[170px] h-[130px] xs:h-[145px] sm:h-[155px] md:h-[160px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
+        className="relative w-[90px] xs:w-[115px] sm:w-[145px] md:w-[170px] h-auto self-stretch min-h-[130px] xs:min-h-[145px] sm:min-h-[155px] md:min-h-[160px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50 mt-[-4px]"
       />
 
       {/* Left Section: Details */}
-      <div className="flex flex-col justify-between gap-1 xs:gap-2 sm:gap-3 mb-1 sm:mb-2 flex-1 min-w-0">
+      <div className="flex flex-col justify-between gap-1 xs:gap-2 sm:gap-3 flex-1 min-w-0">
 
-        <CardHeader className="p-0 flex flex-row justify-between items-center gap-2 w-full space-y-0">
+        <CardHeader className="p-0 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1.5 sm:gap-2 w-full space-y-0">
           {/* Title & Subtitle/Area */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 w-full">
             <AuctionHeader
               title={title}
               area={area}
@@ -72,7 +72,7 @@ export default function HorizontalAuctionCard({
 
           {/* Info on the Right (First in RTL) */}
           {priceInfo ? (
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full sm:w-auto">
               <AuctionPrice amount={priceInfo.amount} subText={priceInfo.subText} />
             </div>
           ) : null}
@@ -90,7 +90,7 @@ export default function HorizontalAuctionCard({
         </CardContent>
 
         {/* Footer Area: Details Button & Asset Count / Price Info */}
-        <CardFooter className="p-0 pt-1 sm:pt-2 flex flex-row justify-between items-center gap-2 w-full border-none bg-transparent">
+        <CardFooter className="p-0 flex flex-row justify-between items-center gap-2 w-full border-none bg-transparent">
           {assetsCount !== undefined ? (
             <div className="flex flex-col items-start text-start">
               <span className="text-[#171D5B] text-[10px] xs:text-[12px] sm:text-[17px] font-bold">
