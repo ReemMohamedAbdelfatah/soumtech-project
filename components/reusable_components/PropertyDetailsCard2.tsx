@@ -145,7 +145,7 @@ export default function PropertyDetailsCard() {
     <div className="p-3">
       <div className="relative rounded-lg overflow-hidden">
         <Image
-          src="/villa.jpg"
+          src="/soum9.jpeg"
           alt="villa"
           width={1200}
           height={800}
@@ -161,7 +161,12 @@ export default function PropertyDetailsCard() {
         </button>
 
         <div className="absolute top-3 left-3 bg-white rounded-md px-2 py-1 shadow">
-          <span className="text-xs font-semibold">infaTH</span>
+          <span className="text-xs font-semibold">
+            <img 
+  src="/soum5.jpeg" 
+  alt="صورة العقار" 
+  className="w-full h-full object-cover" // يمكنك تعديل الكلاسات حسب التصميم المطلوب
+/></span>
         </div>
 
         <button className="absolute top-3 right-3 bg-[#242E7D] text-white text-xs px-4 py-2 rounded">

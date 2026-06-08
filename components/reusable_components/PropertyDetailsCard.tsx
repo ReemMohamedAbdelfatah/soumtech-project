@@ -122,7 +122,7 @@ export default function PropertyDetailsCard() {
               
               <div className="relative h-72 w-full rounded-xl overflow-hidden group">
                 <img 
-                  src="/property-villa.jpg" 
+                  src="/soum9.jpeg" 
                   alt="فيلا حي الروضة"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -130,7 +130,7 @@ export default function PropertyDetailsCard() {
                   }}
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2 py-1 rounded-md shadow-xs max-w-[70px]">
-                  <img src="/infath-logo.png" alt="infath" className="w-full h-auto object-contain" />
+                  <img src="/soum5.jpeg" alt="infath" className="w-full h-auto object-contain" />
                 </div>
 
                 <button className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-6 h-6 rounded-full flex items-center justify-center shadow-xs text-slate-700 text-xs font-bold transition">‹</button>
