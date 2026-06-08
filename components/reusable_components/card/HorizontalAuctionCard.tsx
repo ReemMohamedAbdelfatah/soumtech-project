@@ -46,18 +46,18 @@ export default function HorizontalAuctionCard({
 
   return (
     <Card
-      className="bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-row justify-between gap-[10px] w-full"
+      className="bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col sm:flex-row justify-between gap-[10px] w-full"
     >
       <AuctionImage
         imageSrc="/image4.png"
         title={title}
         location={location}
         transparentLocationBg
-        className="relative w-1/3 h-[180px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
+        className="relative w-full sm:w-1/3 h-[200px] sm:h-[180px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
       />
 
       {/* Left Section: Details */}
-      <div className="flex flex-col justify-between gap-3 mb-2 flex-1 min-w-0">
+      <div className="flex flex-col justify-between gap-3 mb-2 flex-1 min-w-0 w-full sm:w-auto px-2 sm:px-0">
 
         <CardHeader className="p-0 flex flex-row justify-between items-center gap-2 w-full space-y-0">
           {/* Title & Subtitle/Area */}
