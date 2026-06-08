@@ -20,10 +20,10 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
 
   return (
     <>
-      <div className="flex gap-[10px] font-medium text-[16px] mb-4">
+      <div className="flex overflow-x-auto sm:overflow-visible gap-2 sm:gap-[10px] font-medium text-[12px] sm:text-[14px] md:text-[16px]">
         <Button
           onClick={() => setCardFormat('list')}
-          className={`flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'list'
+          className={`flex rounded-[12px] w-[90px] sm:w-[120px] h-[50px] gap-[3px] sm:gap-[5px] md:gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'list'
             ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90'
             : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
             }`}
@@ -37,13 +37,14 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
             alt="list"
             width={24}
             height={24}
+            className="w-3 h-3 sm:w-6 sm:h-6"
           />
           <span>{t('list')}</span>
         </Button>
 
         <Button
           onClick={() => setCardFormat('grid')}
-          className={`flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'grid'
+          className={`flex rounded-[12px] w-[90px] sm:w-[120px] h-[50px] gap-[3px] sm:gap-[5px] md:gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'grid'
             ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90'
             : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
             }`}
@@ -57,13 +58,14 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
             alt="grid"
             width={24}
             height={24}
+            className="w-3 h-3 sm:w-6 sm:h-6"
           />
           <span>{t('card')}</span>
         </Button>
 
         <Button
           onClick={() => setCardFormat('map')}
-          className={`flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'map'
+          className={`flex rounded-[12px] w-[90px] sm:w-[120px] h-[50px] gap-[3px] sm:gap-[5px] md:gap-[10px]gap-[3px] sm:gap-[5px] md:gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'map'
             ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90'
             : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
             }`}
@@ -77,6 +79,7 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
             alt="map"
             width={24}
             height={24}
+            className="w-3 h-3 sm:w-6 sm:h-6"
           />
           <span>{t('map')}</span>
         </Button>
