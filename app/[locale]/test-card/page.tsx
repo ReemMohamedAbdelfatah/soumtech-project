@@ -1,8 +1,11 @@
 import PropertyDetailsCard from "@/components/reusable_components/PropertyDetailsCard";
 
+
+
 export default function SandboxPage() {
   return (
-    <div className="min-h-screen bg-slate-100 py-12 px-4">
+    // حذفنا py-12 و px-4 لكي لا يدفعا المحتوى للأسفل
+    <div className="min-h-screen bg-slate-100"> 
       <PropertyDetailsCard />
     </div>
   );

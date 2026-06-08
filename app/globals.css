@@ -141,3 +141,33 @@ body {
     @apply font-sans;
   }
 }
+
+@layer base {
+  /* This forces the browser to remove any default spacing */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* هذا الكود يجبر أي هيدر يوضع في أعلى الصفحة على الالتصاق التام */
+.force-top {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+}

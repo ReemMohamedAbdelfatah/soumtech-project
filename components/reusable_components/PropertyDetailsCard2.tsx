@@ -5,6 +5,15 @@ import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+        import Image from "next/image";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Minus,
+  Plus,
+  Gavel,
+} from "lucide-react";
+
 import { FileText, FileSpreadsheet, MapPin, Phone, Mail } from 'lucide-react';
 import {
   Table,
@@ -102,63 +111,111 @@ export default function PropertyDetailsCard() {
           {/* =========================================================================
               الجانب الأيمن: كارت العقار والصورة والتفاصيل المالية (6 أعمدة)
               ========================================================================= */}
-          <div className="lg:col-span-6 order-1 lg:sticky lg:top-6 w-full flex flex-col gap-4">
-            
-            <div className="px-1 flex flex-col gap-1">
-              <div className="flex items-center gap-1.5 justify-between">
-                <div className="flex items-baseline gap-1">
-                  <h1 className="text-xl font-bold text-slate-900">فيلا حي الروضة</h1>
+
+<div className="lg:col-span-6 order-1">
+  <div className="w-full bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+
+    {/* Header */}
+    <div className="p-4 border-b">
+      <div className="flex flex-row-reverse justify-between items-center">
+        <div className="text-right">
+             <span className="bg-green-500 text-white text-xs px-4 py-2 rounded-full">
+          أنت أعلى مزايد
+        </span>
+         
+        </div>
+  <div className="flex items-baseline gap-1">
+       <h1 className="text-xl font-bold text-slate-900">فيلا حي الروضة</h1>
                   <span className="text-xs text-slate-400 font-medium">( الرياض )</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mt-4 border-b border-slate-100 pb-2">
+                  </div>
+      </div>
+
+      <div className="flex justify-between items-center mt-4 border-b border-slate-100 pb-2">
                 <span className="text-xs text-slate-800 font-bold border-b-2 border-[#e45a2b] pb-2 cursor-pointer">
                   معرض الصور
                 </span>
-              </div>
-            </div>
 
-            <Card className="w-full rounded-2xl overflow-hidden shadow-xs border border-slate-100 bg-white p-4 flex flex-col gap-4">
-              
-              <div className="relative h-72 w-full rounded-xl overflow-hidden group">
-                <img 
-                  src="/property-villa.jpg" 
-                  alt="فيلا حي الروضة"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80";
-                  }}
-                />
-                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2 py-1 rounded-md shadow-xs max-w-[70px]">
-                  <img src="/infath-logo.png" alt="infath" className="w-full h-auto object-contain" />
-                </div>
+        <span className="font-semibold text-sm">
+          رقم التواصل : +966501759844
+        </span>
+      </div>
+    </div>
 
-                <button className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-6 h-6 rounded-full flex items-center justify-center shadow-xs text-slate-700 text-xs font-bold transition">‹</button>
-                <button className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white w-6 h-6 rounded-full flex items-center justify-center shadow-xs text-slate-700 text-xs font-bold transition">›</button>
-                
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 justify-center">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-                  {Array(6).fill(0).map((_, i) => <span key={i} className="w-1.5 h-1.5 rounded-full bg-white/40"></span>)}
-                </div>
-              </div>
+    {/* Image */}
+    <div className="p-3">
+      <div className="relative rounded-lg overflow-hidden">
+        <Image
+          src="/villa.jpg"
+          alt="villa"
+          width={1200}
+          height={800}
+          className="w-full h-[320px] object-cover"
+        />
 
-              {/* زر المزاد المنتهي */}
-              <div>
-                <Button className="w-full h-16 bg-[#e45a2b] hover:bg-[#d34e22] text-white text-center justify-center rounded-xl font-bold text-base border-none pointer-events-none shadow-xs tracking-wide">
-                  مزاد منتهي
-                </Button>
-              </div>
+        <button className="absolute left-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow">
+          <ChevronRight size={18} />
+        </button>
 
-              {/* التوزيع المالي */}
-              <div className="grid grid-cols-12 gap-2 items-center py-1">
-                <div className="col-span-5 flex flex-col items-start justify-center border-l border-slate-100 pl-4 h-full">
-                  <span className="text-slate-800 font-bold text-xs mb-1">سعر السوم الحالي</span>
-                  <span className="text-[#e7ab21] font-black text-xl tracking-tight flex items-baseline gap-1 tabular-nums">
-                    {formatNumber(4623240.00)} <span className="text-[10px] font-bold text-[#e7ab21]">ر.س</span>
-                  </span>
-                </div>
+        <button className="absolute right-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow">
+          <ChevronLeft size={18} />
+        </button>
 
-                <div className="col-span-7 grid grid-cols-12 gap-1 items-center pr-4">
+        <div className="absolute top-3 left-3 bg-white rounded-md px-2 py-1 shadow">
+          <span className="text-xs font-semibold">infaTH</span>
+        </div>
+
+        <button className="absolute top-3 right-3 bg-[#242E7D] text-white text-xs px-4 py-2 rounded">
+          + سجل في المزاد
+        </button>
+      </div>
+    </div>
+
+    {/* Timer */}
+    <div className="px-4">
+      <div className="grid grid-cols-4 border rounded-lg py-4 text-center">
+        <div>
+          <div className="text-4xl font-bold text-[#1d2569]">06</div>
+          <div className="text-xs text-gray-500">يوم</div>
+        </div>
+
+        <div>
+          <div className="text-4xl font-bold text-[#1d2569]">14</div>
+          <div className="text-xs text-gray-500">ساعة</div>
+        </div>
+
+        <div>
+          <div className="text-4xl font-bold text-[#1d2569]">12</div>
+          <div className="text-xs text-gray-500">دقيقة</div>
+        </div>
+
+        <div>
+          <div className="text-4xl font-bold text-[#1d2569]">40</div>
+          <div className="text-xs text-gray-500">ثانية</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Price Section */}
+    <div className="p-5">
+      <div className="flex flex-row justify-between items-start">
+
+        <div className="text-right">
+            <div className="space-y-3 text-sm text-gray-600 text-right min-w-[180px]">
+ <div className="text-xl font-bold mb-2">
+            سعر السوم الحالي
+          </div>
+
+          <div className="text-[#d6a11d] text-3xl font-extrabold">
+            4,623,240.00 ر.س
+          </div>
+          
+
+        </div>
+        </div>
+
+     
+
+          <div className="col-span-7 grid grid-cols-12 gap-1 items-center pr-4">
                   <div className="col-span-6 flex flex-col gap-2.5 text-slate-400 font-medium text-right">
                     <span>سعر المتر</span>
                     <span>الاجمالي</span>
@@ -172,36 +229,85 @@ export default function PropertyDetailsCard() {
                     <span>2.5 ريال</span>
                   </div>
                 </div>
-              </div>
+                
+      </div>
+    </div>
 
-              <div className="w-full">
-                <div className="grid grid-cols-3 bg-slate-50/80 rounded-xl border border-slate-100/60 py-2.5 text-center">
-                  <div className="flex flex-col justify-center px-1">
-                    <span className="text-[10px] text-slate-400 font-medium">عربون الدخول</span>
-                    <span className="text-slate-800 font-bold text-xs mt-1 tabular-nums">450 ر.س</span>
-                  </div>
-                  <div className="flex flex-col justify-center border-r border-slate-200/60 px-1">
-                    <span className="text-[10px] text-slate-400 font-medium">فرق السوم</span>
-                    <span className="text-slate-800 font-bold text-xs mt-1 tabular-nums">30 ر.س</span>
-                  </div>
-                  <div className="flex flex-col justify-center border-r border-slate-200/60 px-1">
-                    <span className="text-[10px] text-slate-400 font-medium">عدد السومات</span>
-                    <span className="text-slate-900 font-black text-sm mt-0.5 tabular-nums">22</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3">
-                <Button className="w-full h-10 bg-[#e7ab21] hover:bg-[#d69d1b] text-white font-bold rounded-lg shadow-2xs text-xs border-none">
-                  الملف التعريفي
-                </Button>
-                <Button className="w-full h-10 bg-[#e7ab21] hover:bg-[#d69d1b] text-white font-bold rounded-lg shadow-2xs text-xs border-none">
-                  الموقع
-                </Button>
-              </div>
-
-            </Card>
+    {/* Stats */}
+    <div className="px-4">
+      <div className="grid grid-cols-3 border rounded-lg text-center py-5">
+        <div>
+          <div className="text-gray-500 text-sm">
+            عربون الدخول
           </div>
+          <div className="font-bold text-xl mt-2">
+            450 ر.س
+          </div>
+        </div>
+
+        <div>
+          <div className="text-gray-500 text-sm">
+            شرط السوم
+          </div>
+          <div className="font-bold text-xl mt-2">
+            30 ر.س
+          </div>
+        </div>
+
+        <div>
+          <div className="text-gray-500 text-sm">
+            عدد السومات
+          </div>
+          <div className="font-bold text-xl mt-2">
+            22
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Bid Controls */}
+    <div className="p-4 flex flex-row-reverse gap-3">
+
+      <button className="flex-1 bg-[#1c2468] text-white rounded-md py-4 flex items-center justify-center gap-2 font-semibold">
+        <Gavel size={18} />
+        أضف سومتك
+      </button>
+
+      <div className="flex items-center border rounded-md overflow-hidden">
+        <button className="w-12 h-14 flex items-center justify-center">
+          <Minus />
+        </button>
+
+        <div className="w-40 text-center font-bold text-[#d6a11d]">
+          4,623,250
+        </div>
+
+        <button className="w-12 h-14 flex items-center justify-center">
+          <Plus />
+        </button>
+      </div>
+
+    </div>
+
+    {/* Notice */}
+    <div className="px-5 text-xs text-gray-500 leading-6">
+      <p>• بالضغط على أضف سومتك فإنك توافق على الشروط وأحكام المزاد.</p>
+      <p>• السعر الإجمالي لا يشمل ضريبة التصرفات العقارية ويتحملها المشتري.</p>
+    </div>
+
+    {/* Bottom Buttons */}
+    <div className="p-4 flex flex-row-reverse gap-3">
+      <button className="flex-1 bg-[#e0ab22] text-white font-bold py-3 rounded">
+        الملف التعريفي
+      </button>
+
+      <button className="flex-1 bg-[#e0ab22] text-white font-bold py-3 rounded">
+        الموقع
+      </button>
+    </div>
+
+  </div>
+</div>
 
           {/* =========================================================================
               الجانب الأيسر: الجداول التفصيلية والبيانات والمواصفات (6 أعمدة)
