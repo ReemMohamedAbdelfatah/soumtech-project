@@ -53,7 +53,7 @@ export default function HorizontalAuctionCard({
         title={title}
         location={location}
         transparentLocationBg
-        className="relative w-[90px] xs:w-[120px] sm:w-[150px] md:w-[180px] h-[140px] xs:h-[160px] sm:h-[180px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
+        className="relative w-[90px] xs:w-[115px] sm:w-[145px] md:w-[170px] h-[130px] xs:h-[145px] sm:h-[155px] md:h-[160px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
       />
 
       {/* Left Section: Details */}
