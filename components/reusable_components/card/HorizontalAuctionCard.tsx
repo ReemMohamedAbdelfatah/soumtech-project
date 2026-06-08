@@ -57,7 +57,7 @@ export default function HorizontalAuctionCard({
       />
 
       {/* Left Section: Details */}
-      <div className="flex flex-col justify-between gap-3 shrink-0 mb-2 flex-1">
+      <div className="flex flex-col justify-between gap-3 mb-2 flex-1 min-w-0">
 
         <CardHeader className="p-0 flex flex-row justify-between items-center gap-2 w-full space-y-0">
           {/* Title & Subtitle/Area */}
