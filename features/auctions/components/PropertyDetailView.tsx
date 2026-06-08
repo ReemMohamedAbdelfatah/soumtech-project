@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 
 export interface PropertyDetailsProps {
   propertyType?: string;
@@ -82,7 +81,7 @@ export default function PropertyDetails({
 
       {/*Replaced with description from API */}
 
-      <p className="px-3 text-[14px] text-[#000000] font-regular">
+      <p className="px-2 text-[14px] text-[#000000] font-regular">
         فيلا فاخرة في حي الزهور، الرياض. تصميم عصري ومرافق متطورة. حديقة خلابة ومسبح خاص. مؤجرة بقيمة 40 ألف ريال سنويًا، وانتهاء عقد الإيجار في تاريخ 14 نوفمبر 2023م. فرصة للاستثمار في فيلا فاخرة وتحقيق عائد استثماري. احجز الآن قبل انتهاء العقد.
       </p>
 

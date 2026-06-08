@@ -6,10 +6,11 @@ export default function AuctionCardDetails() {
   return (
     <div className="max-w-sm mx-auto p-4">
       {/* Upper section — reuse existing AuctionCard */}
+
       <HorizontalAuctionCard
         title="قطعة أرض رقم 1"
-        imageSrc="/images/land.jpg"
-        logoSrc="/images/logo.png"
+        imageSrc="/image3.png"
+        logoSrc="/image3.png"
         status="active"
         endDate="2025-11-14T00:00:00"
         location="حريملاء"
