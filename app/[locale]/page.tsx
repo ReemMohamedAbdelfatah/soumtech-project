@@ -1,6 +1,8 @@
 import ThemeToggle from "@/features/theme/components/theme-toggle";
 import AuctionGrid from "@/components/reusable_components/card/AuctionGrid";
 import TryPage from "./(routes)/try/page";
+import Image from "next/image";
+import AuctionBanner from "@/components/reusable_components/card/AuctionBanner";
 
 export default async function Home() {
   // Target target dates: 6 days, 14 hours, 12 minutes in the future for active countdown simulation
@@ -100,14 +102,8 @@ export default async function Home() {
 
       {/* Main Section */}
       <main className="max-w-[1352px] mx-auto px-4 py-12 flex flex-col gap-8">
-        <div className="text-center md:text-right px-4">
-          <h2 className="text-3xl font-extrabold text-[#0f1b4c] dark:text-white">
-            المزادات الحالية والمغلقة
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm max-w-xl md:mr-0 md:ml-auto">
-            استعرض المزادات العقارية النشطة والمكتملة المصممة خصيصاً لتوفير أفضل الفرص الاستثمارية العقارية.
-          </p>
-        </div>
+        {/* Title and Banner */}
+        <AuctionBanner />
 
         {/* Dynamic Responsive Auction Grid */}
         <AuctionGrid auctions={mockAuctions} />
