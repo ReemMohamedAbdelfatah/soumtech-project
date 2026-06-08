@@ -1,10 +1,12 @@
 'use client';
 
 import React from 'react';
-import AuctionCard, { AuctionCardProps } from './AuctionCard';
 import Image from "next/image";
-import HorizontalAuctionCard from './HorizontalAuctionCard';
 import { useTranslations } from 'next-intl';
+import { Button } from "@/components/ui/button";
+import VerticalAuctionGrid from './VerticalAuctionGrid';
+import HorizontalAuctionGrid from './HorizontalAuctionGrid';
+import { AuctionCardProps } from './AuctionCard';
 
 interface AuctionGridProps {
   auctions: (AuctionCardProps & { id: string | number })[];
@@ -16,11 +18,15 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
 
   return (
     <>
-      <div className="flex gap-[10px] font-medium text-[16px]">
+      <div className="flex gap-[10px] font-medium text-[16px] mb-4">
         
-        <button
-          className={`flex px-4 py-2 rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center ${cardFormat === 'list' ? 'bg-[#171D5B] text-white' : 'bg-[#F5F5F5] text-black'}`}
+        <Button
           onClick={() => setCardFormat('list')}
+          className={`flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${
+            cardFormat === 'list' 
+              ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90' 
+              : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
+          }`}
         >
           <Image
             src={cardFormat === 'list' ? "/icons/ListBulletsWhite.svg" : "/icons/ListBulletsBlack.svg"}
@@ -29,10 +35,16 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
             height={24}
           />
           <span> {t("list")}</span>
-        </button>
-        <button
-          className={`px-4 py-2 rounded-[12px] w-[120px] h-[50px] flex gap-[10px] justify-center ${cardFormat === 'grid' ? 'bg-[#171D5B] text-white' : 'bg-[#F5F5F5] text-black'}`}
+        </Button>
+
+        
+        <Button
           onClick={() => setCardFormat('grid')}
+          className={`flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${
+            cardFormat === 'grid' 
+              ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90' 
+              : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
+          }`}
         >
           <Image
             src={cardFormat === 'grid' ? "/icons/GridWhite.svg" : "/icons/GridBlack.svg"}
@@ -41,22 +53,15 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
             height={24}
           />
           <span> {t("card")}</span>
-        </button>
+        </Button>
       </div>
-      <div
-        className={`grid grid-cols-1 ${cardFormat === 'list' ? 'sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4' : ' md:grid-cols-2  lg:grid-cols-3'} gap-4 w-full mx-auto px-4 py-8`}
-      >
-        {auctions.map((auction) => (
-          cardFormat === 'list' ? (
-            <AuctionCard key={auction.id} {...auction} />
-          ) : (
-            <HorizontalAuctionCard key={auction.id} {...auction} />
-          )
-        ))}
-      </div>
+
+      {cardFormat === 'list' ? (
+        <HorizontalAuctionGrid auctions={auctions} />
+      ) : (
+        <VerticalAuctionGrid auctions={auctions} />
+      )}
     </>
   );
 }
-
-
 

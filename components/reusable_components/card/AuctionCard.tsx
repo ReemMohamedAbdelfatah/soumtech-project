@@ -1,9 +1,13 @@
-import { useTranslations } from 'next-intl';
 
-import AuctionButton from './shared/AuctionButton';
-import AuctionHeader from './shared/AuctionHeader';
-import AuctionImage from './shared/AuctionImage';
-import AuctionStatus from './shared/AuctionStatus';
+
+
+import { useTranslations } from "next-intl";
+import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
+import AuctionButton from "./shared/AuctionButton";
+import AuctionImage from "./shared/AuctionImage";
+import AuctionStatus from "./shared/AuctionStatus";
+import AuctionHeader from "./shared/AuctionHeader";
+import AuctionPrice from "./shared/AuctionPrice";
 
 export interface AuctionCardProps {
   title: string;
@@ -39,87 +43,57 @@ export default function AuctionCard({
 }: AuctionCardProps) {
   const t = useTranslations("auctionCard");
 
+
+  const buttonWrapperClass = (priceInfo || assetsCount !== undefined)
+    ? "w-1/2 min-w-0"
+    : "w-full";
+
   return (
-    <div
-      className="min-h-[448px] bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col justify-between"
-    >
-      {/* Main Image */}
-      <AuctionImage
-        imageSrc={imageSrc}
-        title={title}
-        location={location}
-        className="relative w-full h-[255px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50 mb-2"
-      />
 
-      {/* Middle Section: Title & Logo */}
-      <AuctionHeader
-        title={title}
-        area={area}
-        logoSrc={logoSrc}
-      />
+    <Card className="h-auto w-full max-w-[350px] mx-auto min-[700px]:max-w-none p-[10px] bg-white dark:bg-white text-[#171D5B] dark:text-[#171D5B] border border-gray-100 dark:border-gray-100 flex flex-col hover:shadow-lg transition-all duration-300 shadow-[0_15px_40px_rgba(0,0,0,0.06)] rounded-[15px]">
 
-      {/* Interactive Status Section (Countdown / Date & Time / Closed State Banner) */}
-      <div className="shrink-0 mb-2">
-        <AuctionStatus
-          auctionDate={auctionDate}
-          auctionTime={auctionTime}
-          status={status}
-          endDate={endDate}
-        />
-      </div>
+      <div className="flex flex-col gap-[5px] w-full">
+        <CardHeader className="p-0 space-y-2">
+          <AuctionImage
+            imageSrc={imageSrc}
+            title={title}
+            location={location}
+            className="relative w-full h-[180px] md:h-[230px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50 " />
+          <AuctionHeader
+            title={title}
+            area={area}
+            logoSrc={logoSrc}
+            align="start" />
+        </CardHeader>
 
-      {/* Footer Area: Details Button & Asset Count / Price Info */}
-      <div className="flex justify-between gap-4 mt-auto pt-2 px-1 w-full">
-        {priceInfo || assetsCount !== undefined ? (
-          <>
-            {/* Info on the Right (First in RTL) */}
-            {priceInfo ? (
-              <div className="flex flex-col items-start text-start">
-                <span className="text-[#171D5B] text-[14px] font-bold w-full">
-                  {t("currentBidPrice")}
-                </span>
+        <CardContent className="p-0 w-full min-h-[50px] flex items-center justify-center">
+          <AuctionStatus
+            auctionDate={auctionDate}
+            auctionTime={auctionTime}
+            status={status}
+            endDate={endDate}
+          />
+        </CardContent>
 
-                <span
-                  className="text-[#EEA820] text-[14px] font-bold"
-                  title={priceInfo.amount}
-                >
-                  {priceInfo.amount}
-                  <span className="text-[#171D5B]">
-                    {" "}
-                    {t("SAR")}
-                  </span>
-                </span>
-
-                {priceInfo.subText && (
-                  <span className="text-gray-400 text-[10px] mt-0.5 truncate w-full">
-                    ({priceInfo.subText} {t("SARperMeter")})
-                  </span>
-                )}
-              </div>
-            ) : (
-              <div className="flex flex-col items-start text-start">
-                <span className="text-[#171D5B] text-[17px] font-bold">
-                  {t("assetsCount")}
-                </span>
-
-                <span className="text-[#EEA820] text-[19px] font-bold ">
-                  {assetsCount}
-                </span>
-              </div>
-            )}
-
-            {/* Details Button*/}
-            <div className="flex justify-end w-1/2 min-w-0 mb-2">
-              <AuctionButton href={detailsUrl} />
+        <CardFooter className="p-0 pt-2 flex flex-row justify-between gap-4 bg-transparent dark:bg-transparent border-none w-full items-center mt-[-5px]">
+          {priceInfo ? (
+            <div className="w-1/2 min-w-0">
+              <AuctionPrice amount={priceInfo.amount} subText={priceInfo.subText} />
             </div>
-          </>
-        ) : (
-          /* If no data is present, render the details button as full width (takes full card width just like the countdown banner) */
-          <div className="w-full mb-2">
+          ) : assetsCount !== undefined ? (
+            <div className="flex flex-col items-start text-start w-1/2 min-w-0">
+              <span className="text-gray-500 dark:text-gray-500 text-xs font-semibold">{t("assetsCount")}</span>
+              <span className="text-[#EEA820] text-base font-bold">{assetsCount}</span>
+            </div>
+          ) : (
+            <div className="w-1/2 min-w-0" />
+          )}
+
+          <div className="w-1/2 min-w-0">
             <AuctionButton href={detailsUrl} />
           </div>
-        )}
+        </CardFooter>
       </div>
-    </div>
+    </Card>
   );
 }

@@ -2,6 +2,8 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import React, { useState, useEffect } from 'react';
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 
 interface AuctionDateTimeProps {
   date?: string | Date;
@@ -76,21 +78,24 @@ export default function AuctionDateTime({
 
   return (
     <div
-      className={`w-full border border-[#EAEAEA] rounded-[6.54px] py-2 px-4 flex justify-between items-center text-center ${className}`}
+      className={`w-full border border-[#EAEAEA] rounded-[6.54px] flex flex-row justify-between items-center text-center bg-white dark:bg-white h-[50px] px-4 ${className}`}
     >
       <div className="flex flex-col items-center flex-1">
-        <span className="text-[#171D5B] text-[13px] font-regular mb-1">
+        <Label className="text-[#171D5B] text-[13px] font-normal mb-1 select-none">
           {dateLabel ?? t("auctionOpenDate")}
-        </span>
+        </Label>
         <span className="text-[#171D5B] text-[12px] font-bold">
           {formattedDate}
         </span>
       </div>
-      <div className="h-4 w-px bg-[#EAEAEA]" />
+      
+      {/* استخدام Separator من shadcn للتنظيم الرأسي */}
+      <Separator orientation="vertical" className="h-5 bg-[#EAEAEA]" />
+
       <div className="flex flex-col items-center flex-1">
-        <span className="text-[#171D5B] text-[13px] font-regular mb-1">
+        <Label className="text-[#171D5B] text-[13px] font-normal mb-1 select-none">
           {timeLabel ?? t("auctionOpenTime")}
-        </span>
+        </Label>
         <span className="text-[#171D5B] font-bold text-[12px]">
           {formattedTime}
         </span>

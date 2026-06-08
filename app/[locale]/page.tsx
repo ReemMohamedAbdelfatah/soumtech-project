@@ -25,7 +25,7 @@ export default async function Home() {
         amount: "500,000,000",
         subText: "20",
       },
-      numberOfBids:71,
+      numberOfBids: 71,
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export default async function Home() {
         subText: "20",
       },
     },
-     
+
     {
       id: 3,
       title: "عمارة سكنية في الاندلس",
@@ -82,14 +82,14 @@ export default async function Home() {
         amount: "1,200,000",
         subText: "2,666",
       },
-      numberOfBids:7,
-    },  
+      numberOfBids: 7,
+    },
   ];
 
   return (
     <div className="min-h-screen bg-[#f7f9fc] dark:bg-[#0b0f19] text-gray-900 dark:text-gray-100 transition-colors duration-300">
       {/* Premium Header */}
-      <header className="border-b border-gray-200/50 dark:border-gray-800/50 bg-white/75 dark:bg-[#0f1422]/75 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto rounded-b-2xl shadow-sm">
+      <header className="border-b border-gray-200/50 dark:border-gray-800/50 bg-white/75 dark:bg-[#0f1422]/75 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-between items-center max-w-[1352px] mx-auto rounded-b-2xl shadow-sm">
         <h1 className="text-2xl font-black text-[#0f1b4c] dark:text-white tracking-tight">
           المنصة الوطنية للمزادات <span className="text-[#e9a11d]">سومتك</span>
         </h1>
@@ -99,7 +99,7 @@ export default async function Home() {
       </header>
 
       {/* Main Section */}
-      <main className="max-w-7xl mx-auto px-4 py-12 flex flex-col gap-8">
+      <main className="max-w-[1352px] mx-auto px-4 py-12 flex flex-col gap-8">
         <div className="text-center md:text-right px-4">
           <h2 className="text-3xl font-extrabold text-[#0f1b4c] dark:text-white">
             المزادات الحالية والمغلقة

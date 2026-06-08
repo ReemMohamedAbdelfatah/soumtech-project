@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import React, { useState, useEffect } from 'react';
+import { Label } from "@/components/ui/label";
 
 interface CountdownTimerProps {
   targetDate: string | Date;
@@ -54,26 +55,20 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   return (
     <div
-      className="border
-              border-[#EAEAEA]
-              rounded-[6.54px]
-              bg-white
-              px-3
-              flex justify-between
-              items-center"
+      className="border border-[#EAEAEA] rounded-[6.54px] bg-white dark:bg-white px-3 py-1 flex justify-between items-center h-[50px] w-full"
     >
       {timeUnits.map((unit, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-col items-center flex-1">
-            <span className="text-[#171D5B] font-bold text-[20px]">
+            <span className="text-[#171D5B] font-bold text-[20px] select-none">
               {unit.value}
             </span>
-            <span className="text-[#171D5B] text-[12px] font-light mb-1">
+            <Label className="text-[#171D5B] text-[11px] font-light mb-1 select-none">
               {unit.label}
-            </span>
+            </Label>
           </div>
           {index < timeUnits.length - 1 && (
-            <div className="text-[#171D5B] font-bold text-[12px] select-none">:</div>
+            <div className="text-[#171D5B] font-bold text-[14px] select-none translate-y-[-4px]">:</div>
           )}
         </React.Fragment>
       ))}
