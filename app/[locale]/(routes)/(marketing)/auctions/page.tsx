@@ -1,11 +1,12 @@
+"use client";
 import AuctionSearchFilterBar from "@/components/reusable_components/AuctionSearchFilterBar";
 import AuctionGrid from "@/components/reusable_components/AuctionGrid";
-import {
-  isAuctionFilterStatus,
-  type AuctionFilterStatus,
-} from "@/components/shared/AuctionTabFilter";
 import auctions from "@/lib/mocks/auctions";
 import Link from "next/link";
+import AuctionTabFilter, {
+  TabType,
+} from "@/components/shared/AuctionTabFilter";
+import { useState } from "react";
 
 type AuctionsPageProps = {
   params: {
@@ -16,27 +17,18 @@ type AuctionsPageProps = {
   }>;
 };
 
-function getActiveStatus(status?: string | string[]): AuctionFilterStatus {
-  const value = Array.isArray(status) ? status[0] : status;
-
-  return value && isAuctionFilterStatus(value) ? value : "active";
-}
-
-export default async function AuctionsPage({
-  params,
-  searchParams,
-}: AuctionsPageProps) {
-  const { status } = await searchParams;
-
-  const activeStatus = getActiveStatus(status);
+export default function AuctionsPage() {
+  // const { status } = await searchParams;
+  const [activeStatus, setActiveStatus] = useState<TabType>("active");
   const filteredAuctions = auctions.filter(
     (auction) => auction.status === activeStatus,
   );
 
   return (
     <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <AuctionSearchFilterBar activeStatus={activeStatus} />
-      <AuctionGrid auctions={filteredAuctions} />
+      <AuctionTabFilter onChange={setActiveStatus} currentTab={activeStatus}>
+        <AuctionGrid auctions={filteredAuctions} />
+      </AuctionTabFilter>
       <div className="mt-6 flex justify-center">
         <Link
           href={`/auctions/all-auctions`}
