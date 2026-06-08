@@ -46,18 +46,18 @@ export default function HorizontalAuctionCard({
 
   return (
     <Card
-      className="bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col sm:flex-row justify-between gap-[10px] w-full"
+      className="bg-white rounded-[15px] shadow-[0_15px_40px_rgba(0,0,0,0.06)] p-1.5 sm:p-2 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-row justify-between gap-[8px] sm:gap-[10px] w-full"
     >
       <AuctionImage
         imageSrc="/image4.png"
         title={title}
         location={location}
         transparentLocationBg
-        className="relative w-full sm:w-1/3 h-[200px] sm:h-[180px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
+        className="relative w-[90px] xs:w-[120px] sm:w-[150px] md:w-[180px] h-[140px] xs:h-[160px] sm:h-[180px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50"
       />
 
       {/* Left Section: Details */}
-      <div className="flex flex-col justify-between gap-3 mb-2 flex-1 min-w-0 w-full sm:w-auto px-2 sm:px-0">
+      <div className="flex flex-col justify-between gap-1 xs:gap-2 sm:gap-3 mb-1 sm:mb-2 flex-1 min-w-0">
 
         <CardHeader className="p-0 flex flex-row justify-between items-center gap-2 w-full space-y-0">
           {/* Title & Subtitle/Area */}
@@ -90,33 +90,34 @@ export default function HorizontalAuctionCard({
         </CardContent>
 
         {/* Footer Area: Details Button & Asset Count / Price Info */}
-        <CardFooter className="p-0 pt-2 flex flex-row justify-between items-center gap-2 w-full border-none bg-transparent">
+        <CardFooter className="p-0 pt-1 sm:pt-2 flex flex-row justify-between items-center gap-2 w-full border-none bg-transparent">
           {assetsCount !== undefined ? (
             <div className="flex flex-col items-start text-start">
-              <span className="text-[#171D5B] text-[12px] sm:text-[17px] font-bold">
+              <span className="text-[#171D5B] text-[10px] xs:text-[12px] sm:text-[17px] font-bold">
                 {t("assetsCount")}
               </span>
 
-              <span className="text-[#EEA820] text-[14px] sm:text-[19px] font-bold">
+              <span className="text-[#EEA820] text-[11px] xs:text-[14px] sm:text-[19px] font-bold">
                 {assetsCount}
               </span>
             </div>
           ) : numberOfBids !== undefined ? (
             <div className="flex flex-col items-start text-start">
-              <span className="text-[#171D5B] text-[11px] sm:text-[15px] font-bold flex gap-1 items-center">
+              <span className="text-[#171D5B] text-[8px] xs:text-[10px] sm:text-[14px] font-bold flex gap-1 items-center">
                 <Image
                   src="/icons/gavel.svg"
                   alt="bid"
                   width={13}
                   height={13}
+                  className="w-2.5 h-2.5 sm:w-[13px] sm:h-[13px]"
                 />
 
                 {t("numberOfBids")}
               </span>
 
-              <span className="text-[#EEA820] text-[12px] sm:text-[15px] font-bold">
+              <span className="text-[#EEA820] text-[9px] xs:text-[12px] sm:text-[15px] font-bold">
                 {numberOfBids}
-                <span className="text-[#757575] text-[10px] sm:text-[12px] font-normal">
+                <span className="text-[#757575] text-[8px] xs:text-[10px] sm:text-[12px] font-normal">
                   {" "}
                   {t("bidder")}
                 </span>

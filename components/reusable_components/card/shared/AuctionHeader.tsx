@@ -22,7 +22,7 @@ export default function AuctionHeader({
         <div className={`flex flex-col min-w-0 flex-1 ${align === 'start' ? 'items-start text-start' : 'items-end text-end'}`}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <h3 className="text-[#171D5B] text-[14px] sm:text-[18px] font-bold tracking-tight leading-snug truncate w-full cursor-help px-[10px]">
+              <h3 className="text-[#171D5B] text-[11px] xs:text-[13px] sm:text-[18px] font-bold tracking-tight leading-snug truncate w-full cursor-help px-[4px] sm:px-[10px]">
                 {title}
               </h3>
             </TooltipTrigger>
@@ -32,12 +32,13 @@ export default function AuctionHeader({
           </Tooltip>
 
           {area && (
-            <span className="text-[#171D5B] text-[12px] font-normal leading-[100%] text-xs mt-1 flex items-center gap-1 select-none px-[10px]">
+            <span className="text-[#171D5B] text-[9px] xs:text-[11px] sm:text-[12px] font-normal leading-[100%] mt-1 flex items-center gap-1 select-none px-[4px] sm:px-[10px]">
               <Image
                 src="/icons/ruler-combined.svg"
                 alt="ruler-combined"
                 width={15}
                 height={15}
+                className="w-[11px] sm:w-[15px] h-[11px] sm:h-[15px]"
               />
               {area}
             </span>
