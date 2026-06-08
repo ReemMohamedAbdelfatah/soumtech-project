@@ -14,13 +14,13 @@ export default function AuctionPrice({ amount, subText }: AuctionPriceProps) {
     <TooltipProvider>
       <div className="flex flex-col items-start text-start w-full min-w-0">
 
-        <Label className="text-gray-500 dark:text-gray-500 text-[8px] sm:text-xs font-semibold select-none">
+        <Label className="text-[#171D5B] dark:text-gray-500 text-xs sm:text-[16px]  font-semibold select-none">
           {t("currentBidPrice")}
         </Label>
 
-        <span className="text-[#171D5B] text-[10px] sm:text-sm font-bold">
+        <span className="text-[#EEA820] text-[10px] sm:text-[16px] font-bold">
           {amount}{" "}
-          <span className="text-[#171D5B] dark:text-[#171D5B] text-[8px] sm:text-xs">
+          <span className="text-[#171D5B] dark:text-[#171D5B] text-xs sm:text-[17px] font-light ">
             {t("SAR")}
           </span>
         </span>

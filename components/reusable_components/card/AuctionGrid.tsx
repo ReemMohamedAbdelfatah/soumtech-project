@@ -20,7 +20,7 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
 
   return (
     <>
-      <div className="flex overflow-x-auto sm:overflow-visible gap-2 sm:gap-[10px] font-medium text-[12px] sm:text-[14px] md:text-[16px]">
+      <div className="flex gap-2 sm:gap-[10px] font-medium text-[12px] sm:text-[14px] md:text-[16px]">
         <Button
           onClick={() => setCardFormat('list')}
           className={`flex rounded-[12px] w-[90px] sm:w-[120px] h-[50px] gap-[3px] sm:gap-[5px] md:gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'list'
@@ -65,7 +65,7 @@ export default function AuctionGrid({ auctions }: AuctionGridProps) {
 
         <Button
           onClick={() => setCardFormat('map')}
-          className={`hidden lg:flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'map'
+          className={`flex rounded-[12px] w-[120px] h-[50px] gap-[10px] justify-center cursor-pointer transition-all ${cardFormat === 'map'
             ? 'bg-[#171D5B] text-white hover:bg-[#171D5B]/90'
             : 'bg-[#F5F5F5] text-black hover:bg-[#EAEAEA]'
             }`}

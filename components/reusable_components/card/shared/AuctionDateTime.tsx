@@ -78,10 +78,10 @@ export default function AuctionDateTime({
 
   return (
     <div
-      className={`w-full border border-[#EAEAEA] rounded-[6.54px] flex flex-row justify-between items-center text-center bg-white dark:bg-white h-[50px] px-4 ${className}`}
+      className={`w-full border border-[#EAEAEA] rounded-[6.54px] flex flex-row justify-between items-center text-center bg-white dark:bg-white px-3 ${className}`}
     >
       <div className="flex flex-col items-center flex-1">
-        <Label className="text-[#171D5B] text-[13px] font-normal mb-1 select-none">
+        <Label className="text-[#171D5B] text-[13px] font-normal m-1 select-none">
           {dateLabel ?? t("auctionOpenDate")}
         </Label>
         <span className="text-[#171D5B] text-[12px] font-bold">
@@ -90,7 +90,7 @@ export default function AuctionDateTime({
       </div>
       
       {/* استخدام Separator من shadcn للتنظيم الرأسي */}
-      <Separator orientation="vertical" className="h-5 bg-[#EAEAEA]" />
+      <Separator orientation="vertical" className="my-2 bg-[#EAEAEA]" />
 
       <div className="flex flex-col items-center flex-1">
         <Label className="text-[#171D5B] text-[13px] font-normal mb-1 select-none">

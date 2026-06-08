@@ -26,6 +26,7 @@ export interface HorizontalAuctionCardProps {
     subText?: string;
   };
   numberOfBids?: number;
+  tight?:boolean; 
 }
 
 export default function HorizontalAuctionCard({
@@ -42,6 +43,7 @@ export default function HorizontalAuctionCard({
   auctionTime,
   priceInfo,
   numberOfBids,
+  tight = false,
 }: HorizontalAuctionCardProps) {
   const t = useTranslations("auctionCard");
 
@@ -53,6 +55,7 @@ export default function HorizontalAuctionCard({
         location={location}
         transparentLocationBg
         className={styles.imageWrapper}
+        style={{ width: tight ? "25%":undefined}}
       />
 
       {/* Left Section: Details */}

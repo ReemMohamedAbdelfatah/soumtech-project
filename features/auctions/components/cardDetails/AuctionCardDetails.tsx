@@ -23,6 +23,7 @@ export default function AuctionCardDetails() {
           amount: "500,000,000",
           subText: "20",
         }}
+        tight={true}
       />
 
       {/* Lower section — new PropertyDetails component */}
