@@ -53,7 +53,7 @@ export default function HorizontalAuctionCard({
         title={title}
         location={location}
         transparentLocationBg
-        className="relative w-[90px] xs:w-[115px] sm:w-[145px] md:w-[170px] h-auto self-stretch min-h-[130px] xs:min-h-[145px] sm:min-h-[155px] md:min-h-[160px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50 mt-[-4px]"
+        className="relative w-[80px] xs:w-[100px] sm:w-[130px] md:w-[150px] h-auto self-stretch min-h-[130px] xs:min-h-[145px] sm:min-h-[155px] md:min-h-[160px] shrink-0 overflow-hidden rounded-[10px] bg-gray-50 mt-[-4px]"
       />
 
       {/* Left Section: Details */}
@@ -93,17 +93,17 @@ export default function HorizontalAuctionCard({
         <CardFooter className="p-0 flex flex-row justify-between items-center gap-2 w-full border-none bg-transparent">
           {assetsCount !== undefined ? (
             <div className="flex flex-col items-start text-start">
-              <span className="text-[#171D5B] text-[10px] xs:text-[12px] sm:text-[17px] font-bold">
+              <span className="text-[#171D5B] text-[11px] xs:text-[13px] sm:text-[17px] font-bold">
                 {t("assetsCount")}
               </span>
 
-              <span className="text-[#EEA820] text-[11px] xs:text-[14px] sm:text-[19px] font-bold">
+              <span className="text-[#EEA820] text-[12px] xs:text-[15px] sm:text-[19px] font-bold">
                 {assetsCount}
               </span>
             </div>
           ) : numberOfBids !== undefined ? (
             <div className="flex flex-col items-start text-start">
-              <span className="text-[#171D5B] text-[8px] xs:text-[10px] sm:text-[14px] font-bold flex gap-1 items-center">
+              <span className="text-[#171D5B] text-[9px] xs:text-[11px] sm:text-[14px] font-bold flex gap-1 items-center">
                 <Image
                   src="/icons/gavel.svg"
                   alt="bid"
@@ -115,9 +115,9 @@ export default function HorizontalAuctionCard({
                 {t("numberOfBids")}
               </span>
 
-              <span className="text-[#EEA820] text-[9px] xs:text-[12px] sm:text-[15px] font-bold">
+              <span className="text-[#EEA820] text-[10px] xs:text-[13px] sm:text-[15px] font-bold">
                 {numberOfBids}
-                <span className="text-[#757575] text-[8px] xs:text-[10px] sm:text-[12px] font-normal">
+                <span className="text-[#757575] text-[9px] xs:text-[11px] sm:text-[12px] font-normal">
                   {" "}
                   {t("bidder")}
                 </span>
