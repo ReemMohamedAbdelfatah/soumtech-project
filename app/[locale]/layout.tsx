@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./../globals.css";
 import StoreProvider from "@/store/provider";
 import ThemeProvider from "@/features/theme/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { Cairo, Inter } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const cairo = Cairo({
+  subsets: ["arabic"],
+  variable: "--font-cairo",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -32,15 +33,13 @@ export default async function RootLayout({
   const isRTL = locale === "ar";
 
   return (
-    <html
-      lang={locale}
-      dir={isRTL ? "rtl" : "ltr"}
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-      </head>
+
+   <html
+  lang={locale}
+  dir={isRTL ? "rtl" : "ltr"}
+     suppressHydrationWarning
+  className={`${cairo.variable} ${inter.variable}`}
+>
       <body className="min-h-full flex flex-col">
         <StoreProvider>
           <ThemeProvider>

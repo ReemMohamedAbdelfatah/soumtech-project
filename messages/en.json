@@ -4,12 +4,46 @@
     "description": "Hello from Next.js",
     "watermelon": "Watermelon"
   },
+  "NavbarLinks": {
+    "MainPage": "Home",
+    "AuctionsPage": "Auctions",
+    "ContactUs": "Contact Us",
+    "Login": "Login"
+  },
+
+  "Footer": {
+    "Main": {
+      "Description": "This text is an example of text that can be replaced in the same space. This text was generated from the Arabic text generator, where you can generate such text or many other texts in addition to the website."
+    },
+    "Menu": {
+      "Title": "Main Menu",
+      "TermsAndConditions": "Terms and Conditions",
+      "License": "Licensing from the General Real Estate Authority",
+      "Contact": "Contact Us"
+    },
+    "Sections": {
+      "Title": "Sections",
+      "SupportLibrary": "Support Library",
+      "FAQ": "Frequently Asked Questions"
+    },
+    "Contact": {
+      "Title": "Contact Us",
+      "Location": "Riyadh, King Faisal District, Saudi Arabia"
+    },
+    "bottom": {
+      "Description": "All rights reserved - Soumtech ©"
+    }
+  },
+  "HeroBanner": {
+    "Title": "Add your tag wherever you are!",
+    "Description": "Somtech platform brings you the ability to view real estate or participate in auctions quickly and easily in a reliable electronic environment!"
+  },
+  "CompanyLogosSection": {
+    "Title": "Auction companies"
+  },
   "LoginPage": {
     "title": "Login",
-    "description": "please login",
-    "hi": "Hello user",
-    "color": "red"
-  },
+ 
   "auctionsPage": {
     "title": "Auctions",
     "description": "Browse available auctions",
@@ -50,5 +84,70 @@
     "westNeighbor": "West",
     "streetName": "Street name",
     "deedNumber": "Deed number"
+    "identifier": "Email or Phone",
+    "identifierPlaceholder": "Enter your email or phone",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Login",
+    "invalidIdentifier": "Enter a valid email or phone number",
+    "passwordMin": "Password must be at least 6 characters",
+    "forgotPassword": "Forgot Password",
+    "register": "Create Account"
+  },
+  "ContactPage": {
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter the subject",
+    "issueType": "Issue Type",
+    "issueTypePlaceholder": "Select an issue type",
+    "description": "Message",
+    "descriptionPlaceholder": "Enter your message",
+    "submit": "Submit",
+    "technical": "Technical Issue",
+    "payment": "Payment Issue",
+    "other": "Other",
+    "nameMin": "Name must be at least 3 characters",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email address",
+    "subjectRequired": "Subject is required",
+    "issueTypeRequired": "Please select an issue type",
+    "descriptionMin": "Description must be at least 10 characters"
+  },
+  "RegisterPage": {
+    "title": "Register",
+    "description": "Enter the required information to create a new account",
+    "IdentityNumber": "Identity Number",
+    "IdentityNumberPlaceholder": "Enter your identity number",
+    "IdentityNumberMin": "Identity number must be at least 10 characters",
+    "submit": "Continue",
+    "back": "Back" 
+  },
+   "ForgotPasswordPage": {
+    "title": "Forgot Password",
+    "description": "Enter your mobile number or email address to receive a password reset code.",
+    "identifier": "Mobile Number or Email",
+    "identifierPlaceholder": "Enter your mobile number or email address",
+    "invalidIdentifier": "Please enter a valid email address or mobile number",
+    "submit": "Continue",
+    "back": "Back"
+  },
+   "ConfirmPasswordPage": {
+    "title": "Confirm Password",
+    "description": "Please confirm your new password",
+    "Password": "Password",
+    "PasswordPlaceholder": "Enter your password",
+    "PasswordMin": "Password must be at least 8 characters long",
+
+    "ConfirmPassword": "Confirm Password",
+    "ConfirmPasswordPlaceholder": "Re-enter your password",
+    "ConfirmPasswordRequired": "Please confirm your password",
+
+    "PasswordsNotMatch": "Passwords do not match",
+
+    "submit": "Save"
   }
+ 
 }
