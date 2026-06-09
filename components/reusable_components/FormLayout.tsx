@@ -12,17 +12,23 @@ import Logo from "@/components/reusable_components/Logo";
 type Props = {
   children: React.ReactNode;
   borderRadius?: number;
+  width?: string | number;
+   height?: string | number;
+   LogoSize?: string;
   className?: string;
 };
 //--------------------------------------
 export default function FormLayout({
   children,
   borderRadius,
+  width="w-full" ,
+  height="h-auto min-h-screen",
+  LogoSize = "w-[150px]",
   className,
 }: Props) {
   return (
     <div
-      className={`w-full h-auto min-h-screen relative flex justify-center items-center overflow-hidden py-3 px-5 ${className}`}
+      className={`${width} ${height} relative flex justify-center items-center overflow-hidden py-3 px-5 ${className}`}
       style={{
         borderRadius: borderRadius || 0,
       }}
@@ -41,13 +47,12 @@ export default function FormLayout({
       <section className="relative z-10 w-full max-w-md min-h-screen flex flex-col py-3">
     {/* Logo */}
   <div className="flex justify-center ">
-    <Logo variant="white" sizeClass="w-[150px]" />
+    <Logo variant="white"   sizeClass={String(LogoSize)}
+/>
   </div>
  {/* Form Content */}
-  <main className="flex-1 flex items-center justify-center my-5">
-    <div className="bg-white/10 backdrop-blur-lg rounded-3xl px-5 py-7">
+  <main className="relative z-10 flex-1 flex items-center justify-center my-5">
       {children}
-    </div>
   </main>
  {/* Bottom Logos */}
   <div dir="ltr" className="flex items-center justify-center gap-10">

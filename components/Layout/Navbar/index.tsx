@@ -1,47 +1,37 @@
-//i18n
+// i18n
 import { getTranslations } from "next-intl/server";
-//Components
+
+// Components
 import HorizontalNavbar from "./HorizontalNavbar";
 import VerticalNavbar from "./VerticalNavbar";
-//types
-export interface ILink {
-  title: string;
-  href: string;
-}
 
-export interface INavbarData {
-  links: ILink[];
-  login: ILink;
-  
-}
+// Data
+import { createNavbarData } from "@/src/data/navbar-data";
+import Logo from "@/components/reusable_components/Logo";
+
 type Props = {
   locale: string;
 };
-//-----------------------------
-export default async function Navbar({locale}: Props) {
+
+export default async function Navbar({ locale }: Props) {
   const t = await getTranslations("NavbarLinks");
 
- const navbarData: INavbarData = {
-  links: [
-    { title: t("MainPage"), href: "/" },
-    { title: t("AuctionsPage"), href: "/auctions" },
-    { title: t("ContactUs"), href: "/contact" },
-  ],
-  login: {
-    title: t("Login"),
-    href: "/login",
-  },
-};
+  const navbarData = createNavbarData(t);
 
   return (
     <>
-      {/* Desktop */}
-      <div className="hidden md:block">
-        <HorizontalNavbar navbarData={navbarData}  locale={locale} />
-      </div>
       {/* Mobile */}
       <div className="block md:hidden">
-        <VerticalNavbar navbarData={navbarData} />
+      <div className=" flex  w-full  justify-between items-center px-3 py-3">
+        <Logo sizeClass="w-[70px]" followTheme />
+        <VerticalNavbar navbarData={navbarData} followTheme />
+      </div>
+{/* Line */}
+        <div className="mt-1 mb-4 h-px w-full bg-[#5757577c]" />
+      </div>
+      {/* Disctop */}
+      <div className="hidden md:block">
+        <HorizontalNavbar navbarData={navbarData} locale={locale} />
       </div>
     </>
   );

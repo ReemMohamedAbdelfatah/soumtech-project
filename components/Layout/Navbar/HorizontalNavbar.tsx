@@ -3,7 +3,7 @@ import Link from "next/link";
 //Logo
 import Logo from "@/components/reusable_components/Logo";
 //types
-import { INavbarData } from "./index";
+import { INavbarData } from "@/src/types/types";
 //Icons
 import { CircleUser } from "lucide-react";
 //Components
@@ -18,7 +18,7 @@ type Props = {
 export default function HorizontalNavbar({ navbarData, locale }: Props) {
   return (
     <div className="flex flex-col">
-      <nav className="flex bg-primary items-center w-full h-22 justify-between px-15">
+      <nav className="flex bg-[#171D5B] items-center w-full h-22 justify-between px-20">
         {/* Logo */}
         <Logo variant="white" sizeClass="w-[100px]" />
         {/*Main LINKS */}
@@ -46,7 +46,7 @@ export default function HorizontalNavbar({ navbarData, locale }: Props) {
         </Link>
       </nav>
       {/* bottom curve */}
-      <div className="relative w-full h-7 bg-primary">
+      <div className="relative w-full h-7 bg-[#171D5B]">
         <div className="absolute bottom-0 w-full h-7 bg-background rounded-t-4xl" />
       </div>
     </div>

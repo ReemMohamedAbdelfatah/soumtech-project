@@ -1,5 +1,8 @@
 "use client";
 
+// i18n
+import { useTranslations } from "next-intl";
+
 // libs
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,34 +19,23 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-//--------------------------------------
-const issueOptions = [
-  { value: "technical", label: "مشكلة تقنية" },
-  { value: "payment", label: "مشكلة دفع" },
-  { value: "other", label: "أخرى" },
-];
-
-//--------------------------------------
-const schema = z.object({
-  name: z.string().min(3, "الاسم يجب أن يكون 3 أحرف على الأقل"),
-
-  email: z
-    .string()
-    .min(1, "البريد الإلكتروني مطلوب")
-    .email("البريد الإلكتروني غير صالح"),
-
-  subject: z.string().min(3, "الموضوع مطلوب"),
-
-  issueType: z.string().min(1, "اختر نوع المشكلة"),
-
-  description: z.string().min(10, "الوصف يجب أن يكون 10 أحرف على الأقل"),
-});
-
-//--------------------------------------
-type FormValues = z.infer<typeof schema>;
+// schema
+import { createContactSchema } from "@/lib/validations/contact.schema";
 
 //--------------------------------------
 export default function ContactFormView() {
+  const t = useTranslations("ContactPage");
+
+  const schema = createContactSchema(t);
+
+  type FormValues = z.infer<typeof schema>;
+
+  const issueOptions = [
+    { value: "technical", label: t("technical") },
+    { value: "payment", label: t("payment") },
+    { value: "other", label: t("other") },
+  ];
+
   const {
     register,
     control,
@@ -70,39 +62,40 @@ export default function ContactFormView() {
       className="space-y-4 w-full md:w-xl lg:w-3xl xl:w-4xl"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-7">
+        
         <FormField
           id="name"
-          label="الاسم"
+          label={t("name")}
           type="text"
-          placeholder="أدخل الاسم"
+          placeholder={t("namePlaceholder")}
           register={register("name")}
           error={errors.name?.message}
         />
 
         <FormField
           id="email"
-          label="البريد الإلكتروني"
+          label={t("email")}
           type="email"
-          placeholder="أدخل البريد الإلكتروني"
+          placeholder={t("emailPlaceholder")}
           register={register("email")}
           error={errors.email?.message}
         />
 
         <FormField
           id="subject"
-          label="الموضوع"
+          label={t("subject")}
           type="text"
-          placeholder="أدخل الموضوع"
+          placeholder={t("subjectPlaceholder")}
           register={register("subject")}
           error={errors.subject?.message}
         />
 
-        {/* نوع المشكلة */}
         <div>
-          <div className="mb-2 flex items-start  flex-col md:flex-row gap-2">
-            <label className=" block text-md md:text-lg font-medium">
-              نوع المشكلة
+          <div className="mb-2 flex items-start flex-col md:flex-row gap-2">
+            <label className="block text-md md:text-lg font-medium">
+              {t("issueType")}
             </label>
+
             {errors.issueType && (
               <span className="text-xs font-semibold text-red-600">
                 {" * "}
@@ -111,18 +104,27 @@ export default function ContactFormView() {
               </span>
             )}
           </div>
+
           <Controller
             name="issueType"
             control={control}
             render={({ field }) => (
-              <Select value={field.value} onValueChange={field.onChange}>
+              <Select
+                value={field.value}
+                onValueChange={field.onChange}
+              >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="اختر نوع المشكلة" />
+                  <SelectValue
+                    placeholder={t("issueTypePlaceholder")}
+                  />
                 </SelectTrigger>
 
                 <SelectContent>
                   {issueOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                    >
                       {option.label}
                     </SelectItem>
                   ))}
@@ -135,9 +137,9 @@ export default function ContactFormView() {
 
       <FormField
         id="description"
-        label="الرسالة"
+        label={t("description")}
         type="textarea"
-        placeholder="أدخل الرسالة"
+        placeholder={t("descriptionPlaceholder")}
         register={register("description")}
         error={errors.description?.message}
       />
@@ -147,7 +149,7 @@ export default function ContactFormView() {
           type="submit"
           className="w-1/2 md:w-1/3 h-12 bg-secondary text-white text-lg"
         >
-          إرسال
+          {t("submit")}
         </Button>
       </div>
     </form>
