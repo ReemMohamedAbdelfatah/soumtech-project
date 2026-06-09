@@ -2,18 +2,17 @@
 
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
-
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 export type TabType = "active" | "upcoming" | "ended";
 
 interface AuctionsTabsProps {
   children: ReactNode;
-  onChange: (value: TabType) => void;
   currentTab: TabType;
 }
 
 export default function AuctionTabFilter({
   children,
-  onChange,
   currentTab,
 }: AuctionsTabsProps) {
   const t = useTranslations("AuctionStatusTabs");
@@ -35,9 +34,9 @@ export default function AuctionTabFilter({
           {tabs.map((tab) => {
             const isActive = tab === currentTab;
             return (
-              <button
+              <Link
+                href={`/auctions?status=${tab}`}
                 key={tab}
-                onClick={() => onChange(tab)}
                 role="tab"
                 aria-selected={isActive}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
@@ -47,7 +46,7 @@ export default function AuctionTabFilter({
                 }`}
               >
                 {t(tab)}
-              </button>
+              </Link>
             );
           })}
         </div>
