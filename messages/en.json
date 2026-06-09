@@ -41,9 +41,18 @@
   "CompanyLogosSection": {
     "Title": "Auction companies"
   },
-  "LoginPage": {
+ "LoginPage": {
     "title": "Login",
- 
+    "identifier": "Email or Phone",
+    "identifierPlaceholder": "Enter your email or phone",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Login",
+    "invalidIdentifier": "Enter a valid email or phone number",
+    "passwordMin": "Password must be at least 6 characters",
+    "forgotPassword": "Forgot Password",
+    "register": "Create Account"
+  },
   "auctionsPage": {
     "title": "Auctions",
     "description": "Browse available auctions",
