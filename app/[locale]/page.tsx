@@ -1,4 +1,5 @@
 import ThemeToggle from "@/features/theme/components/theme-toggle";
+import AuctionsPage from "./(routes)/(marketing)/auctions/all-auctions/page";
 import { getTranslations } from "next-intl/server";
 //Sections
 import HeroBanner from "@/components/shared/HeroBanner";
@@ -12,6 +13,8 @@ export default async function Home() {
       <HeroBanner />
       <CompanyLogosSection />
       <ThemeToggle />
+       <AuctionsPage />
     </div>
   );
 }
+

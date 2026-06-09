@@ -33,6 +33,7 @@ export default async function RootLayout({
   const isRTL = locale === "ar";
 
   return (
+
    <html
   lang={locale}
   dir={isRTL ? "rtl" : "ltr"}

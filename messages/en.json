@@ -43,6 +43,47 @@
   },
   "LoginPage": {
     "title": "Login",
+ 
+  "auctionsPage": {
+    "title": "Auctions",
+    "description": "Browse available auctions",
+    "searchPlaceholder": "Search for an auction...",
+    "assetsCountLabel": "Assets Count"
+  },
+  "auctionCard": {
+    "closed": "Auction Closed",
+    "auctionDetails": "Auction Details",
+    "day": "Day",
+    "hour": "Hour",
+    "minute": "Minute",
+    "second": "Second",
+    "auctionOpenDate": "Auction Open Date",
+    "auctionOpenTime": "Auction Open Time",
+    "assetsCount": "Assets Count",
+    "assets": "Assets",
+    "currentBidPrice": "Current Bid Price",
+    "SAR": "SAR",
+    "SARperMeter": "SAR per Meter",
+    "numberOfBids": "Number of Bids",
+    "bidder": "Bidder",
+    "auctionEnded": "Auction Ended"
+  },
+  "grid": {
+    "list": "List",
+    "card": "Cards",
+    "map": "Map"
+  },
+  "propertyDetails": {
+    "title": "Details",
+    "propertyType": "Property type",
+    "city": "City",
+    "neighborhood": "Neighborhood",
+    "northNeighbor": "North",
+    "southNeighbor": "South",
+    "eastNeighbor": "East",
+    "westNeighbor": "West",
+    "streetName": "Street name",
+    "deedNumber": "Deed number"
     "identifier": "Email or Phone",
     "identifierPlaceholder": "Enter your email or phone",
     "password": "Password",
