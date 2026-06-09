@@ -38,13 +38,7 @@ export default function AuctionImage({
           }`}
           dir="rtl"
         >
-          <Image
-            src="/icons/loc.svg"
-            alt="location icon"
-            width={9}
-            height={14}
-            className="brightness-0 invert shrink-0" 
-          />
+          <i className="fa-solid fa-location-dot text-[10px] sm:text-[14px] shrink-0 text-white"></i>
           <span className="font-medium text-[9px] sm:text-[13px] leading-none truncate flex-1 min-w-0">
             {location}
           </span>

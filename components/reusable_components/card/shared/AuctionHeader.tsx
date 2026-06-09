@@ -33,13 +33,8 @@ export default function AuctionHeader({
 
           {area && (
             <span className="text-[#171D5B] text-[clamp(9px,1.8vw,12px)] font-normal leading-[100%] mt-1 flex items-center gap-1 select-none px-[4px] sm:px-[10px]">
-              <Image
-                src="/icons/ruler-combined.svg"
-                alt="ruler-combined"
-                width={15}
-                height={15}
-                className="w-[clamp(9px,1.8vw,15px)] h-[clamp(9px,1.8vw,15px)]"
-              />
+              <i className="fa-solid fa-ruler-combined text-[clamp(9px,1.8vw,15px)] text-[#171D5B]"></i>
+
               {area}
             </span>
           )}

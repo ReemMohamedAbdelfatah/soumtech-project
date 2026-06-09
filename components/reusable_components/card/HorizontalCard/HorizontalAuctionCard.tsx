@@ -106,13 +106,8 @@ export default function HorizontalAuctionCard({
           ) : numberOfBids !== undefined ? (
             <div className={styles.footerInfoColumn}>
               <span className={styles.bidsLabel}>
-                <Image
-                  src="/icons/gavel.svg"
-                  alt="bid"
-                  width={13}
-                  height={13}
-                  className="w-2 h-2 sm:w-[13px] sm:h-[13px] shrink-0"
-                />
+                <i className="fa-solid fa-gavel text-[10px] sm:text-[13px] shrink-0"></i>
+
 
                 {t("numberOfBids")}
               </span>

@@ -32,23 +32,7 @@ export default function AuctionBanner({
           <h3 className="text-sm xs:text-base sm:text-xl md:text-2xl font-extrabold text-[#171D5B] dark:text-white truncate">{title}</h3>
           <div className="flex items-center  gap-1.5 sm:gap-2 text-[10px] sm:text-xs md:text-[16px] font-bold text-[#EEA820]">
             {/* Building Icon (rightmost) */}
-            <svg
-              className="w-[12px] h-[12px] sm:w-[14px] sm:h-[14px] md:w-[18px] md:h-[18px] text-[#EEA820]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
-              <line x1="9" y1="22" x2="9" y2="16" />
-              <line x1="15" y1="22" x2="15" y2="16" />
-              <line x1="9" y1="16" x2="15" y2="16" />
-              <path d="M9 6h6" />
-              <path d="M9 10h6" />
-              <path d="M9 14h6" />
-            </svg>
+            <i className="fa-solid fa-building text-[12px] sm:text-[14px] md:text-[18px] text-[#EEA820]"></i>
 
             {/* Label Text */}
             <span className="text-gray-500 dark:text-gray-400 font-semibold">{t('assetsCountLabel')}</span>
