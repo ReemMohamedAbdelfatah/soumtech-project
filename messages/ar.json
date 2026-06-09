@@ -11,26 +11,25 @@
     "Login": "تسجيل الدخول"
   },
   "Footer": {
-   "Main": {
-    "Description": " هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك توليد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى الموقع الالكترونى"
+    "Main": {
+      "Description": " هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى حيث يمكنك توليد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى الموقع الالكترونى"
     },
     "Menu": {
       "Title": "القائمة الرئيسية",
       "TermsAndConditions": "الشروط والأحكام",
       "License": "ترخيص الهيئة العامة للعقار",
-      "Contact":"تواصل معنا"
+      "Contact": "تواصل معنا"
     },
     "Sections": {
-     "Title":"الأقسام",
+      "Title": "الأقسام",
       "SupportLibrary": "مكتبة الدعم",
       "FAQ": "الأسئلة الشائعة"
     },
     "Contact": {
-      "Title":"تواصل معنا",
+      "Title": "تواصل معنا",
       "Location": "الرياض حي الملك فيصل، السعودية"
-
     },
-      "bottom": {
+    "bottom": {
       "Description": " جميع الحقوق محفوظة - لـ سومتك ©"
     }
   },
@@ -38,10 +37,10 @@
     "Title": "أضف سومتك وين ما كنت!",
     "Description": "منصة سومتك تجمع لك بين عرض العقارات أو المشاركة في المزاد اتسهلة وسريعة في بيئة إلكترونية موثوقة! "
   },
-  "CompanyLogosSection":{
-    "Title":"شركات المزاد"
+  "CompanyLogosSection": {
+    "Title": "شركات المزاد"
   },
-   "ContactPage": {
+  "ContactPage": {
     "name": "الاسم",
     "namePlaceholder": "أدخل الاسم",
     "email": "البريد الإلكتروني",
@@ -63,7 +62,7 @@
     "issueTypeRequired": "اختر نوع المشكلة",
     "descriptionMin": "الوصف يجب أن يكون 10 أحرف على الأقل"
   },
- "LoginPage": {
+  "LoginPage": {
     "title": "تسجيل الدخول",
     "identifier": "رقم الجوال او الايميل",
     "identifierPlaceholder": "ادخل رقم الجوال او الايميل",
@@ -114,7 +113,7 @@
     "eastNeighbor": "شرقاً",
     "westNeighbor": "غرباً",
     "streetName": "اسم الشارع",
-    "deedNumber": "رقم الصك"
+    "deedNumber": "رقم الصك",
     "identifier": "رقم الجوال او الايميل",
     "identifierPlaceholder": "ادخل رقم الجوال او الايميل",
     "password": "كلمة المرور",
@@ -132,19 +131,19 @@
     "identifierPlaceholder": "ادخل رقم الجوال او الايميل",
     "invalidIdentifier": "أدخل بريدًا إلكترونيًا أو رقم هاتف صحيحًا",
     "submit": "استمرار",
-    "back": "الرجوع" 
-},
-"RegisterPage": {
+    "back": "الرجوع"
+  },
+  "RegisterPage": {
     "title": "تسجيل حساب من خلال إنفاذ ",
     "description": "ادخل رقم بطاقة الأحوال او الإقامة لتسجيل الدخول لنفاذ",
     "IdentityNumber": "رقم بطاقة الأحوال او الإقامة ",
     "IdentityNumberPlaceholder": "رقم بطاقة الأحوال او الإقامة ",
-     "IdentityNumberMin": "يجب أن يتكون رقم الهوية من 10 أرقام",
+    "IdentityNumberMin": "يجب أن يتكون رقم الهوية من 10 أرقام",
     "submit": "استمرار",
-    "back": "الرجوع" 
-},
-"ConfirmPasswordPage": {
-   "title": "تأكيد كلمة المرور",
+    "back": "الرجوع"
+  },
+  "ConfirmPasswordPage": {
+    "title": "تأكيد كلمة المرور",
     "description": "برجاء تأكيد كلمة المرو الجديدة",
     "Password": "كلمة المرور",
     "PasswordPlaceholder": "أدخل كلمة المرور",

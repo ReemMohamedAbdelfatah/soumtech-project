@@ -41,7 +41,7 @@
   "CompanyLogosSection": {
     "Title": "Auction companies"
   },
- "LoginPage": {
+  "LoginPage": {
     "title": "Login",
     "identifier": "Email or Phone",
     "identifierPlaceholder": "Enter your email or phone",
@@ -92,7 +92,7 @@
     "eastNeighbor": "East",
     "westNeighbor": "West",
     "streetName": "Street name",
-    "deedNumber": "Deed number"
+    "deedNumber": "Deed number",
     "identifier": "Email or Phone",
     "identifierPlaceholder": "Enter your email or phone",
     "password": "Password",
@@ -132,9 +132,9 @@
     "IdentityNumberPlaceholder": "Enter your identity number",
     "IdentityNumberMin": "Identity number must be at least 10 characters",
     "submit": "Continue",
-    "back": "Back" 
+    "back": "Back"
   },
-   "ForgotPasswordPage": {
+  "ForgotPasswordPage": {
     "title": "Forgot Password",
     "description": "Enter your mobile number or email address to receive a password reset code.",
     "identifier": "Mobile Number or Email",
@@ -143,7 +143,7 @@
     "submit": "Continue",
     "back": "Back"
   },
-   "ConfirmPasswordPage": {
+  "ConfirmPasswordPage": {
     "title": "Confirm Password",
     "description": "Please confirm your new password",
     "Password": "Password",
@@ -158,5 +158,4 @@
 
     "submit": "Save"
   }
- 
 }
