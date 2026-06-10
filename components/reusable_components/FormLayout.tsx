@@ -13,16 +13,16 @@ type Props = {
   children: React.ReactNode;
   borderRadius?: number;
   width?: string | number;
-   height?: string | number;
-   LogoSize?: string;
+  height?: string | number;
+  LogoSize?: string;
   className?: string;
 };
 //--------------------------------------
 export default function FormLayout({
   children,
   borderRadius,
-  width="w-full" ,
-  height="h-auto min-h-screen",
+  width = "w-full",
+  height = "h-auto min-h-screen",
   LogoSize = "w-[150px]",
   className,
 }: Props) {
@@ -41,26 +41,27 @@ export default function FormLayout({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 w-full h-full bg-[rgba(10,20,60,0.34)] " />
+      <div className="absolute inset-0 w-full h-full bg-[rgba(10,20,60,0.34)]" />
 
       {/* middle section */}
-      <section className="relative z-10 w-full max-w-md min-h-screen flex flex-col py-3">
-    {/* Logo */}
-  <div className="flex justify-center ">
-    <Logo variant="white"   sizeClass={String(LogoSize)}
-/>
-  </div>
- {/* Form Content */}
-  <main className="relative z-10 flex-1 flex items-center justify-center my-5">
-      {children}
-  </main>
- {/* Bottom Logos */}
-  <div dir="ltr" className="flex items-center justify-center gap-10">
-    <Image src={InfathLogo} alt="InfathLogo" />
-    <Image src={REGALogo} alt="REGALogo" />
-  </div>
-
-</section>
+      <section className="relative z-10 w-full max-w-md flex flex-col py-3">
+        {/* Logo */}
+        <div className="flex justify-center mb-22">
+          <Logo variant="white" sizeClass={String(LogoSize)} />
+        </div>
+        {/* Form Content */}
+        <main className="relative z-10 flex-1 flex items-center justify-center my-5">
+          {children}
+        </main>
+        {/* Bottom Logos */}
+        <div
+          dir="ltr"
+          className="flex items-center justify-center gap-10 pt-20.25"
+        >
+          <Image src={InfathLogo} alt="InfathLogo" />
+          <Image src={REGALogo} alt="REGALogo" />
+        </div>
+      </section>
     </div>
   );
 }

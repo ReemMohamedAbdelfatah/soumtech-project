@@ -33,18 +33,17 @@ export default async function RootLayout({
   const isRTL = locale === "ar";
 
   return (
-
-   <html
-  lang={locale}
-  dir={isRTL ? "rtl" : "ltr"}
-     suppressHydrationWarning
-  className={`${cairo.variable} ${inter.variable}`}
->
+    <html
+      lang={locale}
+      dir={isRTL ? "rtl" : "ltr"}
+      suppressHydrationWarning
+      className={`${cairo.variable} ${inter.variable}`}
+    >
       <body className="min-h-full flex flex-col">
         <StoreProvider>
           <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>
-              {children}
+              <div className="min-h-screen">{children}</div>
             </NextIntlClientProvider>
           </ThemeProvider>
         </StoreProvider>

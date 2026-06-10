@@ -21,7 +21,7 @@ export default async function HeroBanner() {
         className="object-cover"
       />
       {/* Dark Overlay  */}
-      <div className="absolute inset-0 bg-slate-850/40 " />
+      <div className="absolute inset-0 bg-slate-850/40" />
 
       {/* Content */}
       <main className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-2 pb-3 md:pb-10">
@@ -49,11 +49,7 @@ export default async function HeroBanner() {
           alt="الهيئة العامة للعقار"
           className="object-contain "
         />
-        <Image 
-         src={InfathLogo}
-         alt="إنفاذ"
-         className="object-contain " 
-        />
+        <Image src={InfathLogo} alt="إنفاذ" className="object-contain " />
       </div>
     </div>
   );
