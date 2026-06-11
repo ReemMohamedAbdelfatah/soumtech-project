@@ -1,0 +1,154 @@
+/* CSS Module for HorizontalAuctionCard */
+
+.cardContainer {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ffffff !important;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+
+
+  padding: clamp(6px, 1.5vw, 10px) !important;
+  gap: clamp(6px, 1.5vw, 10px) !important;
+}
+
+.cardContainer:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  align-self: stretch;
+  height: auto;
+  margin-top: -4px;
+
+  /* Fluid width and min-height based on viewport */
+  width: clamp(80px, 18vw, 150px);
+  min-height: clamp(130px, 25vw, 160px);
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-width: 0;
+  
+  /* Fluid vertical gap */
+  gap: clamp(4px, 1vw, 10px);
+}
+
+/* Header Columns */
+.headerContainer {
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2% !important;
+  width: 100%;
+}
+
+.titleColumn {
+  width: 58%;
+  min-width: 0;
+}
+
+.priceColumn {
+  width: 40%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Footer Columns */
+.footerContainer {
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2% !important;
+  width: 100%;
+  border: none !important;
+  background: transparent !important;
+}
+
+.footerInfoColumn {
+  width: 53%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.footerButtonColumn {
+  width: 45%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.assetsLabel {
+  color: #171d5b;
+  font-size: clamp(9px, 1.8vw, 15px);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.assetsValue {
+  color: #eea820;
+  font-size: clamp(11px, 2.2vw, 17px);
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.bidsLabel {
+  color: #171d5b;
+  font-size: clamp(8px, 1.5vw, 13px);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: clamp(2px, 0.5vw, 4px);
+  line-height: 1;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.bidsValue {
+  color: #eea820;
+  font-size: clamp(9px, 1.8vw, 14px);
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.bidderLabel {
+  color: #757575;
+  font-size: clamp(8px, 1.5vw, 11px);
+  font-weight: 400;
+}
