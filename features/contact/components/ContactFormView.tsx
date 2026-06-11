@@ -59,10 +59,9 @@ export default function ContactFormView() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-4 w-full md:w-xl lg:w-3xl xl:w-4xl"
-    >
+      className=" w-full xl:w-275 h-auto space-y-4 bg-white/10 backdrop-blur-lg px-5 py-7 rounded-xl mx-5"
+        >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-7">
-        
         <FormField
           id="name"
           label={t("name")}
@@ -109,22 +108,14 @@ export default function ContactFormView() {
             name="issueType"
             control={control}
             render={({ field }) => (
-              <Select
-                value={field.value}
-                onValueChange={field.onChange}
-              >
+              <Select value={field.value} onValueChange={field.onChange}>
                 <SelectTrigger className="w-full">
-                  <SelectValue
-                    placeholder={t("issueTypePlaceholder")}
-                  />
+                  <SelectValue placeholder={t("issueTypePlaceholder")} />
                 </SelectTrigger>
 
                 <SelectContent>
                   {issueOptions.map((option) => (
-                    <SelectItem
-                      key={option.value}
-                      value={option.value}
-                    >
+                    <SelectItem key={option.value} value={option.value}>
                       {option.label}
                     </SelectItem>
                   ))}

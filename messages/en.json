@@ -104,6 +104,7 @@
     "register": "Create Account"
   },
   "ContactPage": {
+    "title": "Contact Us",
     "name": "Name",
     "namePlaceholder": "Enter your name",
     "email": "Email",

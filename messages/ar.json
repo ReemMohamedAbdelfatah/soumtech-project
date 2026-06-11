@@ -41,6 +41,7 @@
     "Title": "شركات المزاد"
   },
   "ContactPage": {
+    "title": "تواصل معنا",
     "name": "الاسم",
     "namePlaceholder": "أدخل الاسم",
     "email": "البريد الإلكتروني",
