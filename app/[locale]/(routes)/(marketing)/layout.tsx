@@ -1,3 +1,5 @@
+
+// Try this if your file is at components/Layout/Navbar/Navbar.tsx
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer/Footer";
 import { getLocale } from "next-intl/server";

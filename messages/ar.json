@@ -180,5 +180,9 @@
     "auctionOpenDate": "تاريخ فتح المزاد",
     "auctionOpenTime": "وقت فتح المزاد",
     "auctionOver": "مزاد منتهي"
+  },
+  "Pagination": {
+    "Previous": "السابق",
+    "Next": "التالي"
   }
 }
