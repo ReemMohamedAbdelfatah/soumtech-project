@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { Badge } from "@/components/ui/badge";
-
+import { TabType } from '@/features/auctions/components/AuctionFilterTab';
+import imgended from "@/public/image3.png";
 interface AuctionImageProps {
   imageSrc: string;
   title: string;
+  status: TabType;
   location?: string;
   className?: string;
   transparentLocationBg?: boolean;
@@ -14,14 +16,16 @@ export default function AuctionImage({
   imageSrc,
   title,
   location,
+  status,
   className = '',
   transparentLocationBg = false,
   style,
 }: AuctionImageProps) {
   return (
     <div className={className} style={style}>
+      
       <Image
-        src={imageSrc}
+        src={status === 'ended' ? imgended : imageSrc}
         alt={title}
         fill
         sizes="(max-w-md) 100vw, 400px"

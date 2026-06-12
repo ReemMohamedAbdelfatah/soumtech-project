@@ -2,11 +2,12 @@ import CountdownTimer from './CountdownTimer';
 import AuctionDateTime from './AuctionDateTime';
 import { useTranslations } from 'next-intl';
 import { Alert, AlertTitle } from "@/components/ui/alert";
+import { TabType } from '@/features/auctions/components/AuctionFilterTab';
 
 interface AuctionStatusProps {
   auctionDate?: string;
   auctionTime?: string;
-  status: 'active' | 'closed';
+  status: TabType;
   endDate: string | Date;
   horizontal?: boolean;
 }
@@ -44,7 +45,7 @@ export default function AuctionStatus({
     <Alert
       className="w-full h-[50px] flex items-center justify-center bg-[#DC5224] text-white text-center rounded-[7px] text-[14px] font-medium shadow-sm select-none border-none p-0 mt-[-10px]"
     >
-      <AlertTitle className="leading-none">{t("closed")}</AlertTitle>
+      <AlertTitle className="leading-none">{t("ended")}</AlertTitle>
     </Alert>
   );
 }
