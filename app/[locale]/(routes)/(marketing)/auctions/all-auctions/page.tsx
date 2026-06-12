@@ -1,7 +1,6 @@
 import AuctionBanner from "@/components/reusable_components/card/AuctionBanner";
 import AuctionGrid from "@/components/reusable_components/card/AuctionGrid";
 import ThemeToggle from "@/features/theme/components/theme-toggle";
-import TryPage from "../../../try/page";
 
 export default function AuctionsPage() {
   // Target target dates: 6 days, 14 hours, 12 minutes in the future for active countdown simulation
