@@ -156,5 +156,29 @@
 
     "PasswordsNotMatch": "كلمتا المرور غير متطابقتين",
     "submit": "حفظ"
+  },
+  "AuctionTable": {
+    "joinAuction": "انضم للمزاد",
+    "propertyName": "اسم العقار",
+    "currentBid": "سعر السوم الحالي",
+    "area": "مساحة",
+    "deposit": "عربون الدخول",
+    "bidsCount": "عدد السومات",
+    "timer": "المؤقت",
+    "auctionDetails": "تفاصيل المزاد",
+    "auctionDetailsBtn": "تفاصيل المزاد",
+    "sar": "ر.س",
+    "sarPerMeter": "ر.س للمتر",
+    "m2": "م²",
+    "bidder": "مزايد"
+  },
+  "AuctionTimer": {
+    "second": "ثانية",
+    "minute": "دقيقة",
+    "hour": "ساعة",
+    "day": "يوم",
+    "auctionOpenDate": "تاريخ فتح المزاد",
+    "auctionOpenTime": "وقت فتح المزاد",
+    "auctionOver": "مزاد منتهي"
   }
 }
