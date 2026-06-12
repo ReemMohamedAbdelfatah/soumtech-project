@@ -1,5 +1,5 @@
 // app/sandbox/page.tsx (أو مسار صفحتك الحالي)
-import PropertyDetailsCard2 from "@/components/reusable_components/PropertyDetailsCard2";
+import PropertyDetailsCard2 from "@/app/[locale]/(routes)/(marketing)/PropertyDetailsCard2";
 
 export default function SandboxPage() {
   return (

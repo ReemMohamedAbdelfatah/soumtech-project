@@ -3,6 +3,7 @@ import ThemeToggle from "@/features/theme/components/theme-toggle";
 //Sections
 import HeroBanner from "@/components/shared/HeroBanner";
 import CompanyLogosSection from "@/components/shared/CompanyLogosSection";
+import PropertyDetailsCard from "./PropertyDetailsCard";
 //--------------------------------------------
 export default async function Home() {
   // const t = await getTranslations("Home");
@@ -12,6 +13,9 @@ export default async function Home() {
       <HeroBanner />
       <CompanyLogosSection />
       <ThemeToggle />
+      <PropertyDetailsCard />
+     
     </div>
+
   );
 }
