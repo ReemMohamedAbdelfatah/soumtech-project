@@ -81,21 +81,7 @@ export default function PropertyDetailsCard() {
     <div dir="rtl" className="w-full bg-slate-50/30 font-sans text-right select-none flex flex-col min-h-screen">
       
       {/* محتوى الصفحة الرئيسي */}
-  <header className="force-top z-[9999] w-full bg-[#1e1b4b] text-white py-4 px-6 shadow-md">
-  <div className="mx-auto flex max-w-7xl items-center justify-between">
-    <div className="text-xl font-black tracking-tighter">سومتك</div>
-    
-    <nav className="flex gap-8 text-sm font-bold">
-      <a href="#" className="transition hover:text-amber-400">الرئيسية</a>
-      <a href="#" className="border-b-2 border-amber-400 pb-1 transition hover:text-amber-400">المزادات</a>
-      <a href="#" className="transition hover:text-amber-400">تواصل معنا</a>
-    </nav>
-
-    <div className="flex cursor-pointer items-center gap-2 transition hover:text-amber-400">
-      <span className="text-sm font-bold">تسجيل الدخول</span>
-    </div>
-  </div>
-</header>
+  
       <div className="w-full max-w-7xl mx-auto p-4 lg:p-6 flex-1">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
@@ -338,93 +324,7 @@ export default function PropertyDetailsCard() {
       {/* =========================================================================
           الفوتر (Footer)
           ========================================================================= */}
-      <footer className="w-full bg-white border-t border-slate-100 mt-12 pt-12 pb-6">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-8 border-b border-slate-100">
-            
-            {/* العمود الأول (أقصى اليمين): البراند والشبكات الاجتماعية */}
-            <div className="lg:col-span-4 flex flex-col items-start gap-3 lg:text-right">
-              <div className="flex flex-col items-start gap-1">
-                <span className="text-slate-900 font-black text-xl tracking-tight">سومتك</span>
-                <span className="text-[9px] text-slate-400 uppercase tracking-widest font-bold -mt-1">SOUMTECH</span>
-              </div>
-              <p className="text-[11px] text-slate-400 leading-relaxed font-normal">
-                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التي يولدها التطبيق.
-              </p>
-              <div className="flex items-center gap-2 mt-2">
-                {/* LinkedIn */}
-                <a href="#" className="w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition border border-slate-100">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </a>
-                {/* Twitter / X */}
-                <a href="#" className="w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-sky-500 hover:bg-sky-50 transition border border-slate-100">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                  </svg>
-                </a>
-                {/* Instagram */}
-                <a href="#" className="w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-pink-600 hover:bg-pink-50 transition border border-slate-100">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            {/* العمود الثاني: القائمة الرئيسية */}
-            <div className="lg:col-span-3 flex flex-col gap-4">
-              <h3 className="text-slate-800 font-bold text-sm">القائمة الرئيسية</h3>
-              <div className="flex flex-col gap-3 text-slate-500 text-xs">
-                <a href="#" className="hover:text-[#e45a2b] transition">الضوابض الإعلانية الصادرة من الهيئة</a>
-                <a href="#" className="hover:text-[#e45a2b] transition">الشروط والأحكام</a>
-                <a href="#" className="hover:text-[#e45a2b] transition">ترخيص الهيئة العامة للعقار</a>
-                <a href="#" className="hover:text-[#e45a2b] transition">تواصل معنا</a>
-              </div>
-            </div>
-
-            {/* العمود الثالث: الأقسام */}
-            <div className="lg:col-span-2 flex flex-col gap-4">
-              <h3 className="text-slate-800 font-bold text-sm">الأقسام</h3>
-              <div className="flex flex-col gap-3 text-slate-500 text-xs">
-                <a href="#" className="hover:text-[#e45a2b] transition">مكتبة الدعم</a>
-                <a href="#" className="hover:text-[#e45a2b] transition">الأسئلة الشائعة</a>
-              </div>
-            </div>
-
-            {/* العمود الرابع (أقصى اليسار): تواصل معنا */}
-            <div className="lg:col-span-3 flex flex-col gap-4">
-              <h3 className="text-slate-800 font-bold text-sm">تواصل معنا</h3>
-              <div className="flex flex-col gap-3 text-slate-500 text-xs">
-                <div className="flex items-center gap-2">
-                  <MapPin size={14} className="text-slate-400" />
-                  <span>الرياض، حي الملك فيصل، السعودية</span>
-                </div>
-                {/* تم التعديل هنا ليكون بداخل محاذاة واحدة من اليمين لليسار متناسقة */}
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-slate-400" />
-                  <span className="tabular-nums" dir="ltr">+966 570 212 216</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={14} className="text-slate-400" />
-                  <span>info@soum.tech</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* أسفل الفوتر: الحقوق */}
-          <div className="pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400 gap-2">
-            <span>© جميع الحقوق محفوظة - لـ سومتك 2026</span>
-          </div>
-        </div>
-      </footer>
+      //
 
     </div>
   );
