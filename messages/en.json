@@ -181,5 +181,9 @@
     "auctionOpenDate": "Open Date",
     "auctionOpenTime": "Open Time",
     "auctionOver": "Auction Over"
+  },
+   "Pagination": {
+    "Previous": "Previous",
+    "Next": "Next"
   }
 }
