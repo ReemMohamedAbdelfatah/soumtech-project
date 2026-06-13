@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
-import AuctionTimer from "./AuctionTimer";
+import AuctionTimer from "./Timer";
 import { useTranslations, useLocale } from "next-intl";
 
 export interface AuctionTableData {
@@ -32,8 +32,9 @@ export default function AuctionTableRow({data,grid,status}:AuctionTableRowProps)
   const t = useTranslations("AuctionTable");
   const locale = useLocale();
   const isAr = locale === "ar";
+  
 
-  return( <div className={`hidden lg:grid  mx-auto w-[95%]  whitespace-nowrap rounded-[12px] border-b border-border ${grid}`}>
+  return( <div className={`hidden lg:grid w-full    whitespace-nowrap rounded-[12px] border-b border-border ${grid}`}>
       {status!=="over" && <div className={`flex items-center ${isAr ? 'pr-[9px]' : 'pl-[9px]'}`}>
             <Button className={`h-[40px] w-full rounded-[8px] flex justify-center items-center bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer`}>
               <div className="flex items-center gap-[8px] text-[12px] xl:text-[14px] font-medium">
@@ -62,8 +63,11 @@ export default function AuctionTableRow({data,grid,status}:AuctionTableRowProps)
       <div className="flex items-center w-full">
              <span className="text-[13px] xl:text-[16px] font-medium text-foreground leading-[100%]">{data.depositAmount.toLocaleString()} {t("sar")}</span>       
       </div>
-      <div className="flex items-center w-full">
-            <span className="text-[13px] xl:text-[16px] font-medium  leading-[100%]"><span className="text-primary ">({data.AvailableCount})</span><span className="text-muted-foreground"> {t("bidder")}</span></span>       
+      <div className="flex items-center  ">
+            <span className="text-[13px] xl:text-[16px] font-medium  leading-[100%]">
+              <span className={`text-muted-foreground ${isAr ? 'pl-[2px]' : 'pr-[2px]'}`}> {t("bidder")}</span> 
+              <span className="text-primary ">({data.AvailableCount})</span>
+              </span>       
       </div>
       <div className="flex items-center w-full">
         <AuctionTimer data={data} status={status}/>
