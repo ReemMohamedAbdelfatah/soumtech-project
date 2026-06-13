@@ -1,3 +1,6 @@
-export default function GridAuction() {
-  return <div>page</div>;
+import Display from "@/components/reusable_components/AuctionTable/Display"
+
+export default async function GridAuction(props: any) {
+  const searchParams = await props.searchParams;
+  return <Display page={searchParams.page} />;
 }

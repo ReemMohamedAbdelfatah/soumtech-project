@@ -132,7 +132,7 @@ export {
   PaginationPrevious,
 }
 
-export default function AuctionPagination({totalPages, currentPage}: {totalPages: number, currentPage: string}) : React.JSX.Element {
+export default function AuctionPagination({totalPages, currentPage}: {totalPages: number, currentPage: string}) {
   const current = Number(currentPage);
   
   const getVisiblePages = (current: number, total: number): (number | '...')[] => {
@@ -172,8 +172,8 @@ export default function AuctionPagination({totalPages, currentPage}: {totalPages
   const visiblePages = getVisiblePages(current, totalPages);
 
   return (
-    <Pagination className="w-[95%] mx-auto b-white">
-      <PaginationContent className="w-full h-[84] flex justify-between items-center border-b border-border rounded-[12px] px-[24px]">
+    <Pagination className="w-full">
+      <PaginationContent className="w-full h-[84px] flex justify-between items-center border-b border-border rounded-[12px] px-[24px]">
         <PaginationItem>
           <PaginationPrevious 
             href={current > 1 ? `?page=${current - 1}` : "#"} 

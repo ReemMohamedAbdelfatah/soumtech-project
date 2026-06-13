@@ -1,4 +1,5 @@
 import { AuctionTableData } from "./AuctionTableRow";
+import { AuctionCardProps } from "@/components/reusable_components/card/VerticalCard/AuctionCard";
 
 export const data : AuctionTableData[] = [
   {
@@ -3613,3 +3614,69 @@ export const data : AuctionTableData[] = [
     timer: { hours: 0, minutes: 0, seconds: 0, days: 0 }
   }
 ];
+
+// ─── Grid / Card dummy data (matches AuctionCardProps & { id }) ───
+
+type GridAuction = AuctionCardProps & { id: string | number };
+
+const names = [
+  'عمارة النور', 'فندق الريان', 'برج الحمراء', 'قصر السلام', 'مجمع الياسمين',
+  'فيلا الأمير', 'أرض الواحة', 'مبنى الفيصل', 'شقق الروضة', 'مزرعة النخيل',
+  'برج المملكة', 'فندق الماسة', 'مجمع الندى', 'قصر الذهب', 'عمارة البركة',
+  'فيلا الورد', 'مبنى الشروق', 'شقق الزهراء', 'أرض المروج', 'برج التقنية',
+];
+
+const locations = ['الرياض', 'جدة', 'الدمام', 'مكة المكرمة', 'المدينة المنورة', 'أبها', 'تبوك', 'الطائف', 'حائل', 'الخبر'];
+
+const images = ['/images/card.png'];
+
+const logos = [
+  '/icons/GridBlack.svg',
+  '/icons/ListBulletsBlack.svg',
+  '/icons/MapBlack.svg',
+];
+
+function generateGridData(count: number): GridAuction[] {
+  const result: GridAuction[] = [];
+
+  for (let i = 0; i < count; i++) {
+    const isActive = i % 3 !== 0;
+    const nameIdx = i % names.length;
+    const locIdx = i % locations.length;
+    const imgIdx = i % images.length;
+    const logoIdx = i % logos.length;
+
+    const day = ((i * 3) % 28) + 1;
+    const month = (i % 12) + 1;
+    const year = 2025 + (i % 2);
+
+    const endDay = ((i * 5) % 28) + 1;
+    const endMonth = ((i + 3) % 12) + 1;
+    const endYear = 2025 + ((i + 1) % 2);
+
+    const areaValue = (120 + i * 7.5).toFixed(1);
+    const priceAmount = (250_000 + i * 15_000).toLocaleString('ar-SA');
+
+    result.push({
+      id: `grid-${i + 1}`,
+      title: `${names[nameIdx]} #${i + 1}`,
+      imageSrc: images[imgIdx],
+      logoSrc: logos[logoIdx],
+      assetsCount: (i % 20) + 1,
+      status: isActive ? 'active' : 'closed',
+      endDate: `${endYear}-${String(endMonth).padStart(2, '0')}-${String(endDay).padStart(2, '0')}`,
+      detailsUrl: `#auction-${i + 1}`,
+      location: locations[locIdx],
+      area: `${areaValue} م²`,
+      auctionDate: `${day}/${month}/${year}`,
+      auctionTime: `${String((9 + i) % 12 || 12).padStart(2, '0')}:${String((i * 7) % 60).padStart(2, '0')} ${i % 2 === 0 ? 'ص' : 'م'}`,
+      priceInfo: i % 4 !== 0
+        ? { amount: `${priceAmount} ر.س`, subText: 'السعر يشمل الضريبة' }
+        : undefined,
+    });
+  }
+
+  return result;
+}
+
+export const gridData: GridAuction[] = generateGridData(120);

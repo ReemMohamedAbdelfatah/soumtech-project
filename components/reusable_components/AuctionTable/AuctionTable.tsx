@@ -20,8 +20,8 @@ export default function AuctionTable({ status, currentData}: AuctionTableProps) 
 
 
   return (
-    <>
-      <div className={`hidden lg:grid  mx-auto w-[95%] rounded-[12px] border-b border-border  bg-muted text-muted-foreground text-[14px] font-medium leading-[18px] whitespace-nowrap ${grid}`}>
+    <div className="w-full">
+      <div className={`hidden lg:grid   w-full rounded-[12px] border-b border-border  bg-muted text-muted-foreground text-[14px] font-medium leading-[18px] whitespace-nowrap ${grid}`}>
         {/* header */}
         {status!=="over" && <div className={`flex items-center ${isAr ? 'pr-[14px]' : 'pl-[14px]'}`}>{t("joinAuction")}</div>}
         <div className={`h-[52px] flex items-center ${status==="over" ? (isAr ? "pr-[14px]" : "pl-[14px]") : ""}`}>{t("propertyName")}</div>
@@ -39,6 +39,6 @@ export default function AuctionTable({ status, currentData}: AuctionTableProps) 
         )}
 
 
-    </>
+    </div>
   )
 }

@@ -34,7 +34,7 @@ export default function AuctionTableRow({data,grid,status}:AuctionTableRowProps)
   const isAr = locale === "ar";
   
 
-  return( <div className={`hidden lg:grid  mx-auto w-[95%]  whitespace-nowrap rounded-[12px] border-b border-border ${grid}`}>
+  return( <div className={`hidden lg:grid w-full    whitespace-nowrap rounded-[12px] border-b border-border ${grid}`}>
       {status!=="over" && <div className={`flex items-center ${isAr ? 'pr-[9px]' : 'pl-[9px]'}`}>
             <Button className={`h-[40px] w-full rounded-[8px] flex justify-center items-center bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer`}>
               <div className="flex items-center gap-[8px] text-[12px] xl:text-[14px] font-medium">
