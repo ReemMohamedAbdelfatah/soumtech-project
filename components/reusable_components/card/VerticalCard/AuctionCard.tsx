@@ -10,12 +10,13 @@ import AuctionHeader from "../shared/AuctionHeader";
 import AuctionPrice from "../shared/AuctionPrice";
 import styles from "./AuctionCard.module.css";
 
+
 export interface AuctionCardProps {
   title: string;
   imageSrc: string;
   logoSrc: string;
   assetsCount?: number;
-  status: 'active' | 'closed';
+  status: "active"| "upcoming"| "ended";
   endDate: string | Date;
   detailsUrl?: string;
   location?: string;
@@ -49,6 +50,7 @@ export default function AuctionCard({
       <div className={styles.innerWrapper}>
         <CardHeader className={styles.headerContainer}>
           <AuctionImage
+          status={status}
             imageSrc={imageSrc}
             title={title}
             location={location}

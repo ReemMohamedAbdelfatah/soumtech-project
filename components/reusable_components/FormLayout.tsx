@@ -1,65 +1,94 @@
-//Reusable layout Component for forms (Abanob)
-//Next
+// Reusable layout Component for forms
+
 import Image from "next/image";
-//IMAGES
+
+// Images
 import InfathLogo from "@/public/Images/Logos/Infath-logo.png";
 import REGALogo from "@/public/Images/Logos/REGA-Logo.png";
 import Bgwallpaper from "@/public/bg-wallpaper.png";
-//Logo
+
+// Components
 import Logo from "@/components/reusable_components/Logo";
+
 // -------------------------------------
 
 type Props = {
   children: React.ReactNode;
   borderRadius?: number;
-  width?: string | number;
-  height?: string | number;
-  LogoSize?: string;
+  width?: string;
+  height?: string;
+  logoSize?: string;
   className?: string;
 };
-//--------------------------------------
+
+// -------------------------------------
+
 export default function FormLayout({
   children,
-  borderRadius,
+  borderRadius = 0,
   width = "w-full",
-  height = "h-auto min-h-screen",
-  LogoSize = "w-[150px]",
-  className,
+  height = "h-full",
+  logoSize = "w-[150px]",
+  className = "",
 }: Props) {
   return (
     <div
-      className={`${width} ${height} relative flex justify-center items-center overflow-hidden py-3 px-5 ${className}`}
+      className={`
+        ${width}
+        ${height}
+        relative
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        py-2
+        bg-[url('/bg-wallpaper.png')]
+        bg-cover
+        bg-center
+        bg-no-repeat
+        ${className}
+      `}
       style={{
-        borderRadius: borderRadius || 0,
+        borderRadius: `${borderRadius}px`,
       }}
     >
-      {/* Background */}
-      <Image
-        src={Bgwallpaper}
-        alt="background"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-
       {/* Overlay */}
-      <div className="absolute inset-0 w-full h-full bg-[rgba(10,20,60,0.34)]" />
+      <div className="absolute inset-0 bg-[rgba(10,20,60,0.35)]" />
 
-      {/* middle section */}
-      <section className="relative z-10 w-full max-w-md flex flex-col py-3">
-        {/* Logo */}
-        <div className="flex justify-center mb-22">
-          <Logo variant="white" sizeClass={String(LogoSize)} />
+      {/* Content */}
+      <section className="relative z-10 w-full flex flex-col">
+        {/* Main Logo */}
+        <div className="flex justify-center pt-0 md:pt-5">
+          <Logo variant="white" sizeClass={logoSize} />
         </div>
-        {/* Form Content */}
-        <main className="relative z-10 flex-1 flex items-center justify-center my-5">
-          {children}
-        </main>
+
+        {/* Form */}
+        <main className="flex justify-center my-4 md:my-6">{children}</main>
+
         {/* Bottom Logos */}
         <div
           dir="ltr"
-          className="flex items-center justify-center gap-10 pt-20.25"
+          className="
+            w-full
+            flex
+            items-center
+            justify-center
+            gap-3
+            md:gap-6
+            px-5
+          "
         >
-          <Image src={InfathLogo} alt="InfathLogo" />
-          <Image src={REGALogo} alt="REGALogo" />
+          <Image
+            src={InfathLogo}
+            alt="Infath Logo"
+            className="max-h-18 object-contain "
+          />
+
+          <Image
+            src={REGALogo}
+            alt="REGA Logo"
+            className="max-h-18 object-contain "
+          />
         </div>
       </section>
     </div>

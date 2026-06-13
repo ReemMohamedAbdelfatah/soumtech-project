@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";/
 import Link from 'next/link';
 export type TabType = "active" | "upcoming" | "ended";
 interface AuctionsTabsProps {
@@ -20,7 +20,7 @@ export default function AuctionTabFilter({
 
   return (
     <>
-      <div className="flex justify-center mb-6 ">
+      <div className="flex justify-center mb-6 " >
         <div
           className="flex gap-3 self-center
     border border-gray-100
@@ -34,7 +34,8 @@ export default function AuctionTabFilter({
             const isActive = tab === currentTab;
             return (
               <Link
-                href={`/auctions?status=${tab}`}
+              
+                href={`/?status=${tab}`}
                 key={tab}
                 role="tab"
                 aria-selected={isActive}

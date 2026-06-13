@@ -41,6 +41,7 @@
     "Title": "شركات المزاد"
   },
   "ContactPage": {
+    "title": "تواصل معنا",
     "name": "الاسم",
     "namePlaceholder": "أدخل الاسم",
     "email": "البريد الإلكتروني",
@@ -81,7 +82,7 @@
     "assetsCountLabel": "عدد الأصول"
   },
   "auctionCard": {
-    "closed": "تم اغلاق المزاد",
+    "ended": "تم اغلاق المزاد",
     "auctionDetails": "تفاصيل المزاد",
     "day": "يوم",
     "hour": "ساعة",
@@ -183,5 +184,11 @@
   "Pagination": {
     "Previous": "السابق",
     "Next": "التالي"
+  },
+"AuctionStatusTabs": {
+    "ariaLabel": "تصفية المزادات حسب الحالة",
+    "active": "نشط",
+    "upcoming": "قادم",
+    "ended": "منتهي"
   }
 }

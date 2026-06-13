@@ -60,7 +60,7 @@
     "assetsCountLabel": "Assets Count"
   },
   "auctionCard": {
-    "closed": "Auction Closed",
+    "ended": "Auction Closed",
     "auctionDetails": "Auction Details",
     "day": "Day",
     "hour": "Hour",
@@ -104,6 +104,7 @@
     "register": "Create Account"
   },
   "ContactPage": {
+    "title": "Contact Us",
     "name": "Name",
     "namePlaceholder": "Enter your name",
     "email": "Email",
@@ -185,5 +186,11 @@
    "Pagination": {
     "Previous": "Previous",
     "Next": "Next"
+  },
+ "AuctionStatusTabs": {
+    "ariaLabel": "Filter auctions by status",
+    "active": "Active",
+    "upcoming": "Upcoming",
+    "ended": "Ended"
   }
 }

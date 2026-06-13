@@ -18,7 +18,7 @@ export default async function AuthLayout({
   return (
     <>
       <div className="absolute top-0 left-0 z-50 w-full flex md:hidden justify-between items-center px-3 py-3">
-        <Logo sizeClass="w-[70px]" variant="white" />
+        <Logo sizeClass="w-[50px]" variant="white" />
 
         <VerticalNavbar
           navbarData={navbarData}
@@ -27,8 +27,8 @@ export default async function AuthLayout({
         />
       </div>
 
-      <FormLayout className="pt-13" LogoSize="w-[100px] md:w-[170px]">
-        <div className="w-full md:w-md lg:w-lg xl:w-100 h-auto bg-background rounded-xl px-5 py-7">
+      <FormLayout logoSize="w-[100px] md:w-[150px] " height="min-h-screen">
+        <div className="w-full lg:w-132 max-w-132   bg-background rounded-xl px-5 py-3 mx-5">
           {children}
         </div>
       </FormLayout>
