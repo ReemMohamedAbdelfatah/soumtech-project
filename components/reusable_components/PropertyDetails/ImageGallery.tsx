@@ -82,7 +82,7 @@ export default function ImageGallery({
               className="absolute left-3 top-1/2 size-9 -translate-y-1/2 rounded-full bg-transparent p-0 hover:bg-transparent hover:opacity-80"
             >
               <Image
-                src="/icons/.arrow-left-btn.png"
+                src="/icons/arrow-left-btn.png"
                 alt=""
                 width={36}
                 height={36}
@@ -96,7 +96,7 @@ export default function ImageGallery({
               className="absolute right-3 top-1/2 size-9 -translate-y-1/2 rounded-full bg-transparent p-0 hover:bg-transparent hover:opacity-80"
             >
               <Image
-                src="/icons/.arrow-right-btn.png"
+                src="/icons/arrow-right-btn.png"
                 alt=""
                 width={36}
                 height={36}
