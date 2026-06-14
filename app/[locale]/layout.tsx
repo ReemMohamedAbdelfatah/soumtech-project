@@ -39,7 +39,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${cairo.variable} ${inter.variable}`}
     >
-      <body className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
         <StoreProvider>
           <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>

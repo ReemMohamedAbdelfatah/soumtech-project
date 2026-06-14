@@ -93,6 +93,14 @@
     "westNeighbor": "West",
     "streetName": "Street name",
     "deedNumber": "Deed number",
+    "saleType": "Deal type",
+    "forSale": "For sale",
+    "area": "Property area",
+    "garage": "Garage",
+    "airConditioner": "Air conditioner",
+    "bathroomsCount": "Bathrooms count",
+    "available": "Available",
+    "notAvailable": "Not available",
     "identifier": "Email or Phone",
     "identifierPlaceholder": "Enter your email or phone",
     "password": "Password",
@@ -192,5 +200,94 @@
     "active": "Active",
     "upcoming": "Upcoming",
     "ended": "Ended"
+  },
+  "Countdown": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "PriceDisplay": {
+    "currentBidPrice": "Current Bid Price",
+    "currency": "SAR",
+    "meterPrice": "Meter Price",
+    "total": "Total",
+    "brokerageTax": "Brokerage Tax",
+    "brokerage": "Brokerage"
+  },
+  "AuctionStats": {
+    "entryDeposit": "Entry Deposit",
+    "bidIncrement": "Bid Increment",
+    "numberOfBids": "Number of Bids",
+    "currency": "SAR"
+  },
+  "ImageGallery": {
+    "title": "Image Gallery",
+    "registerInAuction": "Register in Auction",
+    "previous": "Previous",
+    "next": "Next",
+    "contactLabel": "Contact:"
+  },
+  "BidInput": {
+    "addBid": "Add Your Bid",
+    "increase": "Increase",
+    "decrease": "Decrease",
+    "termsNote": "By clicking Add Your Bid, you agree to the auction terms and conditions.",
+    "totalNote": "The total price does not include the auction operator's commission, which is borne by the buyer."
+  },
+  "BidConfirmationModal": {
+    "title": "Add Your Bid",
+    "question": "Would you like to bid <amount></amount>?",
+    "detailsTitle": "Bid Details",
+    "meterPrice": "Meter Price",
+    "brokerage": "Brokerage",
+    "brokerageTax": "Brokerage Tax",
+    "total": "Total",
+    "currency": "SAR",
+    "termsNote": "By clicking Confirm, you agree to the auction terms and conditions.",
+    "totalNote": "The total price does not include real estate transaction tax, which is borne by the buyer.",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "BiddersTable": {
+    "title": "Top Bidders",
+    "name": "Name",
+    "bidPrice": "Bid Price",
+    "time": "Time"
+  },
+  "HighestBidderBadge": {
+    "rank1": "You are the highest bidder",
+    "rank2": "You are the second highest bidder",
+    "rank3": "You are the third highest bidder"
+  },
+  "PropertyActions": {
+    "location": "Location",
+    "profile": "Profile"
+  },
+  "ComingAuctionDetails": {
+    "openingDate": "Auction Opening Date",
+    "openingTime": "Auction Opening Time",
+    "entryDeposit": "Entry Deposit",
+    "bidIncrement": "Bid Increment",
+    "registeredCount": "Registered Users",
+    "currency": "SAR"
+  },
+  "RegisteredUsersTable": {
+    "title": "Total Registered Users",
+    "name": "Name",
+    "identityNumber": "Identity Number",
+    "phone": "Phone",
+    "hasBalance": "Has Balance",
+    "yes": "Yes",
+    "no": "No",
+    "previous": "Previous",
+    "next": "Next",
+    "pagination": "Registered users pages",
+    "exportPdf": "Export PDF",
+    "exportExcel": "Export Excel"
+  },
+  "EndedAuctionDetails": {
+    "ended": "Auction Ended",
+    "registeredUsers": "Registered Auction Users"
   }
 }
