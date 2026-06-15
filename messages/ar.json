@@ -115,6 +115,14 @@
     "westNeighbor": "غرباً",
     "streetName": "اسم الشارع",
     "deedNumber": "رقم الصك",
+    "saleType": "نوع الصفقة",
+    "forSale": "للبيع",
+    "area": "مساحة العقار",
+    "garage": "هل يوجد جراج",
+    "airConditioner": "هل يوجد مكيف",
+    "bathroomsCount": "عدد دورات المياه",
+    "available": "يوجد",
+    "notAvailable": "لا يوجد",
     "identifier": "رقم الجوال او الايميل",
     "identifierPlaceholder": "ادخل رقم الجوال او الايميل",
     "password": "كلمة المرور",
@@ -190,5 +198,94 @@
     "active": "نشط",
     "upcoming": "قادم",
     "ended": "منتهي"
+  },
+  "Countdown": {
+    "days": "يوم",
+    "hours": "ساعة",
+    "minutes": "دقيقة",
+    "seconds": "ثانية"
+  },
+  "PriceDisplay": {
+    "currentBidPrice": "سعر السوم الحالي",
+    "currency": "ر.س",
+    "meterPrice": "سعر المتر",
+    "total": "الإجمالي",
+    "brokerageTax": "ضريبة السعي",
+    "brokerage": "السعي"
+  },
+  "AuctionStats": {
+    "entryDeposit": "عربون الدخول",
+    "bidIncrement": "مبلغ السوم",
+    "numberOfBids": "عدد السومات",
+    "currency": "ر.س"
+  },
+  "ImageGallery": {
+    "title": "معرض الصور",
+    "registerInAuction": "سجل في المزاد",
+    "previous": "السابق",
+    "next": "التالي",
+    "contactLabel": "رقم التواصل:"
+  },
+  "BidInput": {
+    "addBid": "أضف سومتك",
+    "increase": "زيادة",
+    "decrease": "إنقاص",
+    "termsNote": "بالضغط على زر أضف سومتك، فإنك توافق على الشروط والأحكام الخاصة بالمزاد.",
+    "totalNote": "السعر الإجمالي لا يشمل عمولة الجهة المنفذة للمزاد ومتحملها المشتري."
+  },
+  "BidConfirmationModal": {
+    "title": "أضف سومتك",
+    "question": "هل ترغب في السوم بمبلغ <amount></amount>؟",
+    "detailsTitle": "تفاصيل المزايدة",
+    "meterPrice": "سعر المتر",
+    "brokerage": "السعي",
+    "brokerageTax": "ضريبة السعي",
+    "total": "الإجمالي",
+    "currency": "ريال",
+    "termsNote": "بالضغط على زر تأكيد، فإنك توافق على الشروط والأحكام الخاصة بالمزاد.",
+    "totalNote": "السعر الإجمالي لا يشمل ضريبة التصرفات العقارية ويتحملها المشتري.",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد"
+  },
+  "BiddersTable": {
+    "title": "أعلى المزايدين",
+    "name": "الاسم",
+    "bidPrice": "سعر السوم",
+    "time": "الوقت"
+  },
+  "HighestBidderBadge": {
+    "rank1": "أنت أعلى مزايد",
+    "rank2": "أنت ثاني أعلى مزايد",
+    "rank3": "أنت ثالث أعلى مزايد"
+  },
+  "PropertyActions": {
+    "location": "الموقع",
+    "profile": "الملف التعريفي"
+  },
+  "ComingAuctionDetails": {
+    "openingDate": "تاريخ فتح المزاد",
+    "openingTime": "وقت فتح المزاد",
+    "entryDeposit": "عربون الدخول",
+    "bidIncrement": "فرق السوم",
+    "registeredCount": "عدد المسجلين",
+    "currency": "ر.س"
+  },
+  "RegisteredUsersTable": {
+    "title": "إجمالي عدد المسجلين",
+    "name": "الاسم",
+    "identityNumber": "رقم الهوية",
+    "phone": "الهاتف",
+    "hasBalance": "لديه رصيد",
+    "yes": "نعم",
+    "no": "لا",
+    "previous": "السابق",
+    "next": "التالي",
+    "pagination": "صفحات المسجلين",
+    "exportPdf": "تصدير PDF",
+    "exportExcel": "تصدير Excel"
+  },
+  "EndedAuctionDetails": {
+    "ended": "مزاد منتهي",
+    "registeredUsers": "المسجلين في المزاد"
   }
 }
