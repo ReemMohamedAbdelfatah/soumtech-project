@@ -193,7 +193,7 @@
     "Previous": "السابق",
     "Next": "التالي"
   },
-"AuctionStatusTabs": {
+  "AuctionStatusTabs": {
     "ariaLabel": "تصفية المزادات حسب الحالة",
     "active": "نشط",
     "upcoming": "قادم",
@@ -287,5 +287,10 @@
   "EndedAuctionDetails": {
     "ended": "مزاد منتهي",
     "registeredUsers": "المسجلين في المزاد"
+  },
+  "auctionFilter": {
+    "active": "القائمة",
+    "upcoming": "القادمة",
+    "ended": "المنتهي"
   }
 }

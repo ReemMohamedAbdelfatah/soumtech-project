@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FilterCards from "./FilterCards";
+import { getTranslations } from "next-intl/server";
 
 type Props = {
   status: string;
@@ -17,7 +18,7 @@ export default async function AuctionFilter({ status, page }: Props) {
     { label: "Upcoming", value: "upcoming" },
     { label: "Ended", value: "ended" },
   ];
-
+  const t = await getTranslations("auctionFilter");
   return (
     <div>
       <div className="flex justify-center mt-[22.5px] mb-10">
@@ -30,7 +31,7 @@ export default async function AuctionFilter({ status, page }: Props) {
                 key={tab.value}
                 href={`/?status=${tab.value}&page=1`}
                 className={`
-                px-21.5 py-6 rounded-full text-sm font-medium transition-all
+                md:px-21.5 md:py-6 rounded-full text-sm font-medium transition-all px-10 py-3
                 
                 ${
                   isActive
@@ -39,7 +40,7 @@ export default async function AuctionFilter({ status, page }: Props) {
                 }
               `}
               >
-                {tab.label}
+                {t(tab.value)}
               </Link>
             );
           })}
