@@ -9,7 +9,7 @@ type Props = {
 
 export default async function AuctionFilter({ status, page }: Props) {
   const { data } = await fetch(
-    `http://localhost:3001/auctions?status=${status}&_page=${page}&_per_page=10`,
+    `http://localhost:3001/auctions?status=${status}&_page=${page}&_per_page=8`,
     { cache: "no-store" },
   ).then((r) => r.json());
 
