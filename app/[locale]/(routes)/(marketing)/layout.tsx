@@ -1,4 +1,3 @@
-
 // Try this if your file is at components/Layout/Navbar/Navbar.tsx
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer/Footer";
@@ -13,8 +12,10 @@ export default async function layout({
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar locale={locale} />
-      <main className="flex-1">{children}</main>
-      <Footer />
+      <main className="flex-1 max-w-384 mx-auto">{children}</main>
+      <div className="max-w-384 mx-auto">
+        <Footer />
+      </div>
     </div>
   );
 }

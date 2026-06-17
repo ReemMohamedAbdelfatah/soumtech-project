@@ -191,11 +191,11 @@
     "auctionOpenTime": "Open Time",
     "auctionOver": "Auction Over"
   },
-   "Pagination": {
+  "Pagination": {
     "Previous": "Previous",
     "Next": "Next"
   },
- "AuctionStatusTabs": {
+  "AuctionStatusTabs": {
     "ariaLabel": "Filter auctions by status",
     "active": "Active",
     "upcoming": "Upcoming",
@@ -289,5 +289,10 @@
   "EndedAuctionDetails": {
     "ended": "Auction Ended",
     "registeredUsers": "Registered Auction Users"
+  },
+  "auctionFilter": {
+    "active": "Active",
+    "upcoming": "Upcoming",
+    "ended": "Ended"
   }
 }
