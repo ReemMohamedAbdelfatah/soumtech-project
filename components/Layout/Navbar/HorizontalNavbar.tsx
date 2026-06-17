@@ -18,9 +18,9 @@ type Props = {
 export default function HorizontalNavbar({ navbarData, locale }: Props) {
   return (
     <div className="flex flex-col">
-      <nav className="flex bg-[#171D5B] items-center w-full h-22 justify-between px-20">
+      <nav className="flex bg-[#171D5B] items-center w-full h-23 justify-between px-20">
         {/* Logo */}
-        <Logo variant="white" sizeClass="w-[100px]" />
+        <Logo variant="white" sizeClass="w-[90px]" />
         {/*Main LINKS */}
         <div className="flex items-center gap-10">
           {navbarData.links.map((link) => {
