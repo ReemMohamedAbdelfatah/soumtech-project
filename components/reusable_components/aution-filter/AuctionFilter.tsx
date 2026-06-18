@@ -9,7 +9,7 @@ type Props = {
 
 export default async function AuctionFilter({ status, page }: Props) {
   const { data } = await fetch(
-    `http://localhost:3001/auctions?status=${status}&_page=${page}&_per_page=10`,
+    `http://localhost:3001/auctions?status=${status}&_page=${page}&_per_page=8`,
     { cache: "no-store" },
   ).then((r) => r.json());
 
@@ -20,7 +20,7 @@ export default async function AuctionFilter({ status, page }: Props) {
   ];
   const t = await getTranslations("auctionFilter");
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className="flex justify-center mt-[22.5px] mb-10">
         <div className="flex bg-white shadow-md rounded-full p-1 border gap-1">
           {tabs.map((tab) => {
@@ -31,7 +31,7 @@ export default async function AuctionFilter({ status, page }: Props) {
                 key={tab.value}
                 href={`/?status=${tab.value}&page=1`}
                 className={`
-                md:px-21.5 md:py-6 rounded-full text-sm font-medium transition-all px-10 py-3
+                md:px-21.5 md:py-6 rounded-full text-sm font-medium transition-all px-7.5 py-[8.5px]
                 
                 ${
                   isActive
@@ -47,6 +47,16 @@ export default async function AuctionFilter({ status, page }: Props) {
         </div>
       </div>
       <FilterCards data={data} />
+      <Link
+        href={`/auctions/all-auctions`}
+        className={`
+                md:px-16.5 md:py-5 rounded-full text-sm font-medium transition-all px-9.5 py-[12.5px]
+                border border-[#EEA820]
+                mt-[40.5px] mb-16.75
+              `}
+      >
+        {t("allAuctions")}
+      </Link>
     </div>
   );
 }

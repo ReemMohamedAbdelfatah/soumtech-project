@@ -291,6 +291,7 @@
   "auctionFilter": {
     "active": "القائمة",
     "upcoming": "القادمة",
-    "ended": "المنتهي"
+    "ended": "المنتهي",
+    "allAuctions": "جميع المزادات"
   }
 }

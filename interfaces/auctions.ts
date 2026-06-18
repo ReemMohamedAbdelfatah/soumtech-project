@@ -1,4 +1,5 @@
 export interface AuctionCardProps {
+  id: number;
   title: string;
   imageSrc: string;
   logoSrc: string;
