@@ -75,10 +75,12 @@
     "forgotPassword": "نسيت كلمة المرور",
     "register": "تسجيل حساب من خلال إنفاذ"
   },
-  "auctionsPage": {
+  "AuctionsBanner": {
     "title": "المزادات",
+    "allAuctions": "كل المزادات",
     "description": "تصفح المزادات المتاحة",
     "searchPlaceholder": "ابحث عن مزاد...",
+    "AuctionCountLabel": "عدد المزادات القائمة",
     "assetsCountLabel": "عدد الأصول"
   },
   "auctionCard": {
@@ -291,7 +293,9 @@
   "auctionFilter": {
     "active": "القائمة",
     "upcoming": "القادمة",
-    "ended": "المنتهي",
-    "allAuctions": "جميع المزادات"
+    "ended": "المنتهي"
+  },
+  "home":{
+  "allAuctions": "جميع المزادات"
   }
 }

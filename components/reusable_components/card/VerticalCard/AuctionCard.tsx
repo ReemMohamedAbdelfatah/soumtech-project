@@ -1,22 +1,24 @@
-
-
-
-import { useTranslations } from "next-intl";
-import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardFooter,
+} from "@/components/ui/card";
 import AuctionButton from "../shared/AuctionButton";
 import AuctionImage from "../shared/AuctionImage";
 import AuctionStatus from "../shared/AuctionStatus";
 import AuctionHeader from "../shared/AuctionHeader";
 import AuctionPrice from "../shared/AuctionPrice";
 import styles from "./AuctionCard.module.css";
-
+import { get } from "http";
+import { getTranslations } from "next-intl/server";
 
 export interface AuctionCardProps {
   title: string;
   imageSrc: string;
   logoSrc: string;
   assetsCount?: number;
-  status: "active"| "upcoming"| "ended";
+  status: "active" | "upcoming" | "ended";
   endDate: string | Date;
   detailsUrl?: string;
   location?: string;
@@ -29,28 +31,28 @@ export interface AuctionCardProps {
   };
 }
 
-export default function AuctionCard({
+export default async function AuctionCard({
   title,
   imageSrc,
   logoSrc,
   assetsCount,
-  status = 'active',
+  status = "active",
   endDate,
-  detailsUrl = '#',
+  detailsUrl = "#",
   location,
   area,
   auctionDate,
   auctionTime,
   priceInfo,
 }: AuctionCardProps) {
-  const t = useTranslations("auctionCard");
+  const t = await getTranslations("auctionCard");
 
   return (
     <Card className={styles.cardContainer}>
       <div className={styles.innerWrapper}>
         <CardHeader className={styles.headerContainer}>
           <AuctionImage
-          status={status}
+            status={status}
             imageSrc={imageSrc}
             title={title}
             location={location}
@@ -76,7 +78,10 @@ export default function AuctionCard({
         <CardFooter className={styles.footerContainer}>
           {priceInfo ? (
             <div className={styles.priceColumn}>
-              <AuctionPrice amount={priceInfo.amount} subText={priceInfo.subText} />
+              <AuctionPrice
+                amount={priceInfo.amount}
+                subText={priceInfo.subText}
+              />
             </div>
           ) : assetsCount !== undefined ? (
             <div className={styles.footerInfoColumn}>
@@ -88,7 +93,8 @@ export default function AuctionCard({
           )}
 
           <div className={styles.buttonColumn}>
-            <AuctionButton href={detailsUrl} />
+            {/* <AuctionButton href={detailsUrl} /> */}
+            <AuctionButton href={"/auctions/all-auctions"} />
           </div>
         </CardFooter>
       </div>
