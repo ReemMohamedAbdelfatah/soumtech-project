@@ -9,7 +9,7 @@ interface VerticalAuctionGridProps {
 
 export default function VerticalAuctionGrid({ auctions }: VerticalAuctionGridProps) {
   return (
-    <div style={{border:"1px solid red"}} className="grid grid-cols-1 min-[700px]:grid-cols-2 min-[1040px]:grid-cols-3 min-[1380px]:grid-cols-4 gap-[15px] min-[1040px]:gap-[21px] w-full lg:max-w-[1352px] mx-auto px-4 py-8">
+    <div  className="grid grid-cols-1 min-[700px]:grid-cols-2 min-[1040px]:grid-cols-3 min-[1380px]:grid-cols-4 gap-[15px] min-[1040px]:gap-[21px] w-full lg:max-w-[1352px] mx-auto px-4 py-8">
       {auctions.map((auction) => (
         <AuctionCard key={auction.id} {...auction} />
       ))}

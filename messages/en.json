@@ -53,10 +53,12 @@
     "forgotPassword": "Forgot Password",
     "register": "Create Account"
   },
-  "auctionsPage": {
+  "AuctionsBanner": {
     "title": "Auctions",
+    "allAuctions":  "All Auctions",
     "description": "Browse available auctions",
     "searchPlaceholder": "Search for an auction...",
+    "AuctionCountLabel": "Auctions Count",
     "assetsCountLabel": "Assets Count"
   },
   "auctionCard": {
@@ -293,7 +295,9 @@
   "auctionFilter": {
     "active": "Active",
     "upcoming": "Upcoming",
-    "ended": "Ended",
-    "allAuctions": "All Auctions"
+    "ended": "Ended"
+  },
+   "home":{
+  "allAuctions": "All Auctions"
   }
 }

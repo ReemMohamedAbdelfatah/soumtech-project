@@ -5,9 +5,10 @@ import { getTranslations } from "next-intl/server";
 type Props = {
   status: string;
   page: number;
+  mypage?: string
 };
 
-export default async function AuctionFilter({ status, page }: Props) {
+export default async function AuctionFilter({ status, page, mypage="" }: Props) {
   const { data } = await fetch(
     `http://localhost:3001/auctions?status=${status}&_page=${page}&_per_page=8`,
     { cache: "no-store" },
@@ -29,7 +30,7 @@ export default async function AuctionFilter({ status, page }: Props) {
             return (
               <Link
                 key={tab.value}
-                href={`/?status=${tab.value}&page=1`}
+                href={`/${mypage}?status=${tab.value}&page=1`}
                 className={`
                 md:px-21.5 md:py-6 rounded-full text-sm font-medium transition-all px-7.5 py-[8.5px]
                 
@@ -47,16 +48,7 @@ export default async function AuctionFilter({ status, page }: Props) {
         </div>
       </div>
       <FilterCards data={data} />
-      <Link
-        href={`/auctions/all-auctions`}
-        className={`
-                md:px-16.5 md:py-5 rounded-full text-sm font-medium transition-all px-9.5 py-[12.5px]
-                border border-[#EEA820]
-                mt-[40.5px] mb-16.75
-              `}
-      >
-        {t("allAuctions")}
-      </Link>
+      
     </div>
   );
 }
