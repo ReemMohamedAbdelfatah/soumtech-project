@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TextUnderLine from "@/components/reusable_components/TextUnderLine";
+
 interface AuctionBannerProps {
   bannerTitle: string;
   title: string;
@@ -16,53 +17,67 @@ export default function AuctionBanner({
   assetsCount,
   assetsCountLabel,
   icon: Icon,
-  logo1Src = "/dummy/infath-logo.svg",
-  logo2Src = "/image3.png",
+  logo1Src = "/Images/Logos/REGA-Logo.png",
+  logo2Src = "/dummy/infath-logo.svg",
 }: AuctionBannerProps) {
+  const isDefaultLogo = logo1Src === "/Images/Logos/REGA-Logo.png";
+
   return (
-    <div className="flex flex-col w-full">
-      <TextUnderLine
-        text={bannerTitle}
-        fontSize="text-2xl md:text-3xl font-bold"
-      />
-      <div className="w-full min-h-[95px] md:min-h-[115px] bg-[#F3F4F6] dark:bg-[#121824] rounded-[15px] flex flex-row justify-between items-center gap-3 border border-gray-100 dark:border-gray-800 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
-        {/* Text */}
-        <div className="text-right flex flex-col gap-0.5 min-w-0 px-3">
-          <h3 className="text-sm xs:text-base sm:text-xl md:text-2xl font-extrabold text-primary mb-2 truncate transition-colors duration-200 ease-in-out">
-            {title}
-          </h3>
-
-          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs md:text-[16px] font-bold ">
-            {Icon}
-            <span className="text-gray-500 dark:text-gray-400 font-semibold">
-              {assetsCountLabel}
-            </span>
-
-            <span className="text-[#DC5224]">({assetsCount})</span>
-          </div>
+    <section className="flex w-full flex-col">
+      {/* Banner Title */}
+      <div className="w-full px-3 md:px-20">
+        <div className="mx-auto max-w-338">
+          <TextUnderLine
+            text={bannerTitle}
+            fontSize="text-2xl md:text-4xl font-bold"
+          />
         </div>
+      </div>
 
-        {/* Logos */}
-        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-          <div className="relative w-[75px] sm:w-[105px] md:w-[125px] h-[40px] sm:h-[50px] md:h-[60px]">
-            <Image
-              src={logo1Src}
-              alt="Logo 1"
-              fill
-              className="object-contain"
-            />
+      {/* Content */}
+      <div className="w-full overflow-hidden bg-border shadow-[0_15px_40px_rgba(0,0,0,0.03)] px-3 md:px-20">
+        <div className="mx-auto flex max-w-338 items-center justify-between  py-4 md:min-h-28.75 ">
+          {/* Text */}
+          <div className="flex flex-col gap-2">
+            <h3 className="truncate text-sm font-extrabold text-primary transition-colors duration-200 ease-in-out xs:text-base sm:text-xl md:text-2xl">
+              {title}
+            </h3>
+
+            <div className="flex items-center gap-1.5 text-[10px] font-bold sm:gap-2 sm:text-xs md:text-base">
+              {Icon}
+
+              <span className="font-semibold text-gray-500 dark:text-gray-400">
+                {assetsCountLabel}
+              </span>
+
+              <span className="text-[#DC5224]">({assetsCount})</span>
+            </div>
           </div>
 
-          <div className="relative w-[60px] sm:w-[85px] md:w-[105px] h-[40px] sm:h-[50px] md:h-[60px]">
-            <Image
-              src={logo2Src}
-              alt="Logo 2"
-              fill
-              className="object-contain"
-            />
+          {/* Logos */}
+          <div className="flex shrink-0 items-center gap-2 sm:gap-4">
+            <div className="relative h-10 w-18.75 sm:h-12.5 sm:w-26.25 md:h-15 md:w-31.25">
+              <Image
+                src={logo1Src}
+                alt="Logo 1"
+                fill
+                className={`object-contain ${
+                  isDefaultLogo ? "invert dark:invert-0" : ""
+                }`}
+              />
+            </div>
+
+            <div className="relative h-10 w-15 sm:h-12.5 sm:w-21.25 md:h-15 md:w-26.25">
+              <Image
+                src={logo2Src}
+                alt="Logo 2"
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

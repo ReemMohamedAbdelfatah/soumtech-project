@@ -32,12 +32,12 @@ export default async function AuctionFilter({ status, page, mypage="" }: Props) 
                 key={tab.value}
                 href={`/${mypage}?status=${tab.value}&page=1`}
                 className={`
-                md:px-21.5 md:py-6 rounded-full text-sm font-medium transition-all px-7.5 py-[8.5px]
+                rounded-full text-xl font-medium transition-all px-7.5 md:px-21.5 py-2 md:py-4  
                 
                 ${
                   isActive
-                    ? "bg-[#DC5224] text-white! shadow"
-                    : "text-gray-700 hover:bg-gray-100"
+                    ? "bg-[#DC5224] text-white!  shadow"
+                    : "text-gray-700 dark:text-black! hover:bg-gray-100"
                 }
               `}
               >

@@ -50,8 +50,9 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="px-4 md:px-20 py-5">
-      <div className="flex flex-col lg:flex-row md:justify-between gap-5 lg:gap-10">
+    <footer className="py-5  px-3 md:px-20">
+      <div className="max-w-338 mx-auto">
+      <div className="flex flex-col lg:flex-row md:justify-between gap-5 lg:gap-40.25">
         {/* 1st column */}
         <div className="flex flex-col mb-5 lg:mb-0">
           <Logo sizeClass="w-[100px] md:w-[120px]" followTheme />
@@ -74,6 +75,7 @@ export default async function Footer() {
           {t("bottom.Description")} {currentYear}
         </p>
       </div>
+      </div>
     </footer>
   );
 }
@@ -90,8 +92,8 @@ function FooterColumn({ title, items }: { title: string; items: FooterItem[] }) 
       {items.map((item) => {
         if (item.href) {
           return (
-            <Link key={item.href} href={item.href} className="w-fit mt-3">
-              <div className="flex items-center gap-2">
+            <Link key={item.href} href={item.href} className=" mt-3">
+              <div className=" w-full flex items-center gap-2">
                 {item.icon && <item.icon size={25} className="text-muted-foreground" />}
                 <p className="text-lg text-muted-foreground hover:text-secondary transition-colors">
                   {item.title}
@@ -101,7 +103,7 @@ function FooterColumn({ title, items }: { title: string; items: FooterItem[] }) 
           );
         }
         return (
-          <div key={item.title} className="flex items-center gap-2 mt-3">
+          <div key={item.title} className="w-full flex items-center gap-2 mt-3">
             {item.icon && <item.icon size={25} className="text-muted-foreground" />}
             <p className="text-lg text-muted-foreground">{item.title}</p>
           </div>

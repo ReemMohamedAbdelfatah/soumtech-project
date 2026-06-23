@@ -7,7 +7,7 @@ interface FilterCardsProps {
 export default function FilterCards({ data }: FilterCardsProps) {
   console.log(data);
   return (
-    <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-w-full">
+    <div className=" w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 min-w-full gap-5">
       {data?.map((card) => (
         <AuctionCard key={card.id} {...card} />
       ))}

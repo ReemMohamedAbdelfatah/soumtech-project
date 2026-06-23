@@ -7,6 +7,7 @@ import ThemeToggle from "@/features/theme/components/theme-toggle";
 import AuctionFilter from "@/components/reusable_components/aution-filter/AuctionFilter";
 import HeroBanner from "@/components/shared/HeroBanner";
 import CompanyLogosSection from "@/components/shared/CompanyLogosSection";
+import TextUnderLine from "@/components/reusable_components/TextUnderLine";
 //------------
 export default async function Home({
   searchParams,
@@ -20,10 +21,14 @@ export default async function Home({
   const t = await getTranslations("home");
   const params = await searchParams;
   return (
-    <div className=" px-3 md:px-20 py-3 md:py-5">
+    <div className=" px-3 md:px-20 py-3 md:py-5 text-5xl ">
+      <div className="max-w-338 mx-auto ">
       <HeroBanner />
       <CompanyLogosSection />
-      <ThemeToggle />
+      <TextUnderLine
+        text={t("Auction")}
+        fontSize="text-2xl md:text-[40px] font-bold mt:2 md:mt-[46.5px]"
+      />
       <AuctionFilter
         status={params.status ?? "active"}
         page={Number(params.page ?? 1)}
@@ -36,6 +41,7 @@ export default async function Home({
         className={`${BtnStyles}`} > 
         {t("allAuctions")}
       </Link>
+      </div>
       </div>
     </div>
   );

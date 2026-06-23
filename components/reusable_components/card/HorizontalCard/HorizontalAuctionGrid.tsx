@@ -10,7 +10,7 @@ interface HorizontalAuctionGridProps {
 
 export default function HorizontalAuctionGrid({ auctions }: HorizontalAuctionGridProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[15px] w-full mx-auto px-4 py-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3.75 w-full mx-auto ">
       {auctions.map((auction) => (
         <HorizontalAuctionCard key={auction.id} {...auction} />
       ))}

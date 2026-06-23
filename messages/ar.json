@@ -296,6 +296,7 @@
     "ended": "المنتهي"
   },
   "home":{
-  "allAuctions": "جميع المزادات"
+  "allAuctions": "جميع المزادات",
+  "Auction": "المزادات"
   }
 }

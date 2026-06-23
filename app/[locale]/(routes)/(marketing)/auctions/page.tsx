@@ -16,37 +16,36 @@ export default async function AuctionsPage({
     status?: string;
   }>;
 }) {
-   const t = await getTranslations("AuctionsBanner");
+  const t = await getTranslations("AuctionsBanner");
 
   const response = await fetch(
     "http://localhost:3001/auctions?status=active&_page=1&_per_page=8",
-    { cache: "no-store" }
+    { cache: "no-store" },
   );
   const { data, items } = await response.json();
   const params = await searchParams;
   return (
-    <div className="min-h-screen bg-[#f7f9fc] dark:bg-[#0b0f19] text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className="min-h-screen w-full  ">
       {/* Main Section */}
-      <main className="max-w-[1352px] mx-auto px-4 py-12 flex flex-col gap-8">
+      <main className=" flex flex-col">
         {/* Title and Banner */}
-        <AuctionBanner 
+        <AuctionBanner
           bannerTitle={t("title")}
           title={t("allAuctions")}
           assetsCount={items}
           assetsCountLabel={t("assetsCountLabel")}
-          icon={<Image
-          src={Gavel}
-          alt="Gavel icon"
-          width={18}
-          height={18}
-         />}
+          icon={<Image src={Gavel} alt="Gavel icon" width={18} height={18} />}
         />
         {/* Dynamic Responsive Auction Grid */}
-        <AuctionFilter
-          status={params.status ?? "active"}
-          page={Number(params.page ?? 1)}
-          mypage="auctions"
-        />
+        <div className="w-full px-3 md:px-20">
+          <div className=" max-w-338 mx-auto">
+            <AuctionFilter
+              status={params.status ?? "active"}
+              page={Number(params.page ?? 1)}
+              mypage="auctions"
+            />
+          </div>
+        </div>
       </main>
     </div>
   );

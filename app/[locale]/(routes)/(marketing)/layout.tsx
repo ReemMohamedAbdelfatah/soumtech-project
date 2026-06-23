@@ -10,12 +10,10 @@ export default async function layout({
 }) {
   const locale = await getLocale();
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col justify-center min-h-screen">
       <Navbar locale={locale} />
-      <main className="flex-1 max-w-384 mx-auto">{children}</main>
-      <div className="max-w-384 mx-auto">
+      <main className="flex-1 ">{children}</main>
         <Footer />
-      </div>
     </div>
   );
 }
