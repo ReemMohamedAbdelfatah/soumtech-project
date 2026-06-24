@@ -25,7 +25,7 @@ export default function AuctionBanner({
   return (
     <section className="flex w-full flex-col">
       {/* Banner Title */}
-      <div className="w-full px-3 md:px-20">
+      <div className="w-full px-3  md:px-20">
         <div className="mx-auto max-w-338">
           <TextUnderLine
             text={bannerTitle}
