@@ -22,11 +22,11 @@ export default async function Navbar({ locale }: Props) {
     <>
       {/* Mobile */}
       <div className="block md:hidden">
-      <div className=" flex  w-full  justify-between items-center px-3 py-3">
-        <Logo sizeClass="w-[70px]" followTheme />
-        <VerticalNavbar navbarData={navbarData} followTheme />
-      </div>
-{/* Line */}
+        <div className="flex w-full justify-between items-center px-3 py-3">
+          <Logo sizeClass="w-[70px]" followTheme />
+          <VerticalNavbar navbarData={navbarData} followTheme />
+        </div>
+        {/* Line */}
         <div className="mt-1 mb-4 h-px w-full bg-[#5757577c]" />
       </div>
       {/* Disctop */}

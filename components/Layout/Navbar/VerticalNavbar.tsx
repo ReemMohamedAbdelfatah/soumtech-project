@@ -58,7 +58,7 @@ export default function VerticalNavbar({
     <div className={className}>
       <Drawer direction="top">
         {/* Trigger */}
-        <DrawerTrigger className="flex items-center ">
+        <DrawerTrigger className="flex items-center">
           <TextAlignJustify className={`${iconColor} ${iconClassName ?? ""}`} />
         </DrawerTrigger>
 

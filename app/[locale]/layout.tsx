@@ -5,12 +5,12 @@ import ThemeProvider from "@/features/theme/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Cairo, Inter } from "next/font/google";
-
-const cairo = Cairo({
-  subsets: ["arabic"],
-  variable: "--font-cairo",
-  weight: ["400", "500", "600", "700", "800"],
-});
+import { dinNext } from "@/fonts";
+// const cairo = Cairo({
+//   subsets: ["arabic"],
+//   variable: "--font-cairo",
+//   weight: ["400", "500", "600", "700", "800"],
+// });
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,9 +37,14 @@ export default async function RootLayout({
       lang={locale}
       dir={isRTL ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${cairo.variable} ${inter.variable}`}
+      className={`${dinNext.variable} ${inter.variable}`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col">
+      <body
+        suppressHydrationWarning
+        className={`min-h-full flex flex-col ${
+          isRTL ? "font-(--font-din-next)" : "font-(--font-inter)"
+        }`}
+      >
         <StoreProvider>
           <ThemeProvider>
             <NextIntlClientProvider locale={locale} messages={messages}>

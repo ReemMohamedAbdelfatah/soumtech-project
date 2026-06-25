@@ -13,7 +13,7 @@ export default async function layout({
     <div className="flex flex-col min-h-screen">
       <Navbar locale={locale} />
       <main className="flex-1 max-w-384 mx-auto">{children}</main>
-      <div className="max-w-384 mx-auto">
+      <div>
         <Footer />
       </div>
     </div>

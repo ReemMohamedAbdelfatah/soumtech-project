@@ -47,9 +47,9 @@ export default async function HeroBanner() {
         <Image
           src={REGALogo}
           alt="الهيئة العامة للعقار"
-          className="object-contain "
+          className="object-contain"
         />
-        <Image src={InfathLogo} alt="إنفاذ" className="object-contain " />
+        <Image src={InfathLogo} alt="إنفاذ" className="object-contain" />
       </div>
     </div>
   );

@@ -9,8 +9,12 @@ import HeroBanner from "@/components/shared/HeroBanner";
 import CompanyLogosSection from "@/components/shared/CompanyLogosSection";
 //------------
 export default async function Home({
+  params,
   searchParams,
 }: {
+  params: Promise<{
+    locale: "en" | "ar";
+  }>;
   searchParams: Promise<{
     page?: string;
     status?: string;
@@ -18,24 +22,25 @@ export default async function Home({
 }) {
   const BtnStyles = `md:px-16.5 md:py-5 rounded-full text-sm font-medium transition-all px-9.5 py-[12.5px]  border border-[#EEA820] mt-[40.5px] mb-16.75`;
   const t = await getTranslations("home");
-  const params = await searchParams;
+  const routeParams = await params;
+  const queryParams = await searchParams;
+  console.log("searchparams:", queryParams);
+  console.log("params:", routeParams);
   return (
-    <div className=" px-3 md:px-20 py-3 md:py-5">
+    <div className="px-3 md:px-20 py-3 md:py-5">
       <HeroBanner />
       <CompanyLogosSection />
       <ThemeToggle />
       <AuctionFilter
-        status={params.status ?? "active"}
-        page={Number(params.page ?? 1)}
-        
+        status={queryParams.status ?? "active"}
+        page={Number(queryParams.page ?? 1)}
+        locale={routeParams.locale ?? "ar"}
       />
       {/* Button for all auctions */}
       <div className="flex flex-col items-center">
-    <Link 
-        href={`/auctions`}
-        className={`${BtnStyles}`} > 
-        {t("allAuctions")}
-      </Link>
+        <Link href={`/auctions`} className={`${BtnStyles}`}>
+          {t("allAuctions")}
+        </Link>
       </div>
     </div>
   );

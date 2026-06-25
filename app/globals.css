@@ -228,3 +228,11 @@ body {
     border-color: #262626;
   }
 }
+
+html[lang="ar"] body {
+  font-family: var(--font-din-next);
+}
+
+html[lang="en"] body {
+  font-family: var(--font-inter);
+}

@@ -5,10 +5,16 @@ import { getTranslations } from "next-intl/server";
 type Props = {
   status: string;
   page: number;
-  mypage?: string
+  mypage?: string;
+  locale: "en" | "ar";
 };
 
-export default async function AuctionFilter({ status, page, mypage="" }: Props) {
+export default async function AuctionFilter({
+  status,
+  page,
+  mypage = "",
+  locale,
+}: Props) {
   const { data } = await fetch(
     `http://localhost:3001/auctions?status=${status}&_page=${page}&_per_page=8`,
     { cache: "no-store" },
@@ -20,6 +26,7 @@ export default async function AuctionFilter({ status, page, mypage="" }: Props) 
     { label: "Ended", value: "ended" },
   ];
   const t = await getTranslations("auctionFilter");
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex justify-center mt-[22.5px] mb-10">
@@ -47,8 +54,7 @@ export default async function AuctionFilter({ status, page, mypage="" }: Props) 
           })}
         </div>
       </div>
-      <FilterCards data={data} />
-      
+      <FilterCards data={data} locale={locale} />
     </div>
   );
 }
