@@ -20,6 +20,7 @@ interface PreviewCardProps {
   auctionStartDate: Date;
   auctionFinishDate: Date;
   status: "active" | "upcoming" | "ended";
+  premisesAmount: number;
   locale: "en" | "ar";
 }
 
@@ -33,6 +34,7 @@ export default function PreviewCard({
   auctionStartDate,
   auctionFinishDate,
   status,
+  premisesAmount,
 }: PreviewCardProps) {
   return (
     <Card className="p-2.5">
@@ -64,7 +66,9 @@ export default function PreviewCard({
       <CardFooter className="flex justify-between gap-2 px-0 bg-white border-none">
         <div className="flex flex-col items-center flex-1/2">
           <span className="font-bold text-[16.76px] text-ring">عدد الأصول</span>
-          <span className="font-bold text-[18.76px] text-secondary">5</span>
+          <span className="font-bold text-[18.76px] text-secondary">
+            {premisesAmount}
+          </span>
         </div>
         <Button className="h-auto flex-1/2 text-[13px] py-[14.5px] px-11.5 font-medium bg-secondary">
           تفاضيل المزاد
