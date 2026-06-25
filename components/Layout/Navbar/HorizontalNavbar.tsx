@@ -8,6 +8,9 @@ import { INavbarData } from "@/src/types/types";
 import { CircleUser } from "lucide-react";
 //Components
 import ActiveLinkIndicator from "./ActiveLinkIndicator";
+import ThemeToggle from "@/features/theme/components/theme-toggle";
+import LanguageSwitcher from "@/features/theme/components/LanguageSwitcher";
+
 //-----------------------------
 type Props = {
   navbarData: INavbarData;
@@ -17,33 +20,41 @@ type Props = {
 //----------------------------
 export default function HorizontalNavbar({ navbarData, locale }: Props) {
   return (
-    <div className="flex flex-col">
-      <nav className="flex bg-[#171D5B] items-center w-full h-23 justify-between px-20">
-        {/* Logo */}
-        <Logo variant="white" sizeClass="w-[90px]" />
-        {/*Main LINKS */}
-        <div className="flex items-center gap-10">
-          {navbarData.links.map((link) => {
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative text-[1.3rem] text-white!`}
-              >
-                {link.title}
-                <ActiveLinkIndicator href={link.href} locale={locale} />
-              </Link>
-            );
-          })}
+    <div className="flex flex-col ">
+      <nav className="flex bg-[#171D5B] h-23 px-20 ">
+        <div className="grid grid-cols-3 items-center w-full max-w-338 mx-auto ">
+          {/* Logo */}
+          <div className="justify-self-start">
+            <Logo variant="white" sizeClass="w-[87px]" />
+          </div>
+          {/*Main LINKS */}
+          <div className="flex items-center justify-self-center gap-10 ">
+            {navbarData.links.map((link) => {
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative text-[1.3rem] text-white!`}
+                >
+                  {link.title}
+                  <ActiveLinkIndicator href={link.href} locale={locale} />
+                </Link>
+              );
+            })}
+          </div>
+          <div className="flex items-center justify-self-end   gap-1">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            {/* Login Link */}
+            <Link
+              href={navbarData.login.href}
+              className="text-white! flex items-center no-underline text-[1.3rem] gap-1"
+            >
+              <CircleUser className="size-6 text-white" />
+              {navbarData.login.title}
+            </Link>
+          </div>
         </div>
-        {/* Login Link */}
-        <Link
-          href={navbarData.login.href}
-          className="text-white! flex items-center no-underline text-[1.3rem] gap-1"
-        >
-          <CircleUser className="size-6 text-white" />
-          {navbarData.login.title}
-        </Link>
       </nav>
       {/* bottom curve */}
       <div className="relative w-full h-7 bg-[#171D5B]">

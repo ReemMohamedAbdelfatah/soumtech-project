@@ -298,6 +298,7 @@
     "ended": "Ended"
   },
    "home":{
-  "allAuctions": "All Auctions"
+  "allAuctions": "All Auctions",
+  "Auction": "Auctions"
   }
 }

@@ -10,18 +10,18 @@ export default function ContactPage() {
   const t = useTranslations("ContactPage");
   return (
     <div className="w-full h-full  px-3 md:px-20 py-3">
-      <header className="mb-2 md:mb-5">
-        <TextUnderLine
-          text={t("title")}
-          fontSize="text-2xl md:text-3xl font-bold"
-        />
-      </header>
+      <div className=" max-w-338 mx-auto">
+        <header className="mb-2 md:mb-5">
+          <TextUnderLine
+            text={t("title")}
+            fontSize="text-2xl md:text-3xl font-bold"
+          />
+        </header>
 
-      <FormLayout borderRadius={20} logoSize="w-[100px] md:w-[150px] pt-3">
-        
+        <FormLayout borderRadius={20} logoSize="w-[100px] md:w-[150px] pt-3">
           <ContactFormView />
-       
-      </FormLayout>
+        </FormLayout>
+      </div>
     </div>
   );
 }

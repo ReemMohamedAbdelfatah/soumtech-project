@@ -7,6 +7,7 @@ import ThemeToggle from "@/features/theme/components/theme-toggle";
 import AuctionFilter from "@/components/reusable_components/aution-filter/AuctionFilter";
 import HeroBanner from "@/components/shared/HeroBanner";
 import CompanyLogosSection from "@/components/shared/CompanyLogosSection";
+import TextUnderLine from "@/components/reusable_components/TextUnderLine";
 //------------
 export default async function Home({
   params,
@@ -30,7 +31,10 @@ export default async function Home({
     <div className="px-3 md:px-20 py-3 md:py-5">
       <HeroBanner />
       <CompanyLogosSection />
-      <ThemeToggle />
+      <TextUnderLine
+        text={t("Auction")}
+        fontSize="text-2xl md:text-[40px] font-bold mt:2 md:mt-[46.5px]"
+      />
       <AuctionFilter
         status={queryParams.status ?? "active"}
         page={Number(queryParams.page ?? 1)}

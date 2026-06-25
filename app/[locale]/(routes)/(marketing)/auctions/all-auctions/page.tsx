@@ -20,7 +20,7 @@ export default async function Page({ searchParams }: Props) {
   const { data, items } = await response.json();
   // console.log(items);
   return (
-    <>
+    <div>
       <AuctionBanner
         bannerTitle={t("title")}
         title={data.title}
@@ -28,7 +28,11 @@ export default async function Page({ searchParams }: Props) {
         assetsCountLabel={t("assetsCountLabel")}
         icon={<Image src={building} alt="Gavel icon" width={18} height={18} />}
       />
-      <Display page={params.page || "1"} view={params.view || "grid"} />
-    </>
+      <div className="w-full px-3 md:px-20">
+        <div className=" max-w-338 mx-auto">
+          <Display page={params.page || "1"} view={params.view || "grid"} />
+        </div>
+      </div>
+    </div>
   );
 }

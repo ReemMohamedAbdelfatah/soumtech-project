@@ -54,9 +54,9 @@ const t = await getTranslations("grid");
 ] as const;
   //---------------------------------
   return (
-    <div className="flex w-full flex-col gap-7 items-center px-3 md:px-20">
+    <div className="flex w-full flex-col gap-7 items-center ">
       {/* Buttons container */}
-        <div className="flex justify-start w-full gap-2 mt-3">
+        <div className="flex justify-start w-full gap-2 mt-8.5">
           {views.map((item) => {
             const Icon = item.icon;
             return (
