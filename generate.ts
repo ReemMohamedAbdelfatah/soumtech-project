@@ -22,87 +22,33 @@ const cities = [
 ];
 
 const auctionNames = [
-  {
-    en: "Al Andalus Residential Building",
-    ar: "عمارة سكنية الأندلس",
-  },
-  {
-    en: "Al Narjis Residential Building",
-    ar: "عمارة سكنية النرجس",
-  },
-  {
-    en: "Al Yasmin Residential Building",
-    ar: "عمارة سكنية الياسمين",
-  },
-  {
-    en: "Olaya Commercial Complex",
-    ar: "مجمع تجاري العليا",
-  },
-  {
-    en: "Al Rimal Residential Land",
-    ar: "أرض سكنية الرمال",
-  },
-  {
-    en: "Luxury Villa in Al Malqa",
-    ar: "فيلا فاخرة الملقا",
-  },
-  {
-    en: "Gulf Business Tower",
-    ar: "برج الأعمال الخليج",
-  },
-  {
-    en: "Industrial City Warehouses",
-    ar: "مستودعات المدينة الصناعية",
-  },
-  {
-    en: "Al Rawdah Investment Building",
-    ar: "عمارة استثمارية الروضة",
-  },
-  {
-    en: "Qurtubah Commercial Land",
-    ar: "أرض تجارية قرطبة",
-  },
-  {
-    en: "Hittin Villa Compound",
-    ar: "مجمع فلل حطين",
-  },
-  {
-    en: "Al Yarmouk Shopping Center",
-    ar: "مركز تجاري اليرموك",
-  },
-  {
-    en: "Al Aqiq Residential Building",
-    ar: "عمارة سكنية العقيق",
-  },
-  {
-    en: "Al Sahafah Development Land",
-    ar: "أرض تطويرية الصحافة",
-  },
-  {
-    en: "Al Muruj Residential Tower",
-    ar: "برج سكني المروج",
-  },
-  {
-    en: "Al Taawun Office Complex",
-    ar: "مجمع مكاتب التعاون",
-  },
-  {
-    en: "Beachfront Residential Villa",
-    ar: "فيلا سكنية الشاطئ",
-  },
-  {
-    en: "Al Rabwah Residential Building",
-    ar: "عمارة سكنية الربوة",
-  },
-  {
-    en: "Al Waha Investment Land",
-    ar: "أرض استثمارية الواحة",
-  },
-  {
-    en: "Al Nakheel Commercial Complex",
-    ar: "مجمع تجاري النخيل",
-  },
+  { en: "Al Andalus Residential Building", ar: "عمارة سكنية الأندلس" },
+  { en: "Al Narjis Residential Building", ar: "عمارة سكنية النرجس" },
+  { en: "Al Yasmin Residential Building", ar: "عمارة سكنية الياسمين" },
+  { en: "Olaya Commercial Complex", ar: "مجمع تجاري العليا" },
+  { en: "Al Rimal Residential Land", ar: "أرض سكنية الرمال" },
+  { en: "Luxury Villa in Al Malqa", ar: "فيلا فاخرة الملقا" },
+  { en: "Gulf Business Tower", ar: "برج الأعمال الخليج" },
+  { en: "Industrial City Warehouses", ar: "مستودعات المدينة الصناعية" },
+  { en: "Al Rawdah Investment Building", ar: "عمارة استثمارية الروضة" },
+  { en: "Qurtubah Commercial Land", ar: "أرض تجارية قرطبة" },
+  { en: "Hittin Villa Compound", ar: "مجمع فلل حطين" },
+  { en: "Al Yarmouk Shopping Center", ar: "مركز تجاري اليرموك" },
+  { en: "Al Aqiq Residential Building", ar: "عمارة سكنية العقيق" },
+  { en: "Al Sahafah Development Land", ar: "أرض تطويرية الصحافة" },
+  { en: "Al Muruj Residential Tower", ar: "برج سكني المروج" },
+  { en: "Al Taawun Office Complex", ar: "مجمع مكاتب التعاون" },
+  { en: "Beachfront Residential Villa", ar: "فيلا سكنية الشاطئ" },
+  { en: "Al Rabwah Residential Building", ar: "عمارة سكنية الربوة" },
+  { en: "Al Waha Investment Land", ar: "أرض استثمارية الواحة" },
+  { en: "Al Nakheel Commercial Complex", ar: "مجمع تجاري النخيل" },
 ];
+
+function randomDateBetween(start, end) {
+  return new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime()),
+  );
+}
 
 const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
   const status = statuses[auctionIndex % statuses.length];
@@ -146,6 +92,16 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
   const premises = Array.from({ length: 50 }, (_, premiseIndex) => {
     const city = cities[Math.floor(Math.random() * cities.length)];
 
+    const premiseStartDate = randomDateBetween(
+      auctionStartDate,
+      auctionFinishDate,
+    );
+
+    const premiseFinishDate = randomDateBetween(
+      premiseStartDate,
+      auctionFinishDate,
+    );
+
     return {
       uuid: crypto.randomUUID(),
       id: premiseIndex + 1,
@@ -166,7 +122,10 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
       assetsCount: Math.floor(Math.random() * 50) + 1,
 
       status,
-      endDate: auctionFinishDate.toISOString(),
+
+      premiseStartDate: premiseStartDate.toISOString(),
+      premiseFinishDate: premiseFinishDate.toISOString(),
+
       detailsUrl: `/auctions/${auctionIndex + 1}`,
 
       location: {
@@ -175,14 +134,6 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
       },
 
       area: `${Math.floor(Math.random() * 400) + 50} m²`,
-
-      auctionDate: auctionStartDate.toISOString().split("T")[0],
-
-      auctionTime: auctionStartDate.toLocaleTimeString("en-US", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }),
 
       priceInfo: {
         amount: `$${(Math.floor(Math.random() * 90) + 10) * 10000}`,
