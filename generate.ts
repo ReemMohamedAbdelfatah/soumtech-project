@@ -44,7 +44,7 @@ const auctionNames = [
   { en: "Al Nakheel Commercial Complex", ar: "مجمع تجاري النخيل" },
 ];
 
-function randomDateBetween(start, end) {
+function randomDateBetween(start: Date, end: Date) {
   return new Date(
     start.getTime() + Math.random() * (end.getTime() - start.getTime()),
   );
