@@ -299,5 +299,18 @@
   "home": {
     "allAuctions": "جميع المزادات",
     "Auction": "المزادات"
+  },
+  "previewCard": {
+    "counter": {
+      "day": "يوم",
+      "hour": "ساعة",
+      "minute": "دقيقة",
+      "second": "ثانية"
+    },
+    "premisesAmount": "عدد الأصول",
+    "auctionData": "تفاصيل المزاد",
+    "auctionStartDate": "تاريخ فتح المزاد",
+    "auctionStartTime": "وقت فتح المزاد",
+    "auctionEndedBtn": "تم اغلاق المزاد"
   }
 }

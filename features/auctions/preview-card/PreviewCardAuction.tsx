@@ -10,6 +10,8 @@ import PreviewCardImage from "./PreviewCardImage";
 import Image from "next/image";
 import PreviewCardCountdown from "./PreviewCardCountdown";
 import { Button } from "@/components/ui/button";
+import { getTranslations } from "next-intl/server";
+import { RulerDimensionLine } from "lucide-react";
 
 interface PreviewCardProps {
   type: "premise" | "auction";
@@ -21,12 +23,12 @@ interface PreviewCardProps {
   auctionFinishDate: Date;
   status: "active" | "upcoming" | "ended";
   premisesAmount: number;
+  location: { en: string; ar: string };
   locale: "en" | "ar";
 }
 
-export default function PreviewCard({
+export default async function PreviewCardAuction({
   locale,
-  type = "auction",
   auctionImage,
   auctionLogo,
   area,
@@ -35,17 +37,26 @@ export default function PreviewCard({
   auctionFinishDate,
   status,
   premisesAmount,
+  location,
 }: PreviewCardProps) {
+  const t = await getTranslations("previewCard");
   return (
     <Card className="p-2.5">
-      <PreviewCardImage src={auctionImage} imageCation={type === "auction"} />
+      <PreviewCardImage
+        src={auctionImage}
+        imageCaption={true}
+        location={location[locale]}
+      />
       <CardHeader className="flex  justify-between gap-2.5 pt-2.5 px-0">
         <div className="flex flex-col gap-1.5 flex-1/2">
           <CardTitle>
             {auctionName[locale].slice(0, 22)}
             {auctionName[locale].length > 23 && "..."}
           </CardTitle>
-          <CardDescription>{area}</CardDescription>
+          <CardDescription className="flex items-center gap-2">
+            <RulerDimensionLine className="w-5 h-5" />
+            <span className="text-sm">{area}</span>
+          </CardDescription>
         </div>
 
         <Image
@@ -61,17 +72,24 @@ export default function PreviewCard({
           status={status}
           auctionStartDate={auctionStartDate}
           auctionFinishDate={auctionFinishDate}
+          locale={locale}
         />
       </CardContent>
       <CardFooter className="flex justify-between gap-2 px-0 bg-white border-none">
-        <div className="flex flex-col items-center flex-1/2">
-          <span className="font-bold text-[16.76px] text-ring">عدد الأصول</span>
+        <div
+          className={`flex flex-col items-center flex-1/2 ${locale === "en" ? "gap-1" : "gap-0"}`}
+        >
+          <span
+            className={`font-bold ${locale === "en" ? "text-[12px]" : "text-[16.76px]"} text-ring`}
+          >
+            {t("premisesAmount")}
+          </span>
           <span className="font-bold text-[18.76px] text-secondary">
             {premisesAmount}
           </span>
         </div>
         <Button className="h-auto flex-1/2 text-[13px] py-[14.5px] px-11.5 font-medium bg-secondary">
-          تفاضيل المزاد
+          {t("auctionData")}
         </Button>
       </CardFooter>
     </Card>

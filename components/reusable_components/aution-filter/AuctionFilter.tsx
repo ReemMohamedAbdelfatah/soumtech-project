@@ -43,7 +43,7 @@ export default async function AuctionFilter({
                 
                 ${
                   isActive
-                    ? "bg-[#DC5224] text-white!  shadow"
+                    ? "bg-destructive text-white!  shadow"
                     : "text-gray-700 dark:text-black! hover:bg-gray-100"
                 }
               `}

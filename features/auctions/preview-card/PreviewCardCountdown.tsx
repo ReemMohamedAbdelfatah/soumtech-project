@@ -1,18 +1,23 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 interface PreviewCardCountdownProps {
   auctionStartDate: Date;
   auctionFinishDate: Date;
   status: "active" | "upcoming" | "ended";
+  locale: "en" | "ar";
 }
 
 export default function PreviewCardCountdown({
   auctionStartDate,
   auctionFinishDate,
   status,
+  locale,
 }: PreviewCardCountdownProps) {
+  const t = useTranslations("previewCard");
   const [timeLeft, setTimeLeft] = useState<{
     days: number;
     hours: number;
@@ -61,18 +66,13 @@ export default function PreviewCardCountdown({
     return (
       <div className="flex justify-between items-center gap-0.5 px-7.25 py-[7.5px] border-2 border-sidebar-border/.5 rounded-[6.54px] text-ring [&_div>span:first-child]:text-[11px] [&_div>span:first-child]:font-normal [&_div>span:last-child]:font-bold [&_div]:flex [&_div]:flex-col [&_div]:items-center">
         <div>
-          <span>تاريخ فتح المزاد</span>
-          <span>{new Date(auctionStartDate).toLocaleDateString("ar-EG")}</span>
+          <span>{t("auctionStartDate")}</span>
+          <span>{new Date(auctionStartDate).toLocaleDateString()}</span>
         </div>
 
         <div>
-          <span>وقت فتح المزاد</span>
-          <span>
-            {new Date(auctionStartDate).toLocaleTimeString("ar-EG", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          </span>
+          <span>{t("auctionStartTime")}</span>
+          <span>{new Date(auctionStartDate).toLocaleTimeString()}</span>
         </div>
 
         {/* <span className="text-sm text-ring">
@@ -84,29 +84,33 @@ export default function PreviewCardCountdown({
   }
 
   if (status === "ended") {
-    return <div>Ended</div>;
+    return (
+      <Button className="h-auto text-[13px] py-[14.5px] px-11.5 font-medium bg-destructive w-full">
+        {t("auctionEndedBtn")}
+      </Button>
+    );
   }
 
   return (
     <div className="flex justify-between items-center gap-0.5 px-7.25 py-[4.75px] border-2 border-sidebar-border/.5 rounded-[6.54px] text-ring [&_div>span:first-child]:text-[19.63px] [&_div>span:first-child]:font-bold [&_div]:flex [&_div]:flex-col">
       <div>
         <span>{String(timeLeft?.seconds ?? 0).padStart(2, "0")}</span>
-        <span>ثانية</span>
+        <span>{t("counter.second")}</span>
       </div>
       <div className="font-bold text-[19.75px]">:</div>
       <div>
         <span>{String(timeLeft?.minutes ?? 0).padStart(2, "0")}</span>
-        <span>دقيقة</span>
+        <span>{t("counter.minute")}</span>
       </div>
       <div className="font-bold text-[19.75px]">:</div>
       <div>
         <span>{String(timeLeft?.hours ?? 0).padStart(2, "0")}</span>
-        <span>ساعة</span>
+        <span>{t("counter.hour")}</span>
       </div>
       <div className="font-bold text-[19.75px]">:</div>
       <div>
         <span>{String(timeLeft?.days ?? 0).padStart(2, "0")}</span>
-        <span>يوم</span>
+        <span>{t("counter.day")}</span>
       </div>
     </div>
   );

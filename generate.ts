@@ -88,9 +88,9 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
         (Math.floor(Math.random() * 30) + 1) * 24 * 60 * 60 * 1000,
     );
   }
-
+  const auctionCity = cities[Math.floor(Math.random() * cities.length)];
   const premises = Array.from({ length: 50 }, (_, premiseIndex) => {
-    const city = cities[Math.floor(Math.random() * cities.length)];
+    const city = auctionCity;
 
     const premiseStartDate = randomDateBetween(
       auctionStartDate,
@@ -122,16 +122,14 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
       assetsCount: Math.floor(Math.random() * 50) + 1,
 
       status,
-
+      location: {
+        en: `${auctionCity.en}, Saudi Arabia`,
+        ar: `${auctionCity.ar}، المملكة العربية السعودية`,
+      },
       premiseStartDate: premiseStartDate.toISOString(),
       premiseFinishDate: premiseFinishDate.toISOString(),
 
       detailsUrl: `/auctions/${auctionIndex + 1}`,
-
-      location: {
-        en: `${city.en}, Saudi Arabia`,
-        ar: `${city.ar}، المملكة العربية السعودية`,
-      },
 
       area: `${Math.floor(Math.random() * 400) + 50} m²`,
 
@@ -160,6 +158,12 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
     auctionLogo: `https://picsum.photos/100/100?random=${auctionIndex + 1001}`,
 
     status,
+
+    location: {
+      en: `${auctionCity.en}, Saudi Arabia`,
+      ar: `${auctionCity.ar}، المملكة العربية السعودية`,
+    },
+
     area: `${Math.floor(Math.random() * 400) + 50} m²`,
 
     auctionStartDate: auctionStartDate.toISOString(),
