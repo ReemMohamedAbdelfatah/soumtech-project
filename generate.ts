@@ -131,7 +131,7 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
 
       detailsUrl: `/auctions/${auctionIndex + 1}`,
 
-      area: `${Math.floor(Math.random() * 400) + 50} m²`,
+      area: `${Math.floor(Math.random() * 400) + 50}`,
 
       priceInfo: {
         amount: `$${(Math.floor(Math.random() * 90) + 10) * 10000}`,
@@ -164,7 +164,7 @@ const auctions = Array.from({ length: 100 }, (_, auctionIndex) => {
       ar: `${auctionCity.ar}، المملكة العربية السعودية`,
     },
 
-    area: `${Math.floor(Math.random() * 400) + 50} m²`,
+    area: `${Math.floor(Math.random() * 400) + 50}`,
 
     auctionStartDate: auctionStartDate.toISOString(),
     auctionFinishDate: auctionFinishDate.toISOString(),
