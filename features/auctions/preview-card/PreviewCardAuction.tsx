@@ -50,11 +50,11 @@ export default async function PreviewCardAuction({
       <CardHeader className="flex  justify-between gap-2.5 pt-2.5 px-0">
         <div className="flex flex-col gap-1.5 flex-1/2">
           <CardTitle>
-            {auctionName[locale].slice(0, 22)}
+            {auctionName[locale].slice(0, 20)}
             {auctionName[locale].length > 23 && "..."}
           </CardTitle>
           <CardDescription className="flex items-center gap-2">
-            <RulerDimensionLine className="w-5 h-5" />
+            <RulerDimensionLine className="w-5 h-5 text-secondary" />
             <span className="text-sm">{area}</span>
           </CardDescription>
         </div>

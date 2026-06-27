@@ -38,6 +38,7 @@ export default async function AuctionFilter({
               <Link
                 key={tab.value}
                 href={`/${mypage}?status=${tab.value}&page=1`}
+                scroll={false}
                 className={`
                 rounded-full text-xl font-medium transition-all px-7.5 md:px-21.5 py-2 md:py-4  
                 
