@@ -12,15 +12,15 @@ import PreviewCardCountdown from "./PreviewCardCountdown";
 import { Button } from "@/components/ui/button";
 import { getTranslations } from "next-intl/server";
 import { RulerDimensionLine } from "lucide-react";
+import { Auction } from "@/interfaces/auctions";
 
-interface PreviewCardProps {
-  type: "premise" | "auction";
+interface PreviewCardProps extends Auction {
   auctionImage: string;
   auctionLogo: string;
   area: string;
   auctionName: { en: string; ar: string };
-  auctionStartDate: Date;
-  auctionFinishDate: Date;
+  auctionStartDate: string;
+  auctionFinishDate: string;
   status: "active" | "upcoming" | "ended";
   premisesAmount: number;
   location: { en: string; ar: string };
@@ -55,7 +55,9 @@ export default async function PreviewCardAuction({
           </CardTitle>
           <CardDescription className="flex items-center gap-2">
             <RulerDimensionLine className="w-5 h-5 text-secondary" />
-            <span className="text-sm">{area}</span>
+            <span className="text-sm">
+              {area} {t("area")}
+            </span>
           </CardDescription>
         </div>
 
@@ -72,7 +74,6 @@ export default async function PreviewCardAuction({
           status={status}
           auctionStartDate={auctionStartDate}
           auctionFinishDate={auctionFinishDate}
-          locale={locale}
         />
       </CardContent>
       <CardFooter className="flex justify-between gap-2 px-0 bg-white border-none">

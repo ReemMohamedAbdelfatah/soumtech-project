@@ -312,6 +312,7 @@
     "auctionData": "Auction Data",
     "auctionStartDate": "Auction Start Date",
     "auctionStartTime": "Auction Start Time",
-    "auctionEndedBtn": "Auction Ended"
+    "auctionEndedBtn": "Auction Ended",
+    "area": "m²"
   }
 }

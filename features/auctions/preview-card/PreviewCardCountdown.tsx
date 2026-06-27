@@ -5,17 +5,15 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 interface PreviewCardCountdownProps {
-  auctionStartDate: Date;
-  auctionFinishDate: Date;
+  auctionStartDate: string;
+  auctionFinishDate: string;
   status: "active" | "upcoming" | "ended";
-  locale: "en" | "ar";
 }
 
 export default function PreviewCardCountdown({
   auctionStartDate,
   auctionFinishDate,
   status,
-  locale,
 }: PreviewCardCountdownProps) {
   const t = useTranslations("previewCard");
   const [timeLeft, setTimeLeft] = useState<{

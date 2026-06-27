@@ -311,6 +311,7 @@
     "auctionData": "تفاصيل المزاد",
     "auctionStartDate": "تاريخ فتح المزاد",
     "auctionStartTime": "وقت فتح المزاد",
-    "auctionEndedBtn": "تم اغلاق المزاد"
+    "auctionEndedBtn": "تم اغلاق المزاد",
+    "area": "م²"
   }
 }
